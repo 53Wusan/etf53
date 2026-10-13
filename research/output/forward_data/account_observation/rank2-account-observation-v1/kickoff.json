@@ -1,0 +1,56 @@
+{
+  "definition": {
+    "version": "rank2-account-observation-v1",
+    "activation_date": "2026-10-06",
+    "initial_usd": 45000.0,
+    "rule": {
+      "buy_score": 0,
+      "add_drop": 0.05,
+      "buy_gap_days": 3,
+      "sell_score": 20,
+      "profit_target": 0.5,
+      "max_hold_days": 90,
+      "sell_gap_days": 1,
+      "reentry_days": 7,
+      "exit_mode": "trail",
+      "trailing_drop": 0.1,
+      "fee_rate": 0.001,
+      "stop_loss": null,
+      "idle_exit_days": null,
+      "idle_exit_band": 0.05
+    },
+    "capital": {
+      "lot_fraction": 0.05,
+      "max_lots": 4,
+      "reserve_hkd": 0,
+      "max_symbols": 5,
+      "initial_usd": 45000.0
+    },
+    "symbols": [
+      "TQQQ",
+      "FAS",
+      "GDXU",
+      "CURE",
+      "DFEN",
+      "TECL",
+      "UPRO",
+      "EDC",
+      "UGL"
+    ],
+    "benchmark_weights": {
+      "QLD": 0.4,
+      "TQQQ": 0.3,
+      "SOXL": 0.3
+    },
+    "code_sha256": {
+      "execution_research.py": "06a5c50d8cbc6bc6bdb406082b5a8f1484b6f60d396865cc9bc5eefb1a2a93a1",
+      "shadow_account.py": "5f300120598a411b74401590127fb710bf143bc1537a1ef3c9abe7ab81418370",
+      "research_cockpit.py": "01b99077c8789055b407962e2c5aa2b04eb1a9d04ad790cca3bbc9ee883498c7",
+      "research_data_refresh.py": "925172ee79aeeb9d9b57763b10d5f78d27909cd7a2c57aed6e6560ef0028801b",
+      "execution_data_refresh.py": "0b2c0c33c543f4dfab67bf9a57d6d6d266c96cedf3dca63d8229ec96de8a0be0",
+      "account_observation.py": "d4210d2805dcdc7032f742bffc41ecea4fb6047d4228e29e2f6e517b428d3776"
+    }
+  },
+  "started_at_utc": "2026-10-13T18:24:09.599525+00:00",
+  "first_data_date": "2026-10-12"
+}

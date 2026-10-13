@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api, invalidateStaticSnapshots, staticDesk } from '../api'
+import AccountReview from '../components/AccountReview'
 
 type Trade = { date: string; symbol: string; side: string; quantity: number; price: number; fee_hkd: number }
 type Position = { quantity: number; cost_hkd: number; market_value_hkd: number; pnl_hkd: number; profit_pct: number }
@@ -28,7 +29,7 @@ export default function ShadowPage() {
   const profit = account ? account.equity_usd - account.initial_usd : 0
   const returnPct = account && account.initial_usd > 0 ? profit / account.initial_usd * 100 : 0
   const marketValue = positions.reduce((sum, [, p]) => sum + p.market_value_hkd / fx, 0)
-  return <div className="execution-dashboard">
+  return <div className="execution-dashboard account-page">
     <div className="desk-heading"><h1>账户与对账</h1></div>
     {error && <div className="desk-alert">{error}</div>}
     {account && <section className="desk-panel">
@@ -53,5 +54,6 @@ export default function ShadowPage() {
       <h3>成交记录</h3>
       <div className="desk-table-scroll"><table className="desk-table"><thead><tr><th>日期</th><th>品种</th><th>方向</th><th>复权价格</th><th>模拟份额</th><th>费用</th></tr></thead><tbody>{account.trades.slice().reverse().map((t,i)=><tr key={i}><td>{t.date}</td><td>{t.symbol}</td><td>{t.side==='buy'?'买入':'卖出'}</td><td>{money(t.price)}</td><td>{t.quantity.toFixed(3)}</td><td>{money(t.fee_hkd/fx)}</td></tr>)}</tbody></table>{!account.trades.length && <p>账户已准备，尚无模拟成交。</p>}</div>
     </section>}
+    {account && <AccountReview revision={revision} accountDate={account.data_date} />}
   </div>
 }

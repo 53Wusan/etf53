@@ -1,12 +1,17 @@
 """Export market/research views only: no credentials, account config or real trades."""
 import json
 from pathlib import Path
+
 import pandas as pd
 import pandas_market_calendars as mcal
-
+from app.services.account_observation import status as account_observation
 from app.services.execution_research import dashboard, history_view
 from app.services.research_cockpit import DEFAULT_SYMBOLS
-from app.services.strategy_desk import curated_strategies, observation_summary, strategy_detail
+from app.services.strategy_desk import (
+    curated_strategies,
+    observation_summary,
+    strategy_detail,
+)
 
 root = Path(__file__).resolve().parents[1] / "frontend/public/data"
 
@@ -30,4 +35,5 @@ cards = curated_strategies()
 save("strategies.json", cards)
 for item in cards["items"]:
     save(f"strategy-{item['id']}.json", strategy_detail(item["id"]))
+save("account-observation.json", account_observation())
 print("Static market/research views exported; private account omitted")

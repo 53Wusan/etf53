@@ -1,0 +1,678 @@
+{
+  "provenance": {
+    "rule": {
+      "buy_score": 0,
+      "add_drop": 0.05,
+      "buy_gap_days": 3,
+      "sell_score": 20,
+      "profit_target": 0.5,
+      "max_hold_days": 90,
+      "sell_gap_days": 1,
+      "reentry_days": 7,
+      "exit_mode": "trail",
+      "trailing_drop": 0.1,
+      "fee_rate": 0.001,
+      "stop_loss": null,
+      "idle_exit_days": null,
+      "idle_exit_band": 0.05
+    },
+    "capital": {
+      "lot_fraction": 0.05,
+      "max_lots": 4,
+      "reserve_hkd": 0,
+      "max_symbols": 5,
+      "initial_usd": 45000
+    },
+    "symbols": [
+      "TQQQ",
+      "FAS",
+      "GDXU",
+      "CURE",
+      "DFEN",
+      "TECL",
+      "UPRO",
+      "EDC",
+      "UGL"
+    ],
+    "benchmark": {
+      "QLD": 0.4,
+      "TQQQ": 0.3,
+      "SOXL": 0.3
+    },
+    "cutoff": "2026-10-02",
+    "input_sha256": {
+      "TQQQ": "4a1ff374a087690f572f8f4aab8e7a61c61780a2bee369cfeb557e98d6acdf70",
+      "FAS": "1bbcb4866f2558560f48975f0cfe8fd5be1a3eb47cde2d280a8a5fdb85394068",
+      "GDXU": "416586a8ac4fc58550e745c31c7214c8df69396b3fe0ebdb44e9fb4cd5ca1e22",
+      "CURE": "c500e4f293a190f3280057512d6252e70a9c355990d15d353696548b0f92a1de",
+      "DFEN": "89afd86ecdd4c4ad66aeaa99598a81a41ef1e6c1f45f351b4390ad082d34f96e",
+      "TECL": "1550ded5e7ef7b25648fa963b0b3fdb29d7185cccb94708d0ac50724836aa8d4",
+      "UPRO": "d026d2baf221159ed22674d5b681da176ae18968494e2c2da03ab93e44fe806b",
+      "EDC": "1ffd7552e515203c143765d3454c47082947e7b2b6e64ed3df76370a01cdf8d8",
+      "UGL": "cfb92cca18e348dd5ad39b3e52517645a76f9cec3986c761913854f3b5a01cbf"
+    },
+    "benchmark_sha256": {
+      "QLD": "32867db435b52b4584452484cbebc1d5bed1073e31b94dcb6932d9262bed3044",
+      "TQQQ": "ad806ed69443c3c8ffb78a54d0bca48fc7be8404208c742a4c2848e9f2d01f19",
+      "SOXL": "0d63a09a97fd59c67f0a51daa0417a16019a0ae3e1405c2d946b5f68cad6dd1e"
+    },
+    "code_sha256": "aafc6baf4db6b9ec986f34f8a199d1909abd582b1c3af7a689e2614da6255b98",
+    "limitations": [
+      "此前反复研究过的历史，仅作开发与诊断，不是独立样本外",
+      "复权小数份额，次日开盘，未计滑点、最低收费、税或现金利息",
+      "未匹配两组波动风险，不把收益差解释为择时的因果优势",
+      "事件窗口重叠；前瞻收益仅作描述，不计算独立样本显著性",
+      "所有情景单独现金起步；continuous与bear_with_prior_positions内部连续持仓，不逐年重置",
+      "尾部不足完整窗口记空值，不按零计算",
+      "未来路径只作事后诊断，不用于交易决策"
+    ]
+  },
+  "scenarios": {
+    "continuous_from_20211203": {
+      "start": "2021-12-03",
+      "end": "2026-10-02",
+      "return_pct": 188.0503676683398,
+      "max_drawdown_pct": -37.12402983535821,
+      "ending_equity_hkd": 1011056.7905158726,
+      "mean_exposure_pct": 35.73473580902342,
+      "buys": 288,
+      "sells": 280,
+      "trade_count": 568,
+      "fees_hkd": 10630.508972123973,
+      "blocked_candidates": 1710,
+      "max_idle_days": 91,
+      "max_hold_days_observed": 96,
+      "median_lot_hold_days": 58.0,
+      "benchmark_return_pct": 132.48874475711463,
+      "benchmark_drawdown_pct": -76.2532457493424,
+      "by_symbol": [
+        {
+          "symbol": "GDXU",
+          "realized_usd": 31176.249684240127,
+          "floating_usd": 0.0,
+          "total_usd": 31176.249684240127,
+          "fees_usd": 220.20764614156147,
+          "buys": 42,
+          "sells": 42
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 14099.6811322131,
+          "floating_usd": 52.049444144951394,
+          "total_usd": 14151.730576358052,
+          "fees_usd": 124.36165517499511,
+          "buys": 25,
+          "sells": 24
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": 12709.18374171127,
+          "floating_usd": 340.7771688557432,
+          "total_usd": 13049.960910567013,
+          "fees_usd": 185.96982889527348,
+          "buys": 39,
+          "sells": 38
+        },
+        {
+          "symbol": "EDC",
+          "realized_usd": 8689.319370503837,
+          "floating_usd": 0.0,
+          "total_usd": 8689.319370503837,
+          "fees_usd": 152.69816138802884,
+          "buys": 32,
+          "sells": 32
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": 5013.738546689762,
+          "floating_usd": 0.0,
+          "total_usd": 5013.738546689762,
+          "fees_usd": 149.01890130413088,
+          "buys": 32,
+          "sells": 32
+        },
+        {
+          "symbol": "CURE",
+          "realized_usd": 4370.33704985107,
+          "floating_usd": -17.180719020781908,
+          "total_usd": 4353.156330830288,
+          "fees_usd": 159.6226170095104,
+          "buys": 35,
+          "sells": 34
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": 2696.4668308401433,
+          "floating_usd": 612.3335529813066,
+          "total_usd": 3308.80038382145,
+          "fees_usd": 184.9470982447604,
+          "buys": 41,
+          "sells": 40
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 3653.4904259886143,
+          "floating_usd": -1182.8991822381458,
+          "total_usd": 2470.5912437504685,
+          "fees_usd": 98.14824206465171,
+          "buys": 23,
+          "sells": 19
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": 2409.118403991957,
+          "floating_usd": 0.0,
+          "total_usd": 2409.118403991957,
+          "fees_usd": 87.91161543400729,
+          "buys": 19,
+          "sells": 19
+        }
+      ]
+    },
+    "bear_with_dec2021_positions": {
+      "start": "2021-12-03",
+      "end": "2022-12-30",
+      "return_pct": -9.81393913327845,
+      "max_drawdown_pct": -37.12402983535821,
+      "ending_equity_hkd": 316553.07364219264,
+      "mean_exposure_pct": 53.64861628819167,
+      "buys": 78,
+      "sells": 67,
+      "trade_count": 145,
+      "fees_hkd": 2496.7805668207784,
+      "blocked_candidates": 536,
+      "max_idle_days": 90,
+      "max_hold_days_observed": 95,
+      "median_lot_hold_days": 55.0,
+      "benchmark_return_pct": -72.8038116858848,
+      "benchmark_drawdown_pct": -76.2532457493424,
+      "by_symbol": [
+        {
+          "symbol": "CURE",
+          "realized_usd": 2703.630631096039,
+          "floating_usd": 0.0,
+          "total_usd": 2703.630631096039,
+          "fees_usd": 43.206377468102666,
+          "buys": 9,
+          "sells": 9
+        },
+        {
+          "symbol": "EDC",
+          "realized_usd": -176.21029114807016,
+          "floating_usd": 1508.3734508410616,
+          "total_usd": 1332.1631596929915,
+          "fees_usd": 49.319162817721015,
+          "buys": 12,
+          "sells": 10
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 1324.5777099146844,
+          "floating_usd": -184.86761163808842,
+          "total_usd": 1139.710098276596,
+          "fees_usd": 26.069178356801448,
+          "buys": 7,
+          "sells": 4
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": 181.40095108180685,
+          "floating_usd": 564.5280806537762,
+          "total_usd": 745.9290317355831,
+          "fees_usd": 20.429352781384594,
+          "buys": 5,
+          "sells": 4
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 523.5106091855519,
+          "floating_usd": 0.0,
+          "total_usd": 523.5106091855519,
+          "fees_usd": 9.524043643837949,
+          "buys": 2,
+          "sells": 2
+        },
+        {
+          "symbol": "GDXU",
+          "realized_usd": 149.82922438700552,
+          "floating_usd": 0.0,
+          "total_usd": 149.82922438700552,
+          "fees_usd": 18.149997203607736,
+          "buys": 4,
+          "sells": 4
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": -1900.5929687110274,
+          "floating_usd": 65.39368147377718,
+          "total_usd": -1835.1992872372502,
+          "fees_usd": 47.59305403137171,
+          "buys": 12,
+          "sells": 10
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": -3501.027648029682,
+          "floating_usd": 0.0,
+          "total_usd": -3501.027648029682,
+          "fees_usd": 50.49552181984153,
+          "buys": 12,
+          "sells": 12
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": -5424.496270449054,
+          "floating_usd": -250.322158633071,
+          "total_usd": -5674.818429082125,
+          "fees_usd": 55.313384546661815,
+          "buys": 15,
+          "sells": 12
+        }
+      ]
+    },
+    "2022_cash_start": {
+      "start": "2022-01-03",
+      "end": "2022-12-30",
+      "return_pct": -10.106755236838849,
+      "max_drawdown_pct": -38.392713994122495,
+      "ending_equity_hkd": 315525.28911869565,
+      "mean_exposure_pct": 57.0032151742067,
+      "buys": 75,
+      "sells": 64,
+      "trade_count": 139,
+      "fees_hkd": 2390.451648183844,
+      "blocked_candidates": 462,
+      "max_idle_days": 72,
+      "max_hold_days_observed": 94,
+      "median_lot_hold_days": 59.0,
+      "benchmark_return_pct": -73.89282551382443,
+      "benchmark_drawdown_pct": -75.93459946245346,
+      "by_symbol": [
+        {
+          "symbol": "CURE",
+          "realized_usd": 1870.93360288262,
+          "floating_usd": 0.0,
+          "total_usd": 1870.93360288262,
+          "fees_usd": 24.372828909313334,
+          "buys": 5,
+          "sells": 5
+        },
+        {
+          "symbol": "EDC",
+          "realized_usd": -175.00137342283188,
+          "floating_usd": 1508.3734508410616,
+          "total_usd": 1333.3720774182298,
+          "fees_usd": 31.320354945556968,
+          "buys": 8,
+          "sells": 6
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 1496.9409960722319,
+          "floating_usd": -184.86761163808842,
+          "total_usd": 1312.0733844341435,
+          "fees_usd": 21.74170967877669,
+          "buys": 6,
+          "sells": 3
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 1256.2239506405522,
+          "floating_usd": 0.0,
+          "total_usd": 1256.2239506405522,
+          "fees_usd": 32.757512932102614,
+          "buys": 7,
+          "sells": 7
+        },
+        {
+          "symbol": "GDXU",
+          "realized_usd": 494.4690935644553,
+          "floating_usd": 0.0,
+          "total_usd": 494.4690935644553,
+          "fees_usd": 27.494991057647784,
+          "buys": 6,
+          "sells": 6
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": -203.8562337377425,
+          "floating_usd": 564.5280806537762,
+          "total_usd": 360.6718469160337,
+          "fees_usd": 11.043700953728827,
+          "buys": 3,
+          "sells": 2
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": -1512.3769229321672,
+          "floating_usd": 65.39368147377718,
+          "total_usd": -1446.98324145839,
+          "fees_usd": 52.48166318180528,
+          "buys": 13,
+          "sells": 11
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": -3825.6489212646084,
+          "floating_usd": 0.0,
+          "total_usd": -3825.6489212646084,
+          "fees_usd": 50.170575600387146,
+          "buys": 12,
+          "sells": 12
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": -5652.82949107744,
+          "floating_usd": -250.322158633071,
+          "total_usd": -5903.151649710511,
+          "fees_usd": 55.084822764251015,
+          "buys": 15,
+          "sells": 12
+        }
+      ]
+    },
+    "2023_cash_start": {
+      "start": "2023-01-03",
+      "end": "2023-12-29",
+      "return_pct": 41.99900980025875,
+      "max_drawdown_pct": -9.319725508801636,
+      "ending_equity_hkd": 498416.5243989082,
+      "mean_exposure_pct": 43.33901268166345,
+      "buys": 58,
+      "sells": 56,
+      "trade_count": 114,
+      "fees_hkd": 2137.3979501501944,
+      "blocked_candidates": 343,
+      "max_idle_days": 90,
+      "max_hold_days_observed": 94,
+      "median_lot_hold_days": 57.0,
+      "benchmark_return_pct": 165.82498144058712,
+      "benchmark_drawdown_pct": -34.71801422015371,
+      "by_symbol": [
+        {
+          "symbol": "GDXU",
+          "realized_usd": 6520.694150987455,
+          "floating_usd": 0.0,
+          "total_usd": 6520.694150987455,
+          "fees_usd": 56.027270872406945,
+          "buys": 11,
+          "sells": 11
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 4603.956746276541,
+          "floating_usd": 0.0,
+          "total_usd": 4603.956746276541,
+          "fees_usd": 36.10859681161812,
+          "buys": 7,
+          "sells": 7
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": 1506.5446520689945,
+          "floating_usd": 1218.5248583175694,
+          "total_usd": 2725.0695103865637,
+          "fees_usd": 26.255827452547226,
+          "buys": 6,
+          "sells": 5
+        },
+        {
+          "symbol": "EDC",
+          "realized_usd": 1689.7083930008312,
+          "floating_usd": 0.0,
+          "total_usd": 1689.7083930008312,
+          "fees_usd": 33.191431292823616,
+          "buys": 7,
+          "sells": 7
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": 1397.7283161396958,
+          "floating_usd": 0.0,
+          "total_usd": 1397.7283161396958,
+          "fees_usd": 23.8991499436047,
+          "buys": 5,
+          "sells": 5
+        },
+        {
+          "symbol": "CURE",
+          "realized_usd": 1374.3415475244146,
+          "floating_usd": 0.0,
+          "total_usd": 1374.3415475244146,
+          "fees_usd": 41.87575776482777,
+          "buys": 9,
+          "sells": 9
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": 289.27222903913844,
+          "floating_usd": 0.0,
+          "total_usd": 289.27222903913844,
+          "fees_usd": 18.289579790847107,
+          "buys": 4,
+          "sells": 4
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": 113.59107024317063,
+          "floating_usd": 168.93744488767106,
+          "total_usd": 282.5285151308417,
+          "fees_usd": 15.861470522783076,
+          "buys": 4,
+          "sells": 3
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 16.25500163094881,
+          "floating_usd": 0.0,
+          "total_usd": 16.25500163094881,
+          "fees_usd": 22.516293772925277,
+          "buys": 5,
+          "sells": 5
+        }
+      ]
+    },
+    "recent_continuous": {
+      "start": "2024-04-25",
+      "end": "2026-10-02",
+      "return_pct": 125.5612317380074,
+      "max_drawdown_pct": -15.454453392564671,
+      "ending_equity_hkd": 791719.9234004059,
+      "mean_exposure_pct": 31.173253825366356,
+      "buys": 137,
+      "sells": 129,
+      "trade_count": 266,
+      "fees_hkd": 5110.8472484799195,
+      "blocked_candidates": 793,
+      "max_idle_days": 91,
+      "max_hold_days_observed": 96,
+      "median_lot_hold_days": 57.0,
+      "benchmark_return_pct": 240.72415955100493,
+      "benchmark_drawdown_pct": -59.98843191651032,
+      "by_symbol": [
+        {
+          "symbol": "GDXU",
+          "realized_usd": 23264.807753386234,
+          "floating_usd": 0.0,
+          "total_usd": 23264.807753386234,
+          "fees_usd": 104.28817684931259,
+          "buys": 18,
+          "sells": 18
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": 11279.41213563981,
+          "floating_usd": 340.7771688557432,
+          "total_usd": 11620.189304495554,
+          "fees_usd": 90.03853158630316,
+          "buys": 18,
+          "sells": 17
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 8087.929108910439,
+          "floating_usd": 52.049444144951394,
+          "total_usd": 8139.978553055391,
+          "fees_usd": 73.34384038185651,
+          "buys": 15,
+          "sells": 14
+        },
+        {
+          "symbol": "EDC",
+          "realized_usd": 7947.359877754101,
+          "floating_usd": 0.0,
+          "total_usd": 7947.359877754101,
+          "fees_usd": 93.45540069302845,
+          "buys": 19,
+          "sells": 19
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": 3252.1345603268837,
+          "floating_usd": 612.3335529813066,
+          "total_usd": 3864.4681133081904,
+          "fees_usd": 95.50323219811489,
+          "buys": 21,
+          "sells": 20
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": 2688.289661455263,
+          "floating_usd": 0.0,
+          "total_usd": 2688.289661455263,
+          "fees_usd": 61.19103914215306,
+          "buys": 13,
+          "sells": 13
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 1013.4565502330756,
+          "floating_usd": -1182.8991822381458,
+          "total_usd": -169.4426320050702,
+          "fees_usd": 41.50551151229245,
+          "buys": 11,
+          "sells": 7
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": -296.2385089457009,
+          "floating_usd": 0.0,
+          "total_usd": -296.2385089457009,
+          "fees_usd": 40.20350545604887,
+          "buys": 9,
+          "sells": 9
+        },
+        {
+          "symbol": "CURE",
+          "realized_usd": -539.6771213798522,
+          "floating_usd": -17.180719020781908,
+          "total_usd": -556.8578404006341,
+          "fees_usd": 55.707588909084876,
+          "buys": 13,
+          "sells": 12
+        }
+      ]
+    },
+    "2026_cash_start": {
+      "start": "2026-01-02",
+      "end": "2026-10-02",
+      "return_pct": 12.349736249061394,
+      "max_drawdown_pct": -23.261634655206386,
+      "ending_equity_hkd": 394347.57423420553,
+      "mean_exposure_pct": 52.81127219335592,
+      "buys": 54,
+      "sells": 45,
+      "trade_count": 99,
+      "fees_hkd": 1783.185075879415,
+      "blocked_candidates": 312,
+      "max_idle_days": 81,
+      "max_hold_days_observed": 96,
+      "median_lot_hold_days": 60.0,
+      "benchmark_return_pct": 108.61766716024928,
+      "benchmark_drawdown_pct": -54.51293403577353,
+      "by_symbol": [
+        {
+          "symbol": "EDC",
+          "realized_usd": 4727.25364912882,
+          "floating_usd": 0.0,
+          "total_usd": 4727.25364912882,
+          "fees_usd": 36.23201713479358,
+          "buys": 7,
+          "sells": 7
+        },
+        {
+          "symbol": "FAS",
+          "realized_usd": 1250.0807638170784,
+          "floating_usd": 0.0,
+          "total_usd": 1250.0807638170784,
+          "fees_usd": 28.2513590959387,
+          "buys": 6,
+          "sells": 6
+        },
+        {
+          "symbol": "GDXU",
+          "realized_usd": 677.6763149321325,
+          "floating_usd": 0.0,
+          "total_usd": 677.6763149321325,
+          "fees_usd": 32.17838616963173,
+          "buys": 7,
+          "sells": 7
+        },
+        {
+          "symbol": "CURE",
+          "realized_usd": 563.5688532895392,
+          "floating_usd": -17.180719020781908,
+          "total_usd": 546.3881342687573,
+          "fees_usd": 16.311898734040703,
+          "buys": 4,
+          "sells": 3
+        },
+        {
+          "symbol": "UPRO",
+          "realized_usd": 323.8572827917101,
+          "floating_usd": 0.0,
+          "total_usd": 323.8572827917101,
+          "fees_usd": 9.324190464264536,
+          "buys": 2,
+          "sells": 2
+        },
+        {
+          "symbol": "TECL",
+          "realized_usd": -609.8417378915769,
+          "floating_usd": 665.0330117597523,
+          "total_usd": 55.19127386817536,
+          "fees_usd": 19.637318057687512,
+          "buys": 5,
+          "sells": 4
+        },
+        {
+          "symbol": "TQQQ",
+          "realized_usd": -622.2686338851522,
+          "floating_usd": 372.8080777789937,
+          "total_usd": -249.4605561061585,
+          "fees_usd": 19.62487872235861,
+          "buys": 5,
+          "sells": 4
+        },
+        {
+          "symbol": "DFEN",
+          "realized_usd": 803.3390012296154,
+          "floating_usd": -1182.8991822381458,
+          "total_usd": -379.56018100853044,
+          "fees_usd": 41.295183635412116,
+          "buys": 11,
+          "sells": 7
+        },
+        {
+          "symbol": "UGL",
+          "realized_usd": -1236.0504553182843,
+          "floating_usd": -157.9949142960686,
+          "total_usd": -1394.045369614353,
+          "fees_usd": 25.758239252464143,
+          "buys": 7,
+          "sells": 5
+        }
+      ]
+    }
+  }
+}

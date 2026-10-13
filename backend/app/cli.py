@@ -28,13 +28,30 @@ def main() -> None:
         print(run_all_markets())
     elif args.command == "update-desk":
         import json
+
         from app.services.daily_update import run
         result = run(sync_quotes=args.sync_quotes)
         if args.account:
             from pathlib import Path
+
             from app.services.shadow_account import update
             account_path = Path(args.account)
-            update(account_path, account_path.parent / "shadow.json")
+            from app.services.account_observation import capture
+            from app.services.daily_update import _save
+            from app.services.research_cockpit import _research_output
+
+            receipt = _research_output() / "forward_data" / "daily_update.json"
+            try:
+                account = update(account_path, account_path.parent / "shadow.json")
+                observation = capture(json.loads(account_path.read_text(encoding="utf8")), account)
+                _save(receipt, {**{k: result[k] for k in ("status", "started_at", "completed_at", "data_date")},
+                                "observation_version": observation["version"],
+                                "recorded_at_utc": observation["audit"]["latest"]["recorded_at_utc"],
+                                "signal_before_next_open": observation["audit"]["latest"]["signal_before_next_open"]})
+            except Exception as exc:
+                _save(receipt, {"status": "failed", "stage": "account_observation",
+                                "data_date": result["data_date"], "message": str(exc)})
+                raise
         print(json.dumps({k: result[k] for k in ("status", "data_date", "completed_at")}, ensure_ascii=False))
     elif args.command == "refresh-research":
         print(refresh(args.through))

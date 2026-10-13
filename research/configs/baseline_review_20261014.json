@@ -1,0 +1,16 @@
+{
+  "name": "deployed_rank2_baseline_review_20261014",
+  "profile": "rank2",
+  "initial_usd": 45000,
+  "data_cutoff": "2026-10-02",
+  "symbols": ["TQQQ", "FAS", "GDXU", "CURE", "DFEN", "TECL", "UPRO", "EDC", "UGL"],
+  "source_commit": "6c8b76a231979e7e9a64da3616442af2b1df20be",
+  "source_account_date": "2026-10-12",
+  "rule": {
+    "buy_score": 0, "add_drop": 0.05, "buy_gap_days": 3,
+    "sell_score": 20, "profit_target": 0.5, "max_hold_days": 90,
+    "sell_gap_days": 1, "reentry_days": 7, "exit_mode": "trail",
+    "trailing_drop": 0.1, "fee_rate": 0.001, "stop_loss": null,
+    "idle_exit_days": null, "idle_exit_band": 0.05
+  }
+}

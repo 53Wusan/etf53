@@ -171,6 +171,12 @@ def research_catalog_endpoint() -> dict:
     return research_catalog()
 
 
+@router.get("/account/observation", dependencies=[Depends(current_user)])
+def account_observation_endpoint() -> dict:
+    from app.services.account_observation import status
+    return status()
+
+
 @router.get("/research/paper", dependencies=[Depends(current_user)])
 def research_paper_endpoint() -> dict:
     try:

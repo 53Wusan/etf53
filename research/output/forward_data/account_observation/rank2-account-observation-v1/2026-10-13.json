@@ -1,0 +1,156 @@
+{
+  "recorded_at_utc": "2026-10-14T02:10:45.022117+00:00",
+  "previous_sha256": "b51db53b922aa6c0b7063fcfeaeb05b39c1badaf6ad3c592232ed55e5f97c819",
+  "signal_before_next_open": true,
+  "next_open_utc": "2026-10-14T13:30:00+00:00",
+  "fills_linked_to_prior_plan": false,
+  "fills_match_prior_plan": true,
+  "payload": {
+    "data_date": "2026-10-13",
+    "cash_usd": 33750.0,
+    "equity_usd": 44923.35102167849,
+    "positions": {
+      "FAS": {
+        "quantity": 15.383891231864746,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 18265.928722719782,
+        "pnl_hkd": 715.9287227197826,
+        "profit_pct": 4.079365941423263,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 7,
+        "last_buy_price": 146.11077352760174,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 154.1852788410891
+      },
+      "GDXU": {
+        "quantity": 21.407164264307124,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 16811.13153528655,
+        "pnl_hkd": -738.8684647134511,
+        "profit_pct": -4.210076722013967,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 7,
+        "last_buy_price": 105.0,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 109.14999996056235
+      },
+      "CURE": {
+        "quantity": 17.52797622221368,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 17979.241789686483,
+        "pnl_hkd": 429.2417896864833,
+        "profit_pct": 2.4458221634557464,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 7,
+        "last_buy_price": 128.23797906021863,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 137.10928000061995
+      },
+      "DFEN": {
+        "quantity": 47.550820275238685,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 16590.181484838893,
+        "pnl_hkd": -959.8185151611061,
+        "profit_pct": -5.469051368439349,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 7,
+        "last_buy_price": 47.270525192658525,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 47.74062986554362
+      },
+      "UGL": {
+        "quantity": 49.109729472647004,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 17505.65443656051,
+        "pnl_hkd": -44.34556343948825,
+        "profit_pct": -0.25268127315947186,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 7,
+        "last_buy_price": 45.76999857032799,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 46.45000070056348
+      }
+    },
+    "fills": [],
+    "trades_sha256": "e4d098d7990bec177c660f9ea7c6f021c9756f6bc844476a57c561b0abf381c5",
+    "next_open_plan": {
+      "signal_date": "2026-10-13",
+      "next_open_date": "2026-10-14",
+      "actions": [
+        {
+          "date": "2026-10-14",
+          "signal_date": "2026-10-13",
+          "symbol": "DFEN",
+          "side": "buy",
+          "reason": "恐惧区内再跌后加仓",
+          "score": -34.70934995394884,
+          "price": 44.7299611636287,
+          "quantity": 50.25160293633262,
+          "gross_hkd": 17532.467532467534,
+          "fee_hkd": 17.53246753246585,
+          "realized_pnl_hkd": 0.0,
+          "position_quantity": 97.8024232115713,
+          "position_lots": 2,
+          "position_cost_hkd": 35100.0,
+          "cash_hkd": 245700.0,
+          "portfolio_positions": {
+            "FAS": {
+              "quantity": 15.383891231864746,
+              "lots": 1,
+              "market_value_hkd": 18265.928722719782
+            },
+            "GDXU": {
+              "quantity": 21.407164264307124,
+              "lots": 1,
+              "market_value_hkd": 16811.13153528655
+            },
+            "CURE": {
+              "quantity": 17.52797622221368,
+              "lots": 1,
+              "market_value_hkd": 17979.241789686483
+            },
+            "DFEN": {
+              "quantity": 97.8024232115713,
+              "lots": 2,
+              "market_value_hkd": 34122.64901730642
+            },
+            "UGL": {
+              "quantity": 49.109729472647004,
+              "lots": 1,
+              "market_value_hkd": 17505.65443656051
+            }
+          },
+          "equity_at_open_hkd": 350384.60550155974
+        }
+      ]
+    },
+    "benchmark_usd": 40027.285812124916,
+    "source_manifest_sha256": "6a8443c459dbfe6e858fed0841640ce4bce2a643e8a1f97ce660113bab8bacfc"
+  },
+  "sha256": "8162fbb8f528e3cc2104c56dca19ce24518e6c42af7c3a70f2b49fa2cbbdc71d"
+}

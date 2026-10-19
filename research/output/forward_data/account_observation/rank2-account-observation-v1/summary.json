@@ -483,7 +483,7 @@
   "valid_until": "2026-10-19T20:30:00+00:00",
   "run": {
     "status": "calculation_and_recording_ok",
-    "captured_at_utc": "2026-10-19T17:05:15.726914+00:00",
-    "github_run_url": "https://github.com/53Wusan/etf53/actions/runs/39291027111"
+    "captured_at_utc": "2026-10-19T17:29:35.548496+00:00",
+    "github_run_url": "https://github.com/53Wusan/etf53/actions/runs/39294471888"
   }
 }

@@ -2,7 +2,7 @@
   "version": "market-context-v1",
   "status": "partial",
   "market_date": "2026-10-16",
-  "generated_at_utc": "2026-10-19T17:05:17.301974+00:00",
+  "generated_at_utc": "2026-10-19T17:29:37.662320+00:00",
   "valid_until": "2026-10-19T20:30:00+00:00",
   "market_ready": true,
   "assessment": {
@@ -23,7 +23,7 @@
       "return_5d_pct": -1.9677109547117544,
       "return_20d_pct": 0.204807408997576,
       "distance_ma50_pct": -0.5407896045904415,
-      "distance_ma200_pct": 5.731240166733587,
+      "distance_ma200_pct": 5.731240211431787,
       "drawdown_252_pct": -2.0331446058168168,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -71,7 +71,7 @@
       "return_5d_pct": 0.49286663764938066,
       "return_20d_pct": 1.2269799667198988,
       "distance_ma50_pct": -0.5825988123309034,
-      "distance_ma200_pct": 4.257631626468172,
+      "distance_ma200_pct": 4.257632013823387,
       "drawdown_252_pct": -3.535144324276862,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -87,7 +87,7 @@
       "return_5d_pct": -11.80014424110304,
       "return_20d_pct": -7.443673838443409,
       "distance_ma50_pct": -8.147227233215816,
-      "distance_ma200_pct": 5.603408109074515,
+      "distance_ma200_pct": 5.603408074585126,
       "drawdown_252_pct": -24.625182010228375,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -151,24 +151,33 @@
     "excluded_non_session_rows": 16
   },
   "breadth_relative_20d_pp": 1.0221725577223228,
+  "translation_complete": false,
   "news": [
     {
-      "title": "Micron and other chip stocks spring back to life after bruising selloff",
-      "url": "https://www.marketwatch.com/story/micron-and-other-chip-stocks-spring-back-to-life-after-bruising-selloff-16486541?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "published_at_utc": "2026-10-19T16:59:00+00:00",
+      "title": "See What 71 Economists Told Us About Where Growth and Yields Are Headed",
+      "url": "https://www.wsj.com/finance/see-what-71-economists-told-us-about-where-growth-and-yields-are-headed-8977cb44?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-10-19T15:44:00+00:00",
       "tags": [
-        "科技与AI"
-      ]
+        "利率与通胀",
+        "经济与就业"
+      ],
+      "original_title": "See What 71 Economists Told Us About Where Growth and Yields Are Headed",
+      "title_zh": null,
+      "translation_status": "unavailable"
     },
     {
-      "title": "Why a former Intel skeptic is giving up his negative call on the stock after four years",
-      "url": "https://www.marketwatch.com/story/why-a-former-intel-skeptic-is-giving-up-his-negative-call-on-the-stock-after-four-years-47c2fab6?mod=mw_rss_topstories",
-      "source": "MarketWatch",
-      "published_at_utc": "2026-10-19T16:42:00+00:00",
+      "title": "The Weak Points in AI Bonds Are Becoming Clearer",
+      "url": "https://www.wsj.com/finance/investing/the-weak-points-in-ai-bonds-are-becoming-clearer-12f09cc6?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-10-19T09:30:00+00:00",
       "tags": [
-        "科技与AI"
-      ]
+        "科技与AI",
+        "利率与通胀"
+      ],
+      "original_title": "The Weak Points in AI Bonds Are Becoming Clearer",
+      "title_zh": null,
+      "translation_status": "unavailable"
     },
     {
       "title": "Stock Market Today: Tech Stocks Rebound After Friday’s Selloff",
@@ -178,16 +187,10 @@
       "tags": [
         "科技与AI",
         "市场与风险"
-      ]
-    },
-    {
-      "title": "Wall Street Elite Can’t Decide How to RSVP to the Prince’s Big Saudi Conference",
-      "url": "https://www.wsj.com/finance/some-wall-street-leaders-are-weighing-bailing-on-davos-in-the-desert-after-attacks-on-riyadh-f0be73b4?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-10-18T23:01:00+00:00",
-      "tags": [
-        "市场与风险"
-      ]
+      ],
+      "original_title": "Stock Market Today: Tech Stocks Rebound After Friday’s Selloff",
+      "title_zh": null,
+      "translation_status": "unavailable"
     },
     {
       "title": "The AI Stock Market Wobble Is a Reminder: This Time Isn’t Different",
@@ -197,16 +200,10 @@
       "tags": [
         "科技与AI",
         "市场与风险"
-      ]
-    },
-    {
-      "title": "A Popular Tax-Saving Trade is Juicing Wall Street’s Borrowing Binge",
-      "url": "https://www.wsj.com/finance/investing/a-popular-tax-minimizing-trade-is-juicing-wall-streets-borrowing-binge-6d81eac2?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-10-17T02:06:00+00:00",
-      "tags": [
-        "市场与风险"
-      ]
+      ],
+      "original_title": "The AI Stock Market Wobble Is a Reminder: This Time Isn’t Different",
+      "title_zh": null,
+      "translation_status": "unavailable"
     }
   ],
   "events": [
@@ -216,7 +213,10 @@
       "title": "FOMC会议结束日",
       "source": "美联储会议",
       "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-      "timing_note": "美东日期，具体公布时间以官方为准"
+      "timing_note": "美东日期，具体公布时间以官方为准",
+      "original_title": "FOMC会议结束日",
+      "title_zh": "FOMC会议结束日",
+      "translation_status": "original_zh"
     },
     {
       "date": "2026-10-29",
@@ -225,7 +225,9 @@
       "original_title": "GDP (Advance Estimate), 3rd Quarter 2026",
       "source": "BEA经济数据",
       "url": "https://www.bea.gov/news/schedule",
-      "timing_note": "官方发布日期；具体时间查看原日历"
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "GDP发布",
+      "translation_status": "original_zh"
     },
     {
       "date": "2026-10-29",
@@ -234,7 +236,9 @@
       "original_title": "Personal Income and Outlays, September 2026",
       "source": "BEA经济数据",
       "url": "https://www.bea.gov/news/schedule",
-      "timing_note": "官方发布日期；具体时间查看原日历"
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "个人收入与支出（含PCE）",
+      "translation_status": "original_zh"
     }
   ],
   "calendar_complete": false,

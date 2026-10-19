@@ -235,3 +235,45 @@ def test_translation_rejects_invalid_response_and_validates_segments(monkeypatch
     )
     with pytest.raises(ValueError):
         t._translate("original")
+
+
+def test_translation_falls_back_on_hosted_runner_failure_and_rejects_quota_notice(monkeypatch):
+    from app.services import brief_translation as t
+
+    def get(url, **kwargs):
+        if "googleapis" in url:
+            raise ValueError("blocked")
+        assert kwargs["params"]["langpair"] == "en|zh-CN"
+        return type(
+            "Response",
+            (),
+            {
+                "raise_for_status": lambda self: None,
+                "json": lambda self: {
+                    "responseStatus": 200,
+                    "quotaFinished": False,
+                    "responseData": {"translatedText": "科技股下跌"},
+                },
+            },
+        )()
+
+    monkeypatch.setattr(t.httpx, "get", get)
+    assert t._translate("Tech stocks fall") == "科技股下跌"
+    monkeypatch.setattr(
+        t.httpx,
+        "get",
+        lambda *a, **k: type(
+            "Response",
+            (),
+            {
+                "raise_for_status": lambda self: None,
+                "json": lambda self: {
+                    "responseStatus": 200,
+                    "quotaFinished": True,
+                    "responseData": {"translatedText": "额度已用完"},
+                },
+            },
+        )(),
+    )
+    with pytest.raises(ValueError, match="MyMemory"):
+        t._translate("Tech stocks fall")

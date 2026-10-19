@@ -2,7 +2,7 @@
   "version": "market-context-v1",
   "status": "partial",
   "market_date": "2026-10-16",
-  "generated_at_utc": "2026-10-19T17:29:37.662320+00:00",
+  "generated_at_utc": "2026-10-19T17:34:54.227889+00:00",
   "valid_until": "2026-10-19T20:30:00+00:00",
   "market_ready": true,
   "assessment": {
@@ -23,7 +23,7 @@
       "return_5d_pct": -1.9677109547117544,
       "return_20d_pct": 0.204807408997576,
       "distance_ma50_pct": -0.5407896045904415,
-      "distance_ma200_pct": 5.731240211431787,
+      "distance_ma200_pct": 5.731240166733587,
       "drawdown_252_pct": -2.0331446058168168,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -39,7 +39,7 @@
       "return_5d_pct": -5.519990237884931,
       "return_20d_pct": -1.5122883912027651,
       "distance_ma50_pct": -2.2752944151624543,
-      "distance_ma200_pct": 5.3647444278480005,
+      "distance_ma200_pct": 5.3647443801165595,
       "drawdown_252_pct": -6.563460905432783,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -55,7 +55,7 @@
       "return_5d_pct": -3.0472502780541477,
       "return_20d_pct": -4.808167324407653,
       "distance_ma50_pct": -6.314241884490968,
-      "distance_ma200_pct": -2.206133490978668,
+      "distance_ma200_pct": -2.2061333560785434,
       "drawdown_252_pct": -11.125791245480588,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -71,7 +71,7 @@
       "return_5d_pct": 0.49286663764938066,
       "return_20d_pct": 1.2269799667198988,
       "distance_ma50_pct": -0.5825988123309034,
-      "distance_ma200_pct": 4.257632013823387,
+      "distance_ma200_pct": 4.257631975087861,
       "drawdown_252_pct": -3.535144324276862,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -87,7 +87,7 @@
       "return_5d_pct": -11.80014424110304,
       "return_20d_pct": -7.443673838443409,
       "distance_ma50_pct": -8.147227233215816,
-      "distance_ma200_pct": 5.603408074585126,
+      "distance_ma200_pct": 5.603408109074515,
       "drawdown_252_pct": -24.625182010228375,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -151,7 +151,7 @@
     "excluded_non_session_rows": 16
   },
   "breadth_relative_20d_pp": 1.0221725577223228,
-  "translation_complete": false,
+  "translation_complete": true,
   "news": [
     {
       "title": "See What 71 Economists Told Us About Where Growth and Yields Are Headed",
@@ -163,8 +163,8 @@
         "经济与就业"
       ],
       "original_title": "See What 71 Economists Told Us About Where Growth and Yields Are Headed",
-      "title_zh": null,
-      "translation_status": "unavailable"
+      "title_zh": "了解71位经济学家告诉我们的增长和收益率的发展方向",
+      "translation_status": "translated"
     },
     {
       "title": "The Weak Points in AI Bonds Are Becoming Clearer",
@@ -176,8 +176,8 @@
         "利率与通胀"
       ],
       "original_title": "The Weak Points in AI Bonds Are Becoming Clearer",
-      "title_zh": null,
-      "translation_status": "unavailable"
+      "title_zh": "人工智能债券的弱点越来越清晰",
+      "translation_status": "translated"
     },
     {
       "title": "Stock Market Today: Tech Stocks Rebound After Friday’s Selloff",
@@ -189,8 +189,8 @@
         "市场与风险"
       ],
       "original_title": "Stock Market Today: Tech Stocks Rebound After Friday’s Selloff",
-      "title_zh": null,
-      "translation_status": "unavailable"
+      "title_zh": "今日股市：科技股在周五抛售后反弹",
+      "translation_status": "translated"
     },
     {
       "title": "The AI Stock Market Wobble Is a Reminder: This Time Isn’t Different",
@@ -202,8 +202,8 @@
         "市场与风险"
       ],
       "original_title": "The AI Stock Market Wobble Is a Reminder: This Time Isn’t Different",
-      "title_zh": null,
-      "translation_status": "unavailable"
+      "title_zh": "人工智能股市摇摆不定是一个提醒：这一次没有什么不同",
+      "translation_status": "translated"
     }
   ],
   "events": [

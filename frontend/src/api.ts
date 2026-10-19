@@ -30,6 +30,7 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
     const url = new URL(path, 'https://desk.invalid')
     let file: string | undefined
     if (url.pathname === '/account') file = 'account.json'
+    if (url.pathname === '/market/brief') file = 'market-brief.json'
     if (url.pathname === '/account/observation') file = 'account-observation.json'
     if (url.pathname === '/execution/catalog') file = `catalog-${url.searchParams.get('profile') || 'rank2'}.json`
     else if (url.pathname.startsWith('/execution/history/')) file = `history-${url.pathname.split('/').pop()}.json`

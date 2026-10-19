@@ -4,6 +4,7 @@ import { api, invalidateStaticSnapshots, staticDesk } from '../api'
 import LiveLedger from '../components/LiveLedger'
 import type { RecordIntent } from '../components/LiveLedger'
 import ObservationSummary from '../components/ObservationSummary'
+import MarketBrief from '../components/MarketBrief'
 import { names, pct, tone, scoreBands, scoreBandIndex } from '../deskTypes'
 import type { Rule } from '../deskTypes'
 const DeskChart = lazy(() => import('../components/DeskChart'))
@@ -68,7 +69,8 @@ export default function ExecutionPage() {
     series: [{ name: '复权股价 · USD', type: 'line', showSymbol: false, lineStyle: { width: 2.2 }, data: history.points.map(p => p.price) },{ name: '交易贪恐指数', type: 'line', yAxisIndex: 1, showSymbol: false, connectNulls: false, data: history.points.map(p => p.score), lineStyle: { width: 2 }, markArea: { silent: true, data: [[{ yAxis: -50, itemStyle: { color: 'rgba(30,150,107,.12)' } },{ yAxis: -20 }],[{ yAxis: 20, itemStyle: { color: 'rgba(228,83,99,.12)' } },{ yAxis: 50 }]] }, markLine: { silent: true, symbol: 'none', data: [catalog?.rule.buy_score ?? 0,catalog?.rule.sell_score ?? 20].map(yAxis => ({ yAxis })) } }],
   } : null, [history,catalog?.rule])
   return <div className="execution-dashboard">
-    <div className="desk-heading"><div><span className="desk-eyebrow">53 · 每日策略台</span><h1>今天，做哪一笔？</h1></div><button className="desk-button" disabled={refreshing} onClick={refresh}>{refreshing ? '正在更新…' : '↻ 检查最新行情'}</button></div>
+    <div className="desk-heading"><div><span className="desk-eyebrow">53 · 每日策略台</span><h1>先看市场，再做决定。</h1></div><button className="desk-button" disabled={refreshing} onClick={refresh}>{refreshing ? '正在更新…' : '↻ 检查最新行情'}</button></div>
+    <MarketBrief revision={revision} />
     {error && <div className="desk-alert error" role="alert">{error}<button className="desk-link" onClick={() => setRevision(v => v + 1)}>重试读取</button></div>}
     <section className="desk-panel daily-operations"><div className="desk-section-heading"><div><h2>每日操作 <small className="desk-plan-badge">模拟计划</small></h2><p>{catalog ? `收盘 ${catalog.cutoff} · ${plan ? `执行 ${plan.next_open_date}` : '等待核对'}` : '正在读取最新完整收盘…'}</p></div><label className="desk-profile"><select aria-label="每日参考方案" value={profile} onChange={e => { setCatalog(null); setError(''); setProfile(e.target.value) }}><option value="rank2">主方案 · 恐惧分批／回撤保护</option>{!staticDesk && <option value="short">短周期 · 分档兑现／30日</option>}</select></label></div>
     {catalog?.stale ? <div className="desk-alert"><strong>操作暂停：行情未更新</strong><span>本地 {catalog.cutoff}，最近完整交易日 {catalog.last_completed_session}。</span></div> : catalog && !plan ? <div className="desk-alert"><strong>操作暂停：方案与行情日期尚未对齐</strong></div> : catalog && plan && !orders.length ? <div className="desk-no-orders"><strong>今日暂无买卖计划</strong><span>买入 0 · 卖出 0</span></div> : <div className="desk-daily-grid">{(['buy','sell'] as const).map(side => { const rows = orders.filter(o => o.side === side); return <div className={`desk-action-box ${side}`} key={side}><h3>{side === 'buy' ? '买入／加仓' : '卖出／减仓'} <small>{rows.length} 笔</small></h3>{!catalog ? <p>正在核对…</p> : !rows.length ? <p>暂无计划</p> : rows.map(o => <div className="desk-order" key={o.symbol}><div><b>{o.symbol}</b><span>{o.reason}</span><small>{side === 'buy' ? catalog?.buy_budget_usd ? `一笔预算 $${catalog.buy_budget_usd.toLocaleString('en-US')}` : '一笔预算 HK$25,000' : '卖出一笔持仓'}</small></div>{!staticDesk && <button className="desk-button" onClick={() => record(o.symbol, side)}>记录已成交</button>}</div>)}</div> })}</div>}

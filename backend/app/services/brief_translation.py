@@ -1,5 +1,6 @@
 """Best-effort public headline translation; no account data is sent externally."""
 
+import html
 import re
 from concurrent.futures import ThreadPoolExecutor
 
@@ -18,17 +19,43 @@ EVENT_NAMES = {
 
 
 def _translate(title: str) -> str:
-    # Public, unofficial endpoint: bounded timeout, original text retained on failure.
-    response = httpx.get(
-        ENDPOINT,
-        params={"client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": title},
-        timeout=6,
-    )
-    response.raise_for_status()
-    value = "".join(part[0] for part in response.json()[0] if part and part[0])
-    if not re.search(r"[\u4e00-\u9fff]", value) or len(value) > 800:
-        raise ValueError("invalid translation")
-    return value
+    errors = []
+    for provider in ("Google", "MyMemory"):
+        try:
+            if provider == "Google":
+                response = httpx.get(
+                    ENDPOINT,
+                    params={"client": "gtx", "sl": "en", "tl": "zh-CN", "dt": "t", "q": title},
+                    timeout=6,
+                )
+                response.raise_for_status()
+                value = "".join(part[0] for part in response.json()[0] if part and part[0])
+            else:
+                if len(title.encode("utf8")) > 500:
+                    raise ValueError("title exceeds fallback byte limit")
+                response = httpx.get(
+                    "https://api.mymemory.translated.net/get",
+                    params={"q": title, "langpair": "en|zh-CN"},
+                    timeout=6,
+                )
+                response.raise_for_status()
+                data = response.json()
+                if data.get("responseStatus") != 200 or data.get("quotaFinished"):
+                    raise ValueError("translation quota or response unavailable")
+                value = html.unescape(data["responseData"]["translatedText"])
+            if (
+                not isinstance(value, str)
+                or not re.search(r"[\u4e00-\u9fff]", value)
+                or len(value) > 800
+            ):
+                raise ValueError("invalid translation")
+            return value
+        except Exception as exc:
+            status = getattr(getattr(exc, "response", None), "status_code", None)
+            errors.append(
+                f"{provider}: HTTP {status}" if status else f"{provider}: {type(exc).__name__}"
+            )
+    raise ValueError("; ".join(errors))
 
 
 def translate_items(news: list[dict], events: list[dict], previous: dict) -> bool:
@@ -48,8 +75,12 @@ def translate_items(news: list[dict], events: list[dict], previous: dict) -> boo
             try:
                 value = EVENT_NAMES.get(title) or cache.get(title) or _translate(title)
                 item.update(title_zh=value, translation_status="translated")
-            except Exception:
-                item.update(title_zh=None, translation_status="unavailable")
+            except Exception as exc:
+                item.update(
+                    title_zh=None,
+                    translation_status="unavailable",
+                    translation_error=str(exc)[:160],
+                )
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         list(pool.map(translate, items))

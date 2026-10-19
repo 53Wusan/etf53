@@ -263,7 +263,7 @@ def select_news(news: list[dict]) -> list[dict]:
         rank = (
             0
             if re.search(
-                r"stock market|wall street|nasdaq|s&p|federal reserve|\bfed\b|\bfomc\b", title, re.I
+                r"stock market|nasdaq|s&p|federal reserve|\bfed\b|\bfomc\b", title, re.I
             )
             else 1
             if any(t in item["tags"] for t in ("利率与通胀", "经济与就业"))
@@ -287,7 +287,7 @@ def select_news(news: list[dict]) -> list[dict]:
         seen.add(key)
         selected.append(item)
         per_source[item["source"]] = per_source.get(item["source"], 0) + 1
-        if len(selected) == 8:
+        if len(selected) == 4:
             break
     return sorted(selected, key=lambda item: item["published_at_utc"], reverse=True)
 
@@ -475,6 +475,9 @@ def refresh(now: datetime | None = None) -> dict:
             else:
                 events.extend(value)
     selected = select_news(news)
+    from app.services.brief_translation import translate_items
+
+    translation_complete = translate_items(selected, events, status())
     next_session = (
         mcal.get_calendar("NYSE")
         .schedule(start_date=completed + timedelta(days=1), end_date=completed + timedelta(days=14))
@@ -494,6 +497,7 @@ def refresh(now: datetime | None = None) -> dict:
         "breadth_relative_20d_pp": quotes["RSP"]["return_20d_pct"] - quotes["SPY"]["return_20d_pct"]
         if "RSP" in quotes and "SPY" in quotes
         else None,
+        "translation_complete": translation_complete,
         "news": selected,
         "events": sorted(events, key=lambda e: (e["date"], e["title"])),
         "calendar_complete": all(c["ok"] for c in checks if c["kind"] == "calendar"),

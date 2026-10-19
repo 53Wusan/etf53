@@ -183,3 +183,55 @@ def test_refresh_publishes_partial_data_without_hiding_source_failure(tmp_path, 
     assert result["status"] == "partial"
     assert (tmp_path / "market_brief/latest.json").exists()
     assert len(list((tmp_path / "market_brief/captures").glob("*.json"))) == 1
+
+
+def test_translation_preserves_originals_caches_success_and_falls_back(monkeypatch):
+    from app.services import brief_translation as t
+
+    calls = []
+
+    def translate(title):
+        calls.append(title)
+        if title == "Unavailable":
+            raise ValueError("offline")
+        return "科技股下跌"
+
+    monkeypatch.setattr(t, "_translate", translate)
+    news = [{"title": "Tech stocks fall"}, {"title": "Unavailable"}]
+    events = [{"title": "Consumer Price Index"}, {"title": "美国GDP"}]
+    previous = {
+        "news": [
+            {
+                "title": "Tech stocks fall",
+                "title_zh": "科技股回落",
+                "translation_status": "translated",
+            }
+        ]
+    }
+    assert not t.translate_items(news, events, previous)
+    assert news[0]["title_zh"] == "科技股回落"
+    assert news[0]["original_title"] == "Tech stocks fall"
+    assert calls == ["Unavailable"]
+    assert news[1]["title_zh"] is None
+    assert news[1]["title"] == "Unavailable"
+    assert events[0]["title_zh"] == "消费者价格指数（CPI）"
+    assert events[1]["title_zh"] == "美国GDP"
+
+
+def test_translation_rejects_invalid_response_and_validates_segments(monkeypatch):
+    from app.services import brief_translation as t
+
+    def response(payload):
+        return type(
+            "Response", (), {"raise_for_status": lambda self: None, "json": lambda self: payload}
+        )()
+
+    monkeypatch.setattr(
+        t.httpx, "get", lambda *args, **kwargs: response([[["科技股", "Tech"], ["下跌", "fall"]]])
+    )
+    assert t._translate("Tech fall") == "科技股下跌"
+    monkeypatch.setattr(
+        t.httpx, "get", lambda *args, **kwargs: response([[["English only", "original"]]])
+    )
+    with pytest.raises(ValueError):
+        t._translate("original")

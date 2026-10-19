@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api'
+import MarketContext from './MarketContext'
 import { beijing, eventTime, morningReportText, pct, translatedTitle, type Account, type Brief } from '../marketBriefText'
 const tone = (n: number) => n < 0 ? 'negative' : 'positive'
 
@@ -19,7 +20,6 @@ export default function MarketBrief({ revision }: { revision: number }) {
   if (!brief || brief.status === 'not_started') return <section className="desk-panel market-brief"><h2>市场晨报</h2><p>等待最新市场快照…</p></section>
   const expired = checkedAt > Date.parse(brief.valid_until)
   const usable = brief.market_ready && !expired
-  const vix = brief.vix
   const failed = brief.sources.filter(s => !s.ok)
   async function copyReport() {
     if (!brief) return
@@ -52,7 +52,7 @@ export default function MarketBrief({ revision }: { revision: number }) {
       const q = brief.quotes.find(x => x.symbol === symbol)
       return <article key={symbol}><div><b>{q?.label ?? symbol}</b><small>{symbol}</small></div>{q ? <><strong className={tone(q.return_1d_pct)}>{pct(q.return_1d_pct)}</strong><span>近5日 <b className={tone(q.return_5d_pct)}>{pct(q.return_5d_pct)}</b></span></> : <p>行情待核验</p>}</article>
     })}</div>
-    <div className="market-context-strip"><span>VIX <b>{vix ? vix.close.toFixed(2) : '待核验'}</b>{vix && <> · 近5日 {pct(vix.change_5d_pct)}</>}</span>{['^TNX','UUP','GLD'].map(symbol => { const q = brief.quotes.find(x => x.symbol === symbol); const label = { '^TNX': '美债10年收益率', UUP: '美元ETF', GLD: '黄金ETF' }[symbol]; return <span key={symbol}>{label} <b>{q ? symbol === '^TNX' ? `${q.close.toFixed(2)}%` : pct(q.return_5d_pct) : '待核验'}</b>{q && <small> {symbol === '^TNX' ? `近5日${q.change_5d_bp! >= 0 ? '+' : ''}${q.change_5d_bp!.toFixed(0)}基点` : '近5日'}</small>}</span> })}</div>
+    <MarketContext brief={brief} usable={usable} />
     <div className="market-reading-grid">
       <div><h3>重要日程</h3>{!brief.calendar_complete && <p className="market-source-warning">部分官方日历暂不可读，日程可能不全。</p>}{brief.events.length ? <ul className="market-events">{brief.events.map((e,i) => <li key={`${e.date}-${i}`}><time>{eventTime(e)}</time><a href={e.url} target="_blank" rel="noreferrer">{translatedTitle(e)}</a></li>)}</ul> : <p>暂无已核验的重要日程。</p>}</div>
       <div><h3>核心要闻</h3><small>近72小时 · 标题机译</small>{brief.news.length ? <ul className="market-news">{brief.news.slice(0, 5).map(n => <li key={n.url}><a href={n.url} target="_blank" rel="noreferrer" title={n.title}>{translatedTitle(n)}{!n.title_zh && <small>（原文）</small>}</a><small>{n.source} · {beijing(n.published_at_utc)} 北京</small></li>)}</ul> : <p>暂无已核验的相关标题。</p>}</div>

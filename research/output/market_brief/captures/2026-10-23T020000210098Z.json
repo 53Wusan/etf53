@@ -1,0 +1,378 @@
+{
+  "version": "market-context-v1",
+  "status": "partial",
+  "market_date": "2026-10-22",
+  "generated_at_utc": "2026-10-23T02:00:00.210098+00:00",
+  "valid_until": "2026-10-23T20:30:00+00:00",
+  "market_ready": true,
+  "assessment": {
+    "trend": "震荡分化",
+    "short_term": "短期回撤",
+    "risk": "常态",
+    "technology": "科技回撤较大",
+    "summary": "震荡分化，短期回撤。纳指100近5日-3.2%，标普500近5日-1.0%；科技回撤较大。"
+  },
+  "quotes": [
+    {
+      "symbol": "SPY",
+      "label": "标普500",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 763.9600219726562,
+      "return_1d_pct": -1.1809756387556325,
+      "return_5d_pct": -1.0145190113378333,
+      "return_20d_pct": -0.4197151560084822,
+      "distance_ma50_pct": -0.424631230944883,
+      "distance_ma200_pct": 5.574223933051048,
+      "drawdown_252_pct": -1.9420098270131358,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SPY/history/"
+    },
+    {
+      "symbol": "QQQ",
+      "label": "纳指100",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 704.469970703125,
+      "return_1d_pct": -2.8585274620745893,
+      "return_5d_pct": -3.2321468814388687,
+      "return_20d_pct": -4.942653635071526,
+      "distance_ma50_pct": -2.962671714255527,
+      "distance_ma200_pct": 4.259984647327042,
+      "drawdown_252_pct": -7.265092856341127,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/QQQ/history/"
+    },
+    {
+      "symbol": "IWM",
+      "label": "美国小盘",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 276.6700134277344,
+      "return_1d_pct": 0.06872194511582386,
+      "return_5d_pct": 0.57802345975142,
+      "return_20d_pct": -1.7716360752310423,
+      "distance_ma50_pct": -3.4746349553980482,
+      "distance_ma200_pct": -0.13967022077456814,
+      "drawdown_252_pct": -9.07843400563646,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/IWM/history/"
+    },
+    {
+      "symbol": "RSP",
+      "label": "标普等权",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 218.22000122070312,
+      "return_1d_pct": 0.7293213790187103,
+      "return_5d_pct": 1.4976749863735428,
+      "return_20d_pct": 3.7857923151464634,
+      "distance_ma50_pct": 1.4733886195047452,
+      "distance_ma200_pct": 6.017890698176331,
+      "drawdown_252_pct": -1.6742431529219948,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/RSP/history/"
+    },
+    {
+      "symbol": "SOXX",
+      "label": "半导体",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 475.69000244140625,
+      "return_1d_pct": -6.793240831032977,
+      "return_5d_pct": -7.580971394670632,
+      "return_20d_pct": -15.966223914606203,
+      "distance_ma50_pct": -10.898057261069471,
+      "distance_ma200_pct": 1.026855003148186,
+      "drawdown_252_pct": -27.32919943845369,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SOXX/history/"
+    },
+    {
+      "symbol": "GLD",
+      "label": "黄金ETF",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 369.0,
+      "return_1d_pct": -2.6256793472789974,
+      "return_5d_pct": -3.5823447940180997,
+      "return_20d_pct": -5.792846970813481,
+      "distance_ma50_pct": -6.618212767236775,
+      "distance_ma200_pct": -10.960379224380246,
+      "drawdown_252_pct": -25.589835744779997,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/GLD/history/"
+    },
+    {
+      "symbol": "UUP",
+      "label": "美元ETF",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 28.899999618530273,
+      "return_1d_pct": -0.06915787590217048,
+      "return_5d_pct": -0.34482890161974256,
+      "return_20d_pct": 0.7319591514937995,
+      "distance_ma50_pct": 1.5182053746645385,
+      "distance_ma200_pct": 3.683823824111365,
+      "drawdown_252_pct": -0.7895624746398933,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/UUP/history/"
+    },
+    {
+      "symbol": "^TNX",
+      "label": "美债10年收益率",
+      "date": "2026-10-22",
+      "fresh": true,
+      "close": 4.953000068664551,
+      "return_1d_pct": -3.7504827675162167,
+      "return_5d_pct": -2.6724336881080335,
+      "return_20d_pct": -4.048820289946908,
+      "distance_ma50_pct": -0.47421755483200156,
+      "distance_ma200_pct": 9.522584770301034,
+      "drawdown_252_pct": -6.740723223092459,
+      "change_5d_bp": -13.600015640258789,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/^TNX/history/"
+    }
+  ],
+  "vix": {
+    "date": "2026-10-22",
+    "close": 19.03,
+    "change_5d_pct": 15.613608748481166,
+    "prior252_percentile": 76.19047619047619,
+    "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+    "excluded_non_session_rows": 16
+  },
+  "breadth_relative_20d_pp": 4.205507471154945,
+  "translation_complete": true,
+  "news": [
+    {
+      "title": "The U.S. stock market is fracturing into two camps, and it’s leaving investors with a brutal case of whiplash",
+      "url": "https://www.marketwatch.com/story/the-u-s-stock-market-is-fracturing-into-two-camps-and-its-leaving-investors-with-a-brutal-case-of-whiplash-e8580a99?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-10-22T22:17:00+00:00",
+      "tags": [
+        "市场与风险"
+      ],
+      "original_title": "The U.S. stock market is fracturing into two camps, and it’s leaving investors with a brutal case of whiplash",
+      "title_zh": "美国股市正在分裂为两个阵营，它给投资者留下了一个残酷的鞭打案例",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Treasury yields log biggest drop since the 2023 banking crisis. Here’s what’s going on.",
+      "url": "https://www.marketwatch.com/story/treasury-yields-see-extreme-plunge-why-investors-are-ducking-for-cover-60044c66?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-10-22T22:07:00+00:00",
+      "tags": [
+        "利率与通胀"
+      ],
+      "original_title": "Treasury yields log biggest drop since the 2023 banking crisis. Here’s what’s going on.",
+      "title_zh": "美国国债收益率录得自2023年银行业危机以来的最大跌幅。具体情况如下。",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Oil prices approach Iran-war highs as soaring tanker rates trigger a second energy squeeze",
+      "url": "https://www.marketwatch.com/story/oil-prices-approach-iran-war-highs-as-soaring-tanker-rates-trigger-a-second-energy-squeeze-2d726982?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-10-22T20:46:00+00:00",
+      "tags": [
+        "利率与通胀",
+        "市场与风险"
+      ],
+      "original_title": "Oil prices approach Iran-war highs as soaring tanker rates trigger a second energy squeeze",
+      "title_zh": "随着油轮价格飙升引发第二次能源紧缩，油价逼近伊朗战争高点",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Stock Market News, Oct. 22, 2026: Tech Selloff Deepens as Flight Into Treasurys Drives Yields Lower",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-22-2026?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-10-22T07:55:42+00:00",
+      "tags": [
+        "科技与AI",
+        "利率与通胀",
+        "市场与风险"
+      ],
+      "original_title": "Stock Market News, Oct. 22, 2026: Tech Selloff Deepens as Flight Into Treasurys Drives Yields Lower",
+      "title_zh": "股市新闻， 2026年10月22日：科技股抛售加深，逃入国债推动收益率下降",
+      "translation_status": "translated"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-10-28",
+      "time_utc": null,
+      "title": "FOMC会议结束日",
+      "source": "美联储会议",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "timing_note": "美东日期，具体公布时间以官方为准",
+      "original_title": "FOMC会议结束日",
+      "title_zh": "FOMC会议结束日",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-10-29",
+      "time_utc": null,
+      "title": "GDP发布",
+      "original_title": "GDP (Advance Estimate), 3rd Quarter 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "GDP发布",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-10-29",
+      "time_utc": null,
+      "title": "个人收入与支出（含PCE）",
+      "original_title": "Personal Income and Outlays, September 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "个人收入与支出（含PCE）",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-11-04",
+      "time_utc": null,
+      "title": "U.S. International Trade in Goods and Services, September 2026",
+      "original_title": "U.S. International Trade in Goods and Services, September 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "美国国际货物和服务贸易， 2026年9月",
+      "translation_status": "translated"
+    }
+  ],
+  "calendar_complete": false,
+  "sources": [
+    {
+      "name": "SPY",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SPY/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "QQQ",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/QQQ/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "IWM",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/IWM/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "RSP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/RSP/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "SOXX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SOXX/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "GLD",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/GLD/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "UUP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/UUP/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "^TNX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/^TNX/history/",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "VIX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+      "data_date": "2026-10-22"
+    },
+    {
+      "name": "WSJ市场",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+      "data_date": null
+    },
+    {
+      "name": "MarketWatch",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "data_date": null
+    },
+    {
+      "name": "美联储政策",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+      "data_date": null
+    },
+    {
+      "name": "美联储会议",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "data_date": null
+    },
+    {
+      "name": "BEA经济数据",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.bea.gov/news/schedule",
+      "data_date": null
+    },
+    {
+      "name": "BLS经济数据",
+      "kind": "calendar",
+      "ok": false,
+      "message": "来源暂不可读取（HTTP 403）",
+      "url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "data_date": null
+    }
+  ],
+  "note": "规则描述已发生的收盘状态，不预测下一日方向；新闻按主题和时间筛选，不是AI解读，不参与现网买卖。"
+}

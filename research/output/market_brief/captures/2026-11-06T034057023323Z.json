@@ -1,0 +1,344 @@
+{
+  "version": "market-context-v1",
+  "status": "partial",
+  "market_date": "2026-11-05",
+  "generated_at_utc": "2026-11-06T03:40:57.023323+00:00",
+  "valid_until": "2026-11-06T21:30:00+00:00",
+  "market_ready": true,
+  "assessment": {
+    "trend": "中期下行",
+    "short_term": "短期回撤",
+    "risk": "偏高",
+    "technology": "科技回撤较大",
+    "summary": "中期下行，短期回撤。纳指100近5日-9.5%，标普500近5日-4.7%；科技回撤较大。"
+  },
+  "quotes": [
+    {
+      "symbol": "SPY",
+      "label": "标普500",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 733.0,
+      "return_1d_pct": -4.409175371505281,
+      "return_5d_pct": -4.72600421699182,
+      "return_20d_pct": -5.288591095206185,
+      "distance_ma50_pct": -4.286614479681283,
+      "distance_ma200_pct": 0.7715862858228562,
+      "drawdown_252_pct": -5.915879457666195,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SPY/history/"
+    },
+    {
+      "symbol": "QQQ",
+      "label": "纳指100",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 647.0499877929688,
+      "return_1d_pct": -6.488911571928469,
+      "return_5d_pct": -9.546514454488609,
+      "return_20d_pct": -13.447393857344547,
+      "distance_ma50_pct": -10.385032788944926,
+      "distance_ma200_pct": -4.79058806612268,
+      "drawdown_252_pct": -14.823735530704019,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/QQQ/history/"
+    },
+    {
+      "symbol": "IWM",
+      "label": "美国小盘",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 270.9800109863281,
+      "return_1d_pct": -4.591218411291487,
+      "return_5d_pct": -4.587866036851896,
+      "return_20d_pct": -2.374174501567494,
+      "distance_ma50_pct": -4.060371891156544,
+      "distance_ma200_pct": -2.5232136891657597,
+      "drawdown_252_pct": -10.948329214281971,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/IWM/history/"
+    },
+    {
+      "symbol": "RSP",
+      "label": "标普等权",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 216.8699951171875,
+      "return_1d_pct": -2.8925834688140473,
+      "return_5d_pct": -1.440646366873477,
+      "return_20d_pct": 2.359937752032537,
+      "distance_ma50_pct": 1.0433601568030637,
+      "distance_ma200_pct": 4.769644549124696,
+      "drawdown_252_pct": -2.8925834688140473,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/RSP/history/"
+    },
+    {
+      "symbol": "SOXX",
+      "label": "半导体",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 131.89999389648438,
+      "return_1d_pct": -12.146718530489341,
+      "return_5d_pct": -22.99459362093772,
+      "return_20d_pct": -29.750746828189655,
+      "distance_ma50_pct": -24.371633528806136,
+      "distance_ma200_pct": -17.21410528594336,
+      "drawdown_252_pct": -39.54921559491014,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SOXX/history/"
+    },
+    {
+      "symbol": "GLD",
+      "label": "黄金ETF",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 375.489990234375,
+      "return_1d_pct": 0.8053907698599705,
+      "return_5d_pct": 1.8775219829726852,
+      "return_20d_pct": -0.82668768770221,
+      "distance_ma50_pct": -2.7129205691062697,
+      "distance_ma200_pct": -8.781360527948346,
+      "drawdown_252_pct": -24.281106098832527,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/GLD/history/"
+    },
+    {
+      "symbol": "UUP",
+      "label": "美元ETF",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 28.920000076293945,
+      "return_1d_pct": 0.06920573711997058,
+      "return_5d_pct": -0.4132260173905,
+      "return_20d_pct": -0.20703749789553472,
+      "distance_ma50_pct": 0.8909948996938866,
+      "distance_ma200_pct": 3.442355760853144,
+      "drawdown_252_pct": -0.7209031600505234,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/UUP/history/"
+    },
+    {
+      "symbol": "^TNX",
+      "label": "美债10年收益率",
+      "date": "2026-11-05",
+      "fresh": true,
+      "close": 4.836999893188477,
+      "return_1d_pct": -1.1646947199687618,
+      "return_5d_pct": -3.0467018475457186,
+      "return_20d_pct": -7.532021743993411,
+      "distance_ma50_pct": -3.8278025420197426,
+      "distance_ma200_pct": 6.068860543560395,
+      "drawdown_252_pct": -8.924872692286767,
+      "change_5d_bp": -15.199995040893555,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/^TNX/history/"
+    }
+  ],
+  "vix": {
+    "date": "2026-11-05",
+    "close": 28.18,
+    "change_5d_pct": 63.83720930232559,
+    "prior252_percentile": 98.80952380952381,
+    "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+    "excluded_non_session_rows": 16
+  },
+  "breadth_relative_20d_pp": 7.6485288472387225,
+  "translation_complete": true,
+  "news": [
+    {
+      "title": "U.S. Stock Market Will Likely Struggle to Regain October Peak",
+      "url": "https://www.wsj.com/finance/stocks/nikkei-falls-5-9-dragged-by-chip-stocks-d8937761?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-06T03:10:00+00:00",
+      "tags": [
+        "市场与风险"
+      ],
+      "original_title": "U.S. Stock Market Will Likely Struggle to Regain October Peak",
+      "title_zh": "美国股市可能难以重拾十月峰值",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Here are the 2027 capital-gains tax rates for each income level",
+      "url": "https://www.marketwatch.com/story/here-are-the-2027-capital-gains-tax-rates-for-each-income-level-166fc306?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-11-05T23:48:00+00:00",
+      "tags": [
+        "利率与通胀"
+      ],
+      "original_title": "Here are the 2027 capital-gains tax rates for each income level",
+      "title_zh": "以下是 2027 年各收入水平的资本利得税率",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Gold Settles Higher As Yields, U.S. Dollar Weaken",
+      "url": "https://www.wsj.com/finance/commodities-futures/gold-flat-after-midterm-linked-rebound-2d7cca6a?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-05T19:17:00+00:00",
+      "tags": [
+        "利率与通胀",
+        "市场与风险"
+      ],
+      "original_title": "Gold Settles Higher As Yields, U.S. Dollar Weaken",
+      "title_zh": "随着收益率和美元走弱，金价走高",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Stock Market News, Nov. 5, 2026: Nasdaq Plunges 5.5%; Investors Retreat From AI Trade After Election",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-05T09:25:53+00:00",
+      "tags": [
+        "科技与AI",
+        "市场与风险"
+      ],
+      "original_title": "Stock Market News, Nov. 5, 2026: Nasdaq Plunges 5.5%; Investors Retreat From AI Trade After Election",
+      "title_zh": "股市新闻，2026 年 11 月 5 日：纳斯达克指数暴跌 5.5%；大选后投资者退出人工智能交易",
+      "translation_status": "translated"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-11-18",
+      "time_utc": null,
+      "title": "Outdoor Recreation Economic Statistics, U.S. and States, 2025",
+      "original_title": "Outdoor Recreation Economic Statistics, U.S. and States, 2025",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "美国和各州户外休闲经济统计数据，2025 年",
+      "translation_status": "translated"
+    }
+  ],
+  "calendar_complete": false,
+  "sources": [
+    {
+      "name": "SPY",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SPY/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "QQQ",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/QQQ/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "IWM",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/IWM/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "RSP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/RSP/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "SOXX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SOXX/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "GLD",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/GLD/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "UUP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/UUP/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "^TNX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/^TNX/history/",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "VIX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+      "data_date": "2026-11-05"
+    },
+    {
+      "name": "WSJ市场",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+      "data_date": null
+    },
+    {
+      "name": "MarketWatch",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "data_date": null
+    },
+    {
+      "name": "美联储政策",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+      "data_date": null
+    },
+    {
+      "name": "美联储会议",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "data_date": null
+    },
+    {
+      "name": "BEA经济数据",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.bea.gov/news/schedule",
+      "data_date": null
+    },
+    {
+      "name": "BLS经济数据",
+      "kind": "calendar",
+      "ok": false,
+      "message": "来源暂不可读取（HTTP 403）",
+      "url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "data_date": null
+    }
+  ],
+  "note": "规则描述已发生的收盘状态，不预测下一日方向；新闻按主题和时间筛选，不是AI解读，不参与现网买卖。"
+}

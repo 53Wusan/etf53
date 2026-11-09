@@ -32,8 +32,10 @@ export default function MethodPage() {
   const scale = model?.indicator_scale
   const p = scale?.parameters
   return <div className="execution-dashboard method-page">
-    <div className="desk-heading"><div><span className="desk-eyebrow">读懂指数，再看操作</span><h1>计算说明</h1><p>交易指数 → 策略条件 → 次日计划；五项量价观察是独立的辅助模型。</p></div><Link className="desk-link" to="/">返回看板 →</Link></div>
+    <div className="desk-heading"><div><span className="desk-eyebrow">看懂，再行动</span><h1>指数怎么看，计划怎么用？</h1><p>先看每日操作；想了解原因，再看下面的说明。</p></div><Link className="desk-link" to="/">返回看板 →</Link></div>
     {error && <div className="desk-alert error" role="alert">{error}</div>}
+    <section className="desk-panel"><h2>先记住这三件事</h2><div className="method-inputs"><article><b>分数越低，越偏恐惧</b><p>它观察价格是否接近近期低位、上涨动力是否偏弱。分数高则偏贪婪。负数不是亏损比例，正数也不是预期收益。</p></article><article><b>操作看计划，不凭分数猜</b><p>主方案指数≤0才有首笔买入资格；加仓还要满足跌幅、间隔和仓位限制。指数≥20只是可能启动回撤保护，不代表立刻卖出。</p></article></div><p><b>为什么图表是−50～+50？</b>当前公式算出的分数大致落在这个范围，图表就用这个刻度。无需换算成−100～+100，直接把原始分数与方案门槛比较。</p><p>例如−20表示偏恐惧，不代表“有20%概率上涨”，也不保证已经到底。市场风险卡另看大盘和板块波动，不参与当前买卖规则。</p></section>
+    <details className="desk-panel desk-rule-details"><summary>深入了解 · 计算公式、刻度与辅助模型</summary>
     <section className="desk-panel"><h2>首页指数是怎么来的？</h2><p>它是每只ETF自己的价格与动量指标，使用日线收盘数据，不是盘中实时行情，也没有读取新闻或宏观风险。</p>
     <div className="method-inputs"><article><b>① 21日价格位置 · X</b><p>把复权收盘价放在最近21个交易日的复权最高／最低价之间：靠近低点为负，靠近高点为正，统一到−100～+100。</p></article><article><b>② RSI14自身分位 · R</b><p>计算14日RSI，再比较它在自身近252个交易日里的位置：越靠近历史低位越负，越靠近高位越正，统一到−100～+100。</p></article></div>
     {p ? <div className="method-formula"><span>当前冻结参数 · 来自实际运行配置</span><code>当日输入 D = {p[0].toFixed(6)} + {p[1].toFixed(6)} × X/100 + {p[3].toFixed(6)} × R/100</code><code>平滑值 L = {(1 - p[4]).toFixed(6)} × D + {p[4].toFixed(6)} × 昨日L</code><code>交易指数 = 100 × tanh(L)，最后限制在−99～+99</code><small>tanh将数值平滑压缩。递推初值为0；另有252日价格位置项，但当前权重为0。两项有效系数没有归一化到总和1。</small></div> : <p className="desk-footnote">{error ? '参数未读取成功，暂不展示数值。' : '正在读取计算参数…'}</p>}
@@ -43,6 +45,7 @@ export default function MethodPage() {
     <p className="desk-footnote">只放大显示不会更准确；为避免两套分数混淆，目前没有启用±99显示转换。</p></section>
     <section className="desk-panel"><h2>指数区间、历史分位，有什么区别？</h2><p>区间回答“现在分数在哪里”，例如+30落在20～40。分布卡片显示所选历史窗口中，每个区间出现的天数比例，当前区间只有一张高亮。</p><p>历史分位回答“相对自己过去有多高”：当前值≥多少比例的历史有效分数。比如分位90%表示处于这段历史的顶部约10%，并不表示股价会下跌90%。切换100日／1年／600日，分位与区间占比会改变，当前指数不变。</p><p>主方案与短周期目前按原始指数0／20判断；GDXU十分位研究方案按自身600日历史分位进出，两者不能混用。历史分布包含所选窗口的最新有效日，仅用于展示。</p></section>
     <section className="desk-panel"><h2>五项量价观察与它有什么关联？</h2><p>两者都来自同一只ETF的复权OHLCV日线，会共享部分价格位置和RSI信息，但公式、权重与平滑方式不同。五项观察不是首页交易指数的拆解，也不参与每日买卖。</p><div className="desk-table-scroll"><table className="desk-table"><thead><tr><th>辅助分项</th><th>权重</th><th>观察什么</th></tr></thead><tbody>{factors.map(([name, weight, detail]) => <tr key={name}><td>{name}</td><td>{weight}</td><td>{detail}</td></tr>)}</tbody></table></div><p>五项先加权，经过100 × tanh(加权值／50)压缩，再平滑：向恐惧变化时采用55%新值，向恢复变化时采用25%新值。因此，同一天辅助指数与交易指数可能差很多。</p></section>
+    </details>
     <section className="method-rules"><h2>每日计划怎样由指数变成买卖？</h2><p>下方读取网页保留方案的实际参数。参考高点取首笔开盘价与持仓期间历次收盘价的最高值。收盘后检查条件，生成下一交易日开盘的模拟计划；过期行情暂停展示操作。实盘记录独立录入。</p>{strategies.map(strategy => <RuleCard key={strategy.id} strategy={strategy} />)}<p className="desk-footnote">回测假设：复权开盘价、可用零碎股、单边成本0.1%、固定汇率7.8、现金利息0。实盘以实际成交、费用和可用现金为准。指数模型的冻结参数文件与执行方案不同，执行规则以下方方案为准。</p><Link className="desk-link" to="/research">查看各方案回测 →</Link></section>
   </div>
 }

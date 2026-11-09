@@ -43,7 +43,7 @@ it('copies dated market and paper account context without presenting intentions 
     next_open_plan: { signal_date: '2026-10-16', next_open_date: '2026-10-19', actions: [{ symbol: 'SOXL', side: 'buy', reason: '恐惧区' }] },
   } : brief)
   render(<MarketBrief revision={0} />)
-  fireEvent.click(await screen.findByRole('button', { name: '一键复制晨报' }))
+  fireEvent.click(await screen.findByRole('button', { name: '复制完整晨报' }))
   await waitFor(() => expect(writeText).toHaveBeenCalledOnce())
   const text = writeText.mock.calls[0][0]
   expect(text).toContain('现金 $30000.00')
@@ -59,7 +59,7 @@ it('offers manual copying and marks unavailable account data instead of inventin
   Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: vi.fn().mockRejectedValue(new Error('denied')) } })
   vi.mocked(api).mockImplementation(async path => { if (path === '/account') throw new Error('offline'); return brief })
   render(<MarketBrief revision={0} />)
-  fireEvent.click(await screen.findByRole('button', { name: '一键复制晨报' }))
+  fireEvent.click(await screen.findByRole('button', { name: '复制完整晨报' }))
   const area = await screen.findByRole('textbox', { name: '晨报复制内容' }) as HTMLTextAreaElement
   expect(area.value).toContain('模拟账户：读取失败')
   expect(area.value).toContain('当前判断暂停')

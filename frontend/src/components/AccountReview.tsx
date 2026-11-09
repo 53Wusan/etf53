@@ -28,14 +28,18 @@ export default function AccountReview({ revision, accountDate }: { revision: num
   const audit = review.audit
   return <>
     <section className="desk-panel">
-      <h2>运行状态与每日留档</h2>
+      <h2>数据更新与计划核对</h2>
       <p>方案② · {review.version} · 数据截至 {review.data_date}</p>
+      <p>这里检查每天的数据有没有更新、计划是否在开盘前保存，以及模拟成交是否符合前一天的计划。</p>
       {review.data_date !== accountDate && <p className="desk-alert" role="alert">观察数据与账户日期不同，以下仅展示旧日期结果，等待更新。</p>}
       {checkedAt > Date.parse(review.valid_until) && <p className="desk-alert" role="alert">快照已超过下一交易日收盘后的更新时间，等待新数据。请核对 GitHub 最近运行结果。</p>}
-      <p className="desk-footnote">最近计算与留档成功：{new Date(review.run.captured_at_utc).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}（北京时间）{review.run.github_run_url && <> · <a href={review.run.github_run_url} target="_blank" rel="noreferrer">查看 GitHub 运行结果</a></>}<br />版本校验码 {review.definition_sha256.slice(0, 12)} · 规则或计算代码变化将阻止该版本继续记账。</p>
+      <p>最近更新：{new Date(review.run.captured_at_utc).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}（北京时间） · 已记录 {audit.recorded_sessions} 个交易日</p>
+      <details className="desk-rule-details"><summary>更新记录与异常说明 · 缺失 {audit.missing_sessions.length} 日 · 计划迟到 {audit.late_signals} 日</summary>
+      <p className="desk-footnote">{review.run.github_run_url && <a href={review.run.github_run_url} target="_blank" rel="noreferrer">查看自动更新任务</a>} · 版本校验码 {review.definition_sha256.slice(0, 12)} · 规则或计算代码变化将阻止该版本继续记账。</p>
       <p>从 {audit.first_data_date} 行情日起保存 {audit.recorded_sessions} 个交易日的观察。迟于下一开盘登记 {audit.late_signals} 日；缺失 {audit.missing_sessions.length} 日；有成交但未关联及时计划 {audit.unverified_fill_sessions} 日。</p>
       <p>已核验网页发布 {audit.confirmed_publications} 日，其中晚于开盘 {audit.late_publications} 日。本次发布回执在部署成功后保存，于下一次更新中展示。</p>
       <p className="desk-footnote">首次留档以前的曲线为历史回放，不代表当时已登记信号。迟到和缺失记录保留原状态，不能补成完整前瞻样本。成交核对品种、方向与原因；数量和价格以模拟开盘成交为准。</p>
+      </details>
       {audit.missing_sessions.length > 0 && <p className="desk-alert">缺失日期：{audit.missing_sessions.join('、')}</p>}
       <details className="desk-rule-details"><summary>每日计划与成交核对</summary><div className="desk-table-scroll"><table className="desk-table"><thead><tr><th>行情日</th><th>登记时间（北京）</th><th>下一开盘前登记</th><th>网页发布核验</th><th>当日成交核对</th><th>下一开盘计划</th></tr></thead><tbody>{audit.records.slice().reverse().map(r => <tr key={r.data_date}><td>{r.data_date}</td><td>{new Date(r.recorded_at_utc).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })}</td><td>{r.signal_before_next_open ? '及时' : '迟到'}</td><td>{r.publication ? `${new Date(r.publication.published_at_utc).toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' })} · ${r.publication.before_next_open ? '及时' : '迟到'}` : '待下次更新核验'}</td><td>{r.fills_match_prior_plan === true && r.fills_linked_to_prior_plan ? `${r.fill_count} 笔，符合及时计划` : r.fill_count ? `${r.fill_count} 笔，缺少及时计划证明` : '无成交'}</td><td>{r.next_open_plan.next_open_date} · {r.next_open_plan.actions.length ? r.next_open_plan.actions.map(t => `${t.symbol}${t.side === 'buy' ? '买' : '卖'}`).join('、') : '无操作'}</td></tr>)}</tbody></table></div></details>
     </section>

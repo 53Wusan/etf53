@@ -25,7 +25,7 @@ from app.services.public_history import PublicHistoryProvider
 from app.services.research_cockpit import _research_output
 from app.services.research_data_refresh import last_completed_us_session
 
-VERSION = "market-context-v1"
+VERSION = "market-context-v2"
 CORE = ("SPY", "QQQ", "IWM")
 LABELS = {
     "SPY": "标普500",
@@ -193,15 +193,33 @@ def classify(quotes: dict, vix: dict | None) -> dict:
         else "短期震荡"
     )
     q, s = quotes["QQQ"]["return_5d_pct"], quotes["SPY"]["return_5d_pct"]
-    risk = (
-        "待核验"
-        if vix is None
-        else "很高"
-        if vix["close"] >= 35 or q <= -10 or s <= -6
-        else "偏高"
-        if vix["close"] >= 25 or vix["change_5d_pct"] >= 25 or q <= -5 or s <= -3
-        else "常态"
+    # Sector and single-session stress must not be hidden by a positive five-day return.
+    reasons, severe = [], False
+    for symbol, daily_high, daily_severe, five_high, five_severe in (
+        ("SPY", -2, -3, -3, -6),
+        ("QQQ", -3, -5, -5, -10),
+        ("SOXX", -4, -7, -7, -12),
+    ):
+        quote = quotes.get(symbol)
+        if not quote or not quote.get("fresh"):
+            continue
+        daily, five_day = quote.get("return_1d_pct"), quote["return_5d_pct"]
+        if daily is not None and daily <= daily_high:
+            reasons.append(f"{LABELS[symbol]}单日{daily:+.1f}%")
+            severe |= daily <= daily_severe
+        if five_day <= five_high:
+            reasons.append(f"{LABELS[symbol]}近5日{five_day:+.1f}%")
+            severe |= five_day <= five_severe
+    if vix and (vix["close"] >= 25 or vix["change_5d_pct"] >= 25):
+        reasons.append(f"VIX {vix['close']:.1f}，近5日{vix['change_5d_pct']:+.1f}%")
+        severe |= vix["close"] >= 35
+    coverage = vix is not None and all(
+        quotes.get(symbol, {}).get("fresh") and quotes[symbol].get("return_1d_pct") is not None
+        for symbol in ("SPY", "QQQ", "SOXX")
     )
+    risk = "很高" if severe else "偏高" if reasons else "常态" if coverage else "待核验"
+    if not coverage:
+        reasons.append("部分风险数据未齐，不能排除其他风险")
     tech = (
         "科技回撤较大"
         if q <= -3 or quotes.get("SOXX", {}).get("return_5d_pct", 0) <= -5
@@ -211,6 +229,7 @@ def classify(quotes: dict, vix: dict | None) -> dict:
         "trend": trend,
         "short_term": short,
         "risk": risk,
+        "risk_reasons": reasons,
         "technology": tech,
         "summary": f"{trend}，{short}。纳指100近5日{q:+.1f}%，标普500近5日{s:+.1f}%；{tech}。",
     }

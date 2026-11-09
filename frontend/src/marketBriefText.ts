@@ -3,7 +3,7 @@ export type Event = { date: string; time_utc: string | null; title: string; titl
 export type Quote = { symbol: string; label: string; date: string; fresh: boolean; close: number; return_1d_pct: number; return_5d_pct: number; return_20d_pct: number; distance_ma50_pct: number; distance_ma200_pct: number; drawdown_252_pct: number; change_5d_bp: number | null; source_url: string }
 export type Brief = {
   status: string; version: string; market_date: string; market_ready: boolean; generated_at_utc: string; valid_until: string
-  assessment: { trend: string; short_term: string; risk: string; summary: string; technology?: string }
+  assessment: { trend: string; short_term: string; risk: string; summary: string; technology?: string; risk_reasons?: string[] }
   quotes: Quote[]; vix: { close: number; change_5d_pct: number; prior252_percentile: number; source_url: string } | null
   breadth_relative_20d_pp: number | null; calendar_complete: boolean
   news: Headline[]; events: Event[]

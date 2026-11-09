@@ -7,7 +7,7 @@ import pandas_market_calendars as mcal
 from app.services.account_observation import status as account_observation
 from app.services.execution_research import dashboard, history_view
 from app.services.market_brief import status as market_brief
-from app.services.research_cockpit import DEFAULT_SYMBOLS
+from app.services.research_cockpit import INPUT_SYMBOLS
 from app.services.strategy_desk import (
     curated_strategies,
     observation_summary,
@@ -29,7 +29,7 @@ for profile in ("rank2", "short"):
     schedule = mcal.get_calendar("NYSE").schedule(start_date=last+pd.Timedelta(days=1), end_date=last+pd.Timedelta(days=14))
     catalog["valid_until"] = (schedule.iloc[0].market_close+pd.Timedelta(minutes=30)).isoformat()
     save(f"catalog-{profile}.json", catalog)
-for symbol in DEFAULT_SYMBOLS:
+for symbol in INPUT_SYMBOLS:
     save(f"history-{symbol}.json", history_view(symbol, 0))
     save(f"observation-{symbol}.json", observation_summary(symbol))
 cards = curated_strategies()

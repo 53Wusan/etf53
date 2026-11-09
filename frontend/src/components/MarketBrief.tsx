@@ -38,7 +38,7 @@ export default function MarketBrief({ revision }: { revision: number }) {
     } finally { setCopying(false) }
   }
   return <section className="desk-panel market-brief">
-    <div className="desk-section-heading"><div><h2>市场晨报</h2><p>收盘判断 {brief.market_date}（美东） · 更新 {beijing(brief.generated_at_utc)}（北京）</p></div><button className="desk-button" type="button" disabled={copying} onClick={copyReport}>{copying ? '正在整理…' : '一键复制晨报'}</button></div>
+    <div className="desk-section-heading"><div><h2>市场状态</h2><p>收盘判断 {brief.market_date}（美东） · 更新 {beijing(brief.generated_at_utc)}（北京）</p></div><button className="desk-button" type="button" disabled={copying} onClick={copyReport}>{copying ? '正在整理…' : '复制完整晨报'}</button></div>
     {copyState && <p role="status">{copyState}</p>}
     {manualText && <textarea aria-label="晨报复制内容" rows={8} value={manualText} readOnly style={{ width: '100%', boxSizing: 'border-box' }} ref={element => { element?.focus(); element?.select() }} />}
     {!usable && <div className="desk-alert" role="alert">{expired ? '收盘快照已过期，暂停展示当前环境结论。' : '主要行情未到齐，暂停环境判断。'} 下方保留的数字仅供核对日期。</div>}
@@ -48,15 +48,19 @@ export default function MarketBrief({ revision }: { revision: number }) {
       <article className={usable && ['偏高','很高'].includes(brief.assessment.risk) ? 'market-risk-high' : ''}><span>波动与急跌风险</span><strong>{usable ? brief.assessment.risk : '待核验'}</strong></article>
     </div>
     {usable && <p className="market-verdict">{brief.assessment.summary}</p>}
+    {usable && <p className="desk-footnote">中期趋势看50／200日均线，可能与当天急跌同时存在。风险是已发生的波动警报，不是未来下跌概率。</p>}
+    {usable && !!brief.assessment.risk_reasons?.length && <p className="desk-alert">风险依据：{brief.assessment.risk_reasons.join('；')}。</p>}
     <div className="market-quotes">{['SPY','QQQ','IWM','SOXX'].map(symbol => {
       const q = brief.quotes.find(x => x.symbol === symbol)
       return <article key={symbol}><div><b>{q?.label ?? symbol}</b><small>{symbol}</small></div>{q ? <><strong className={tone(q.return_1d_pct)}>{pct(q.return_1d_pct)}</strong><span>近5日 <b className={tone(q.return_5d_pct)}>{pct(q.return_5d_pct)}</b></span></> : <p>行情待核验</p>}</article>
     })}</div>
+    <details className="desk-rule-details"><summary>展开晨报 · 新闻、日程与市场背景</summary>
     <MarketContext brief={brief} usable={usable} />
     <div className="market-reading-grid">
       <div><h3>重要日程</h3>{!brief.calendar_complete && <p className="market-source-warning">部分官方日历暂不可读，日程可能不全。</p>}{brief.events.length ? <ul className="market-events">{brief.events.map((e,i) => <li key={`${e.date}-${i}`}><time>{eventTime(e)}</time><a href={e.url} target="_blank" rel="noreferrer">{translatedTitle(e)}</a></li>)}</ul> : <p>暂无已核验的重要日程。</p>}</div>
       <div><h3>核心要闻</h3><small>近72小时 · 标题机译</small>{brief.news.length ? <ul className="market-news">{brief.news.slice(0, 5).map(n => <li key={n.url}><a href={n.url} target="_blank" rel="noreferrer" title={n.title}>{translatedTitle(n)}{!n.title_zh && <small>（原文）</small>}</a><small>{n.source} · {beijing(n.published_at_utc)} 北京</small></li>)}</ul> : <p>暂无已核验的相关标题。</p>}</div>
     </div>
-    <details className="desk-rule-details"><summary>判断依据与来源状态{failed.length ? ` · ${failed.length}项待核验` : ''}</summary><p className="desk-footnote">均线判断中期，近5日涨跌判断短期，VIX及急跌幅度提示风险。仅描述市场状态，未接入买卖规则。标题为机器翻译，悬停可看原题；翻译失败保留原文。规则 {brief.version}。</p><div className="market-sources">{brief.sources.map(s => <div key={s.name}><a href={s.url} target="_blank" rel="noreferrer">{s.name}</a><span>{s.ok ? s.data_date ? `已核验 · ${s.data_date}` : '已读取' : '暂未读取成功'}</span>{!s.ok && <small>{s.message}</small>}</div>)}</div></details>
+    </details>
+    <details className="desk-rule-details"><summary>判断依据与来源状态{failed.length ? ` · ${failed.length}项待核验` : ''}</summary><p className="desk-footnote">均线判断中期，近5日涨跌判断短期；风险检查标普、纳指及半导体的单日和5日跌幅，以及VIX。半导体单日跌4%提示偏高、跌7%提示很高。数据不齐时仍保留已触发的警报，不显示常态。仅描述市场状态，未接入买卖规则；这些观察线尚未验证为预测模型。标题为机器翻译。规则 {brief.version}。</p><div className="market-sources">{brief.sources.map(s => <div key={s.name}><a href={s.url} target="_blank" rel="noreferrer">{s.name}</a><span>{s.ok ? s.data_date ? `已核验 · ${s.data_date}` : '已读取' : '暂未读取成功'}</span>{!s.ok && <small>{s.message}</small>}</div>)}</div></details>
   </section>
 }

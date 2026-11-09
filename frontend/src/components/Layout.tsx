@@ -19,8 +19,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </NavLink>
         <nav>
           <NavLink to="/" end>看板</NavLink>
+          {staticDesk && <NavLink to="/account">账户与对账</NavLink>}
           <NavLink to="/research">保留方案</NavLink>
-          <NavLink to="/method">计算说明</NavLink>{staticDesk && <NavLink to="/account">账户与对账</NavLink>}
+          <NavLink to="/method">计算说明</NavLink>
           {!staticDesk && <NavLink to="/portfolio">组合</NavLink>}
           {!staticDesk && <NavLink to="/trades">实盘记录</NavLink>}
         </nav>

@@ -23,7 +23,26 @@ def test_uptrend_can_coexist_with_short_term_stress():
     assert result["trend"] == "中期上行"
     assert result["short_term"] == "短期回撤"
     assert result["risk"] == "很高"  # SPY <= -6% is independently severe.
-    assert m.classify(quotes, None)["risk"] == "待核验"
+    assert m.classify(quotes, None)["risk"] == "很高"
+
+
+def test_sector_daily_crash_overrides_positive_week_and_low_vix():
+    quotes = {s: {**row(2), "return_1d_pct": 0.2} for s in m.CORE}
+    quotes["SOXX"] = {**row(1), "return_1d_pct": -9.8}
+    result = m.classify(quotes, {"close": 15, "change_5d_pct": -3})
+    assert result["trend"] == "中期上行"
+    assert result["risk"] == "很高"
+    assert any("半导体单日-9.8%" in reason for reason in result["risk_reasons"])
+    assert m.classify(quotes, None)["risk"] == "很高"
+    quotes["SOXX"]["fresh"] = False
+    assert m.classify(quotes, {"close": 15, "change_5d_pct": -3})["risk"] == "待核验"
+
+
+@pytest.mark.parametrize("symbol, daily", [("SPY", -2), ("QQQ", -3), ("SOXX", -4)])
+def test_daily_stress_is_visible_without_five_day_decline(symbol, daily):
+    quotes = {s: {**row(2), "return_1d_pct": 0.2} for s in (*m.CORE, "SOXX")}
+    quotes[symbol]["return_1d_pct"] = daily
+    assert m.classify(quotes, {"close": 15, "change_5d_pct": -3})["risk"] == "偏高"
 
 
 def test_incomplete_market_cannot_be_classified_as_normal():

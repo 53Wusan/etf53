@@ -16,7 +16,7 @@ beforeEach(() => {
     if (path.startsWith('/execution/catalog')) return {
       cutoff: '2026-10-02', last_completed_session: stale ? '2026-10-05' : '2026-10-02', stale,
       rule: { buy_score: 0, sell_score: 20, add_drop: .05, buy_gap_days: 3, profit_target: .5, exit_mode: 'trail', trailing_drop: .1, max_hold_days: 90 },
-      items: [{ symbol: 'TQQQ', date: '2026-10-02', score: -30, raw_close: 81, adjusted_close: 40.5, price_change_pct: 1, phase: '恐惧', position: null }],
+      items: [{ symbol: 'TQQQ', date: '2026-10-02', score: -30, raw_close: 81, adjusted_close: 40.5, price_change_pct: 1, phase: '恐惧', position: null }, { symbol: 'SOXL', date: '2026-10-02', score: -25, raw_close: 40, adjusted_close: 40, price_change_pct: -2, phase: '恐惧', position: null }],
       next_open_plan: { signal_date: '2026-10-02', next_open_date: '2026-10-05', actions: [{ symbol: 'TQQQ', side: 'buy', reason: '首笔买入' }] },
     }
     if (path.startsWith('/execution/history')) return { observations: 0, points: [], distribution: [] }
@@ -27,7 +27,7 @@ beforeEach(() => {
     throw Error(`Unexpected ${path}`)
   })
 })
-afterEach(cleanup)
+afterEach(() => { cleanup(); vi.unstubAllGlobals() })
 
 describe('daily desk', () => {
   it('loads actions without full results and records actual inputs only after explicit save', async () => {
@@ -55,4 +55,27 @@ describe('daily desk', () => {
     expect(screen.queryByText('一笔预算 HK$25,000')).toBeNull()
     expect(screen.queryByRole('button', { name: '记录已成交' })).toBeNull()
   })
+})
+
+
+it('starts mobile history at 30 sessions and resets it when selecting another ETF', async () => {
+  vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: true })))
+  render(<MemoryRouter><ExecutionPage /></MemoryRouter>)
+  await screen.findByText('一笔预算 HK$25,000')
+  await waitFor(() => expect(request.mock.calls.some(([path]) => path === '/execution/history/TQQQ?limit=30')).toBe(true))
+  fireEvent.click(screen.getByRole('button', { name: '100日', exact: true }))
+  await waitFor(() => expect(request.mock.calls.some(([path]) => path === '/execution/history/TQQQ?limit=100')).toBe(true))
+  fireEvent.click(screen.getByRole('button', { name: '展开其他品种' }))
+  fireEvent.click(screen.getByRole('button', { name: /SOXL.*三倍半导体/ }))
+  await waitFor(() => expect(request.mock.calls.some(([path]) => path === '/execution/history/SOXL?limit=30')).toBe(true))
+  expect(screen.getByText('最近 30 个交易日')).toBeTruthy()
+})
+
+it('keeps the desktop 600-session default and offers a 30-session view', async () => {
+  vi.stubGlobal('matchMedia', vi.fn(() => ({ matches: false })))
+  render(<MemoryRouter><ExecutionPage /></MemoryRouter>)
+  await screen.findByText('一笔预算 HK$25,000')
+  expect(request.mock.calls.some(([path]) => path === '/execution/history/TQQQ?limit=600')).toBe(true)
+  fireEvent.click(screen.getByRole('button', { name: '30日', exact: true }))
+  await waitFor(() => expect(request.mock.calls.some(([path]) => path === '/execution/history/TQQQ?limit=30')).toBe(true))
 })

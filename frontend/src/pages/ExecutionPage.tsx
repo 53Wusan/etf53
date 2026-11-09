@@ -12,12 +12,13 @@ type Item = { symbol: string; date: string; score: number | null; raw_close: num
 type Order = { symbol: string; side: 'buy' | 'sell'; reason: string }
 type Catalog = { buy_budget_usd?: number; cutoff: string; last_completed_session: string; stale: boolean; items: Item[]; rule: Rule; simulation_account?: { cash_hkd: number; position_count: number } | null; next_open_plan: { signal_date: string; next_open_date: string; actions: Order[] } | null }
 type History = { observations: number; distribution: { threshold: number; operator: string; count: number; pct: number | null }[]; points: { date: string; price: number; score: number | null }[] }
+const defaultHistoryDays = () => window.matchMedia?.('(max-width: 600px)').matches ? 30 : 600
 const pool = ['TQQQ','FAS','GDXU','CURE','DFEN','TECL','UPRO','EDC','UGL']
 export default function ExecutionPage() {
   const [catalog, setCatalog] = useState<Catalog | null>(null)
   const [profile, setProfile] = useState('rank2')
   const [focus, setFocus] = useState('TQQQ')
-  const [windowDays, setWindowDays] = useState(600)
+  const [windowDays, setWindowDays] = useState(defaultHistoryDays)
   const [history, setHistory] = useState<History | null>(null)
   const [all, setAll] = useState(false)
   const [error, setError] = useState('')
@@ -78,9 +79,9 @@ export default function ExecutionPage() {
     <MarketBrief revision={revision} />
     <div className="desk-section-heading compact-heading"><h2>指数看板 <small>收盘 {catalog?.cutoff ?? '—'}</small></h2><button className="desk-link" onClick={() => setAll(!all)}>{all ? '只看9只关注品种' : '展开其他品种'}</button></div>
     {!catalog && !error && <div className="desk-empty">正在读取品种看板…</div>}
-    <div className="desk-watch-grid">{catalog?.items.filter(i => all || pool.includes(i.symbol)).map(i => <button key={i.symbol} className={`desk-watch-tile ${focus === i.symbol ? 'selected' : ''}`} onClick={() => { if (focus !== i.symbol) { setHistory(null); setHistoryError(''); setFocus(i.symbol) } }} aria-pressed={focus === i.symbol}><div><b>{i.symbol}</b><small>{names[i.symbol]}</small></div><strong className="violet">{i.score == null ? '—' : i.score.toFixed(1)}</strong><div><span>${(i.raw_close ?? i.adjusted_close).toFixed(2)}</span><small className={tone(i.price_change_pct)}>{pct(i.price_change_pct)}</small></div></button>)}</div>
+    <div className="desk-watch-grid">{catalog?.items.filter(i => all || pool.includes(i.symbol)).map(i => <button key={i.symbol} className={`desk-watch-tile ${focus === i.symbol ? 'selected' : ''}`} onClick={() => { if (focus !== i.symbol) { setHistory(null); setHistoryError(''); if (defaultHistoryDays() === 30) setWindowDays(30); setFocus(i.symbol) } }} aria-pressed={focus === i.symbol}><div><b>{i.symbol}</b><small>{names[i.symbol]}</small></div><strong className="violet">{i.score == null ? '—' : i.score.toFixed(1)}</strong><div><span>${(i.raw_close ?? i.adjusted_close).toFixed(2)}</span><small className={tone(i.price_change_pct)}>{pct(i.price_change_pct)}</small></div></button>)}</div>
     {!staticDesk && <LiveLedger key={intent?.key ?? 0} intent={intent} />}
-    {item && <section className="desk-panel" id="index-history"><div className="desk-section-heading"><div><span className="desk-eyebrow">{focus} · {names[focus]}</span><h2>历史指数与价格</h2><p>交易指数 {item.score?.toFixed(1) ?? '—'} · {item.phase} · {item.position ? `${item.position.lots}笔模拟持仓` : '模拟空仓'}</p></div><div className="desk-range-buttons">{[{ n: 100, text: '100日' },{ n: 252, text: '1年' },{ n: 600, text: '600日' },{ n: 0, text: '全部' }].map(w => <button key={w.n} className={windowDays === w.n ? 'active' : ''} onClick={() => { if (windowDays !== w.n) { setHistory(null); setHistoryError(''); setWindowDays(w.n) } }}>{w.text}</button>)}</div></div>
+    {item && <section className="desk-panel" id="index-history"><div className="desk-section-heading"><div><span className="desk-eyebrow">{focus} · {names[focus]}</span><h2>历史指数与价格</h2><p>{windowDays ? `最近 ${windowDays} 个交易日` : '全部历史交易日'}</p><p>交易指数 {item.score?.toFixed(1) ?? '—'} · {item.phase} · {item.position ? `${item.position.lots}笔模拟持仓` : '模拟空仓'}</p></div><div className="desk-range-buttons">{[{ n: 30, text: '30日' },{ n: 100, text: '100日' },{ n: 252, text: '1年' },{ n: 600, text: '600日' },{ n: 0, text: '全部' }].map(w => <button key={w.n} className={windowDays === w.n ? 'active' : ''} onClick={() => { if (windowDays !== w.n) { setHistory(null); setHistoryError(''); setWindowDays(w.n) } }}>{w.text}</button>)}</div></div>
     {historyError ? <div className="desk-alert error" role="alert">{historyError}<button className="desk-link" onClick={() => setRevision(v => v + 1)}>重试</button></div> : chart ? <Suspense fallback={<div className="desk-empty">正在绘制历史曲线…</div>}><DeskChart option={chart} /></Suspense> : <div className="desk-empty">正在读取 {focus} 历史…</div>}
     <details open className="desk-rule-details"><summary>查看指数分布 · {validScores.length}个有效交易日</summary>
     <div className="desk-current-score"><strong>{focus} · {item.score == null ? '指数缺失' : `最新收盘 ${item.score.toFixed(1)}`}</strong><span>{item.date}{catalog?.stale ? ' · 行情待更新' : ''}{currentRank != null ? ` · 历史分位 ${currentRank.toFixed(1)}%` : ''}</span></div>

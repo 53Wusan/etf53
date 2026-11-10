@@ -1,34 +1,31 @@
 {
   "version": "market-context-v2",
   "status": "partial",
-  "market_date": "2026-11-06",
-  "generated_at_utc": "2026-11-09T16:23:52.557836+00:00",
-  "valid_until": "2026-11-09T21:30:00+00:00",
+  "market_date": "2026-11-09",
+  "generated_at_utc": "2026-11-10T04:48:05.119049+00:00",
+  "valid_until": "2026-11-10T21:30:00+00:00",
   "market_ready": true,
   "assessment": {
-    "trend": "中期下行",
-    "short_term": "短期回撤",
-    "risk": "很高",
-    "risk_reasons": [
-      "半导体近5日-13.1%",
-      "VIX 25.6，近5日+32.0%"
-    ],
-    "technology": "科技回撤较大",
-    "summary": "中期下行，短期回撤。纳指100近5日-5.0%，标普500近5日-2.7%；科技回撤较大。"
+    "trend": "震荡分化",
+    "short_term": "短期震荡",
+    "risk": "常态",
+    "risk_reasons": [],
+    "technology": "科技走势未触发急跌观察线",
+    "summary": "震荡分化，短期震荡。纳指100近5日-0.3%，标普500近5日+0.1%；科技走势未触发急跌观察线。"
   },
   "quotes": [
     {
       "symbol": "SPY",
       "label": "标普500",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 735.2899780273438,
-      "return_1d_pct": 0.31241173633611563,
-      "return_5d_pct": -2.7033813406800777,
-      "return_20d_pct": -5.558912993016429,
-      "distance_ma50_pct": -3.9025180671657167,
-      "distance_ma200_pct": 1.0505319965542048,
-      "drawdown_252_pct": -5.621949623063327,
+      "close": 752.6900024414062,
+      "return_1d_pct": 2.366416642960889,
+      "return_5d_pct": 0.07845058830231455,
+      "return_20d_pct": -3.2656437401115013,
+      "distance_ma50_pct": -1.5904989537572578,
+      "distance_ma200_pct": 3.3929276624433458,
+      "drawdown_252_pct": -3.3885717316414876,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/SPY/history/"
@@ -36,15 +33,15 @@
     {
       "symbol": "QQQ",
       "label": "纳指100",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 656.0999755859375,
-      "return_1d_pct": 1.3986535760301066,
-      "return_5d_pct": -4.980523271128723,
-      "return_20d_pct": -12.667887905961328,
-      "distance_ma50_pct": -8.969599697921337,
-      "distance_ma200_pct": -3.485528388279746,
-      "drawdown_252_pct": -13.63241466177535,
+      "close": 679.3499755859375,
+      "return_1d_pct": 3.543667255777039,
+      "return_5d_pct": -0.2554803624955304,
+      "return_20d_pct": -8.939199561094025,
+      "distance_ma50_pct": -5.648656591596146,
+      "distance_ma200_pct": -0.10853709434195391,
+      "drawdown_252_pct": -10.571834820539394,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/QQQ/history/"
@@ -52,15 +49,15 @@
     {
       "symbol": "IWM",
       "label": "美国小盘",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 273.6700134277344,
-      "return_1d_pct": 0.9926940483967917,
-      "return_5d_pct": -2.0262676463727813,
-      "return_20d_pct": -1.8892912337945766,
-      "distance_ma50_pct": -2.933687454829581,
-      "distance_ma200_pct": -1.5656550852928386,
-      "drawdown_252_pct": -10.064318578394237,
+      "close": 282.510009765625,
+      "return_1d_pct": 3.230166223609632,
+      "return_5d_pct": 1.2072776887368963,
+      "return_20d_pct": 1.6588758439691764,
+      "distance_ma50_pct": 0.2904277962954005,
+      "distance_ma200_pct": 1.5783440226688983,
+      "drawdown_252_pct": -7.159246574140365,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/IWM/history/"
@@ -68,15 +65,15 @@
     {
       "symbol": "RSP",
       "label": "标普等权",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 216.0500030517578,
-      "return_1d_pct": -0.37810304970339326,
-      "return_5d_pct": -1.035222633919619,
-      "return_20d_pct": 1.4128848387552573,
-      "distance_ma50_pct": 0.7042031725860376,
-      "distance_ma200_pct": 4.3262580032019216,
-      "drawdown_252_pct": -3.2597495722066383,
+      "close": 220.9499969482422,
+      "return_1d_pct": 2.2679906629348823,
+      "return_5d_pct": 0.4409497406775653,
+      "return_20d_pct": 3.6399429701065467,
+      "distance_ma50_pct": 2.977735227258793,
+      "distance_ma200_pct": 6.629218457148323,
+      "drawdown_252_pct": -1.0656897252044661,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/RSP/history/"
@@ -84,15 +81,15 @@
     {
       "symbol": "SOXX",
       "label": "半导体",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 136.52999877929688,
-      "return_1d_pct": 3.5102388908722304,
-      "return_5d_pct": -13.132276916782848,
-      "return_20d_pct": -26.780476943284192,
-      "distance_ma50_pct": -21.369754738010904,
-      "distance_ma200_pct": -14.363240265237298,
-      "drawdown_252_pct": -37.427248650885346,
+      "close": 146.75999450683594,
+      "return_1d_pct": 7.4928556500436505,
+      "return_5d_pct": -2.9472050582560194,
+      "return_20d_pct": -19.192442215581185,
+      "distance_ma50_pct": -15.25682871913695,
+      "distance_ma200_pct": -8.03905554963663,
+      "drawdown_252_pct": -32.73876271603545,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/SOXX/history/"
@@ -100,15 +97,15 @@
     {
       "symbol": "GLD",
       "label": "黄金ETF",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 372.5199890136719,
-      "return_1d_pct": -0.7909668161458328,
-      "return_5d_pct": 4.705152142282021,
-      "return_20d_pct": -3.135887976408669,
-      "distance_ma50_pct": -3.2313062841339946,
-      "distance_ma200_pct": -9.415649437530716,
-      "drawdown_252_pct": -24.88001742314343,
+      "close": 379.5299987792969,
+      "return_1d_pct": 1.881780836562763,
+      "return_5d_pct": 4.944008069838457,
+      "return_20d_pct": -0.685593395010542,
+      "distance_ma50_pct": -1.2597173411624252,
+      "distance_ma200_pct": -7.622916889343834,
+      "drawdown_252_pct": -23.466423986582853,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/GLD/history/"
@@ -116,15 +113,15 @@
     {
       "symbol": "UUP",
       "label": "美元ETF",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 29.1299991607666,
-      "return_1d_pct": 0.7261379111986654,
-      "return_5d_pct": 0.44827296816070117,
-      "return_20d_pct": 0.37904445647072293,
-      "distance_ma50_pct": 1.5449587794398534,
-      "distance_ma200_pct": 4.156607279521962,
-      "drawdown_252_pct": 0.0,
+      "close": 28.969999313354492,
+      "return_1d_pct": -0.5492614212897151,
+      "return_5d_pct": 0.03453117816980544,
+      "return_20d_pct": -0.5492614212897151,
+      "distance_ma50_pct": 0.9316208542091919,
+      "distance_ma200_pct": 3.54638068886608,
+      "drawdown_252_pct": -0.5492614212897151,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/UUP/history/"
@@ -132,45 +129,72 @@
     {
       "symbol": "^TNX",
       "label": "美债10年收益率",
-      "date": "2026-11-06",
+      "date": "2026-11-09",
       "fresh": true,
-      "close": 4.859000205993652,
-      "return_1d_pct": 0.4548338493072235,
-      "return_5d_pct": -1.4201601994880075,
-      "return_20d_pct": -7.341719205289587,
-      "distance_ma50_pct": -3.462165412914353,
-      "distance_ma200_pct": 6.48008120562551,
-      "drawdown_252_pct": -8.510632184991628,
-      "change_5d_bp": -6.999969482421875,
+      "close": 4.863999843597412,
+      "return_1d_pct": 0.1028943690430939,
+      "return_5d_pct": -0.6129997850627844,
+      "return_20d_pct": -7.175571449319307,
+      "distance_ma50_pct": -3.4180970006123412,
+      "distance_ma200_pct": 6.5166992799916335,
+      "drawdown_252_pct": -8.41649477723686,
+      "change_5d_bp": -3.000020980834961,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/^TNX/history/"
     }
   ],
   "vix": {
-    "date": "2026-11-06",
-    "close": 25.64,
-    "change_5d_pct": 32.028836251287316,
-    "prior252_percentile": 95.23809523809523,
+    "date": "2026-11-09",
+    "close": 19.92,
+    "change_5d_pct": -5.815602836879419,
+    "prior252_percentile": 80.55555555555556,
     "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
     "excluded_non_session_rows": 16
   },
-  "breadth_relative_20d_pp": 6.971797831771687,
+  "breadth_relative_20d_pp": 6.9055867102180475,
   "translation_complete": true,
   "news": [
     {
-      "title": "Euro Could be Influenced by Risk Sentiment Amid Stock Market Volatility",
-      "url": "https://www.wsj.com/finance/currencies/new-zealand-dollar-climbs-as-traders-await-election-result-033c6116?mod=rss_markets_main",
+      "title": "Gold Edges Lower as Investors Await Key U.S. Inflation Data",
+      "url": "https://www.wsj.com/finance/commodities-futures/gold-edges-lower-as-investors-await-key-u-s-inflation-data-d4a0623a?mod=rss_markets_main",
       "source": "WSJ市场",
-      "published_at_utc": "2026-11-09T13:23:00+00:00",
+      "published_at_utc": "2026-11-10T00:35:00+00:00",
       "tags": [
+        "利率与通胀",
         "市场与风险"
       ],
-      "original_title": "Euro Could be Influenced by Risk Sentiment Amid Stock Market Volatility",
-      "title_zh": "股市波动，欧元可能受到风险情绪影响",
+      "original_title": "Gold Edges Lower as Investors Await Key U.S. Inflation Data",
+      "title_zh": "投资者等待美国关键通胀数据，金价小幅走低",
       "translation_status": "translated"
     },
     {
-      "title": "Stock Market Today: Nvidia Stock Slides After Chip Maker Opens Probe",
+      "title": "The stock-market rally keeps spreading beyond Big Tech. October inflation data could put it to the test.",
+      "url": "https://www.marketwatch.com/story/the-stock-market-rally-keeps-spreading-beyond-big-tech-october-inflation-data-could-put-it-to-the-test-c1b87dcd?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-11-09T21:24:00+00:00",
+      "tags": [
+        "科技与AI",
+        "利率与通胀",
+        "市场与风险"
+      ],
+      "original_title": "The stock-market rally keeps spreading beyond Big Tech. October inflation data could put it to the test.",
+      "title_zh": "股市的上涨继续蔓延到大型科技公司之外。十月份的通胀数据可能会对其进行考验。",
+      "translation_status": "translated"
+    },
+    {
+      "title": "U.S., Eurozone Bond Yields Rise Ahead of Inflation, Rates Outlook",
+      "url": "https://www.wsj.com/finance/investing/u-s-treasury-yields-edge-lower-as-oil-prices-decline-71869e97?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-09T19:33:00+00:00",
+      "tags": [
+        "利率与通胀"
+      ],
+      "original_title": "U.S., Eurozone Bond Yields Rise Ahead of Inflation, Rates Outlook",
+      "title_zh": "美国和欧元区债券收益率在通胀和利率前景之前上升",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Stock Market News, November 9, 2026: Nvidia Stock Slides After Chip Maker Opens Probe",
       "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-09-2026?mod=rss_markets_main",
       "source": "WSJ市场",
       "published_at_utc": "2026-11-09T09:04:21+00:00",
@@ -178,33 +202,8 @@
         "科技与AI",
         "市场与风险"
       ],
-      "original_title": "Stock Market Today: Nvidia Stock Slides After Chip Maker Opens Probe",
-      "title_zh": "今日股市：芯片制造商展开调查后，英伟达股价下跌",
-      "translation_status": "translated"
-    },
-    {
-      "title": "Gold Rises Above $4,100 an Ounce, With Focus on U.S. Inflation Data",
-      "url": "https://www.wsj.com/finance/commodities-futures/gold-edges-higher-amid-mixed-signals-00565ca1?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-09T08:49:00+00:00",
-      "tags": [
-        "利率与通胀",
-        "市场与风险"
-      ],
-      "original_title": "Gold Rises Above $4,100 an Ounce, With Focus on U.S. Inflation Data",
-      "title_zh": "关注美国通胀数据，金价升至每盎司 4,100 美元上方",
-      "translation_status": "translated"
-    },
-    {
-      "title": "A Berkshire Hathaway Electric Utility Wants a Historic Rate Hike in California",
-      "url": "https://www.wsj.com/business/energy-oil/a-berkshire-hathaway-electric-utility-wants-a-historic-rate-hike-in-california-b7a0cc70?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-06T23:33:00+00:00",
-      "tags": [
-        "利率与通胀"
-      ],
-      "original_title": "A Berkshire Hathaway Electric Utility Wants a Historic Rate Hike in California",
-      "title_zh": "伯克希尔哈撒韦电力公司希望加州历史性地提高电价",
+      "original_title": "Stock Market News, November 9, 2026: Nvidia Stock Slides After Chip Maker Opens Probe",
+      "title_zh": "股市新闻，2026 年 11 月 9 日：芯片制造商展开调查后 Nvidia 股价下跌",
       "translation_status": "translated"
     }
   ],
@@ -240,7 +239,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/SPY/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "QQQ",
@@ -248,7 +247,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/QQQ/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "IWM",
@@ -256,7 +255,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/IWM/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "RSP",
@@ -264,7 +263,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/RSP/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "SOXX",
@@ -272,7 +271,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/SOXX/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "GLD",
@@ -280,7 +279,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/GLD/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "UUP",
@@ -288,7 +287,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/UUP/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "^TNX",
@@ -296,7 +295,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/^TNX/history/",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "VIX",
@@ -304,7 +303,7 @@
       "ok": true,
       "message": null,
       "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
-      "data_date": "2026-11-06"
+      "data_date": "2026-11-09"
     },
     {
       "name": "WSJ市场",

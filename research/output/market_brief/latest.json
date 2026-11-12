@@ -1,31 +1,31 @@
 {
   "version": "market-context-v2",
   "status": "partial",
-  "market_date": "2026-11-10",
-  "generated_at_utc": "2026-11-11T03:04:26.619605+00:00",
-  "valid_until": "2026-11-11T21:30:00+00:00",
+  "market_date": "2026-11-11",
+  "generated_at_utc": "2026-11-12T04:18:31.883326+00:00",
+  "valid_until": "2026-11-12T21:30:00+00:00",
   "market_ready": true,
   "assessment": {
     "trend": "震荡分化",
     "short_term": "短期震荡",
     "risk": "常态",
     "risk_reasons": [],
-    "technology": "科技回撤较大",
-    "summary": "震荡分化，短期震荡。纳指100近5日-1.5%，标普500近5日-0.6%；科技回撤较大。"
+    "technology": "科技走势未触发急跌观察线",
+    "summary": "震荡分化，短期震荡。纳指100近5日-0.2%，标普500近5日-0.9%；科技走势未触发急跌观察线。"
   },
   "quotes": [
     {
       "symbol": "SPY",
       "label": "标普500",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 749.9199829101562,
-      "return_1d_pct": -0.36801598563356297,
-      "return_5d_pct": -0.5872596035202737,
-      "return_20d_pct": -3.6104968448838926,
-      "distance_ma50_pct": -1.9135992399945345,
-      "distance_ma200_pct": 2.9681830346769633,
-      "drawdown_252_pct": -3.7441172316179494,
+      "close": 759.8099975585938,
+      "return_1d_pct": 1.3188093228371,
+      "return_5d_pct": -0.9128728136418296,
+      "return_20d_pct": -1.272086582368992,
+      "distance_ma50_pct": -0.6198106880274667,
+      "distance_ma200_pct": 4.276232475684494,
+      "drawdown_252_pct": -2.4746856758893765,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/SPY/history/"
@@ -33,15 +33,15 @@
     {
       "symbol": "QQQ",
       "label": "纳指100",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 674.760009765625,
-      "return_1d_pct": -0.6756408309801842,
-      "return_5d_pct": -1.5351417057993033,
-      "return_20d_pct": -9.25400391097143,
-      "distance_ma50_pct": -6.178622163023184,
-      "distance_ma200_pct": -0.820940438358897,
-      "drawdown_252_pct": -11.17604801888823,
+      "close": 690.3800048828125,
+      "return_1d_pct": 2.3148963914759957,
+      "return_5d_pct": -0.226896061351467,
+      "return_20d_pct": -5.291173150191863,
+      "distance_ma50_pct": -3.9626257315597324,
+      "distance_ma200_pct": 1.429188825066352,
+      "drawdown_252_pct": -9.119865559711105,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/QQQ/history/"
@@ -49,15 +49,15 @@
     {
       "symbol": "IWM",
       "label": "美国小盘",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 280.5799865722656,
-      "return_1d_pct": -0.6831698441271405,
-      "return_5d_pct": 0.28234676122000923,
-      "return_20d_pct": 1.4022313675690512,
-      "distance_ma50_pct": -0.30565114140914673,
-      "distance_ma200_pct": 0.8510693595340069,
-      "drawdown_252_pct": -7.793506604606271,
+      "close": 283.0899963378906,
+      "return_1d_pct": 0.8945790454582214,
+      "return_5d_pct": -0.3274391633528606,
+      "return_20d_pct": 4.318827221720656,
+      "distance_ma50_pct": 0.6342729272494685,
+      "distance_ma200_pct": 1.7164382569961445,
+      "drawdown_252_pct": -6.968646636139253,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/IWM/history/"
@@ -65,15 +65,15 @@
     {
       "symbol": "RSP",
       "label": "标普等权",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 220.8800048828125,
-      "return_1d_pct": -0.03167778519864717,
-      "return_5d_pct": 0.7388536060216166,
-      "return_20d_pct": 3.5536810701382704,
-      "distance_ma50_pct": 2.922937092964961,
-      "distance_ma200_pct": 6.533758872383122,
-      "drawdown_252_pct": -1.0970299235010805,
+      "close": 222.64999389648438,
+      "return_1d_pct": 0.8013351025643711,
+      "return_5d_pct": -0.30448570679936227,
+      "return_20d_pct": 4.979017276123732,
+      "distance_ma50_pct": 3.6909241667237858,
+      "distance_ma200_pct": 7.319976552294505,
+      "drawdown_252_pct": -0.30448570679936227,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/RSP/history/"
@@ -81,15 +81,15 @@
     {
       "symbol": "SOXX",
       "label": "半导体",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 146.58999633789062,
-      "return_1d_pct": -0.11583413417025623,
-      "return_5d_pct": -5.42580881426411,
-      "return_20d_pct": -19.145066811696697,
-      "distance_ma50_pct": -15.123217659902677,
-      "distance_ma200_pct": -8.23881900124116,
-      "drawdown_252_pct": -32.81667418787553,
+      "close": 155.39999389648438,
+      "return_1d_pct": 6.009958236363322,
+      "return_5d_pct": 3.505686398003438,
+      "return_20d_pct": -10.246046872878,
+      "distance_ma50_pct": -9.90466991433262,
+      "distance_ma200_pct": -2.841320758317667,
+      "drawdown_252_pct": -28.778984364766945,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/SOXX/history/"
@@ -97,15 +97,15 @@
     {
       "symbol": "GLD",
       "label": "黄金ETF",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 369.3599853515625,
-      "return_1d_pct": -2.679633615378163,
-      "return_5d_pct": 2.81132753754767,
-      "return_20d_pct": -3.225306585030596,
-      "distance_ma50_pct": -3.70989440768118,
-      "distance_ma200_pct": -9.993851782433726,
-      "drawdown_252_pct": -25.51724341648938,
+      "close": 365.1700134277344,
+      "return_1d_pct": -1.1343870722325344,
+      "return_5d_pct": -1.9651472518858348,
+      "return_20d_pct": -2.877730016135782,
+      "distance_ma50_pct": -4.645190878638283,
+      "distance_ma200_pct": -10.894436715636768,
+      "drawdown_252_pct": -26.36216617821515,
       "change_5d_bp": null,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/GLD/history/"
@@ -113,14 +113,14 @@
     {
       "symbol": "UUP",
       "label": "美元ETF",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 29.149999618530273,
-      "return_1d_pct": 0.621333480987718,
-      "return_5d_pct": 0.4825901018403078,
-      "return_20d_pct": 0.44796402038589367,
-      "distance_ma50_pct": 1.485905949785482,
-      "distance_ma200_pct": 4.14563814484652,
+      "close": 29.350000381469727,
+      "return_1d_pct": 0.6861089727504321,
+      "return_5d_pct": 1.5570960860875616,
+      "return_20d_pct": 0.7898335700816661,
+      "distance_ma50_pct": 2.1011635530026274,
+      "distance_ma200_pct": 4.80627039402568,
       "drawdown_252_pct": 0.0,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -129,80 +129,78 @@
     {
       "symbol": "^TNX",
       "label": "美债10年收益率",
-      "date": "2026-11-10",
+      "date": "2026-11-11",
       "fresh": true,
-      "close": 4.9830002784729,
-      "return_1d_pct": 2.4465550719976026,
-      "return_5d_pct": 0.6260124484152696,
-      "return_20d_pct": -4.485331202114063,
-      "distance_ma50_pct": -1.143500087474314,
-      "distance_ma200_pct": 9.030763871961067,
-      "drawdown_252_pct": -6.175853885096161,
-      "change_5d_bp": 3.1000137329101562,
+      "close": 4.998000144958496,
+      "return_1d_pct": 0.3010303816955773,
+      "return_5d_pct": 2.125052930482907,
+      "return_20d_pct": -3.6994202340103644,
+      "distance_ma50_pct": -0.9253282601623392,
+      "distance_ma200_pct": 9.266325414039356,
+      "drawdown_252_pct": -5.893423705244782,
+      "change_5d_bp": 10.400009155273438,
       "provider": "yahoo",
       "source_url": "https://finance.yahoo.com/quote/^TNX/history/"
     }
   ],
   "vix": {
-    "date": "2026-11-10",
-    "close": 19.46,
-    "change_5d_pct": -6.577052328372524,
-    "prior252_percentile": 76.98412698412699,
+    "date": "2026-11-11",
+    "close": 17.49,
+    "change_5d_pct": 5.298013245033117,
+    "prior252_percentile": 55.55555555555556,
     "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
     "excluded_non_session_rows": 16
   },
-  "breadth_relative_20d_pp": 7.164177915022163,
+  "breadth_relative_20d_pp": 6.251103858492724,
   "translation_complete": true,
   "news": [
     {
-      "title": "Asian Bond Yields Rise on Growing Expectations for Fed Rate Hike",
-      "url": "https://www.wsj.com/finance/asian-bond-yields-rise-on-growing-expectations-for-fed-rate-hike-a2491a28?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-11T02:22:00+00:00",
+      "title": "Nasdaq futures fall as Nvidia sinks 8% after hours on report board may oust Huang",
+      "url": "https://www.marketwatch.com/story/nasdaq-futures-fall-as-nvidia-sinks-8-after-hours-on-report-board-may-oust-huang-e99b898d?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-11-12T01:12:00+00:00",
       "tags": [
-        "利率与通胀"
+        "科技与AI"
       ],
-      "original_title": "Asian Bond Yields Rise on Growing Expectations for Fed Rate Hike",
-      "title_zh": "美联储加息预期升温，亚洲债券收益率上升",
+      "original_title": "Nasdaq futures fall as Nvidia sinks 8% after hours on report board may oust Huang",
+      "title_zh": "纳斯达克期货下跌，英伟达盘后下跌 8%，因董事会可能罢免黄仁勋",
       "translation_status": "translated"
     },
     {
-      "title": "Asian Currencies Soften After U.S. CPI Data Boosts Dollar",
-      "url": "https://www.wsj.com/finance/currencies/asian-currencies-soften-after-u-s-cpi-data-boosts-dollar-26f03632?mod=rss_markets_main",
+      "title": "Gold Dims Amid Rising Fed Rate-Hike Expectations",
+      "url": "https://www.wsj.com/finance/commodities-futures/gold-dims-amid-rising-fed-rate-hike-expectations-22fab6f0?mod=rss_markets_main",
       "source": "WSJ市场",
-      "published_at_utc": "2026-11-11T01:45:00+00:00",
+      "published_at_utc": "2026-11-12T00:48:00+00:00",
       "tags": [
         "利率与通胀",
         "市场与风险"
       ],
-      "original_title": "Asian Currencies Soften After U.S. CPI Data Boosts Dollar",
-      "title_zh": "美国消费者物价指数数据提振美元后亚洲货币走软",
+      "original_title": "Gold Dims Amid Rising Fed Rate-Hike Expectations",
+      "title_zh": "美联储加息预期升温，金价下跌",
       "translation_status": "translated"
     },
     {
-      "title": "U.S. Stocks Slip on Inflation, AI Worries",
-      "url": "https://www.wsj.com/finance/stocks/u-s-stocks-slip-on-inflation-ai-worries-feb790bc?mod=rss_markets_main",
+      "title": "Nasdaq Jumps After CoreWeave Re-Energizes AI Trade",
+      "url": "https://www.wsj.com/finance/commodities-futures/nasdaq-futures-rally-as-ai-optimism-returns-af100e62?mod=rss_markets_main",
       "source": "WSJ市场",
-      "published_at_utc": "2026-11-10T21:54:00+00:00",
+      "published_at_utc": "2026-11-11T19:36:00+00:00",
       "tags": [
-        "科技与AI",
-        "利率与通胀"
+        "科技与AI"
       ],
-      "original_title": "U.S. Stocks Slip on Inflation, AI Worries",
-      "title_zh": "美国股市因通胀和人工智能担忧而下滑",
+      "original_title": "Nasdaq Jumps After CoreWeave Re-Energizes AI Trade",
+      "title_zh": "CoreWeave 重振人工智能交易后纳斯达克上涨",
       "translation_status": "translated"
     },
     {
-      "title": "Stock Market News, November 10, 2026: Yields Jump as Inflation Comes in Hotter Than Expected",
-      "url": "https://www.wsj.com/livecoverage/stock-market-cpi-inflation-11-10-2026?mod=rss_markets_main",
+      "title": "Nasdaq-Backed Payward Launches Tokenized Versions of European Stocks",
+      "url": "https://www.wsj.com/finance/stocks/payward-to-launch-tokenized-versions-of-u-k-european-stocks-ae35dc78?mod=rss_markets_main",
       "source": "WSJ市场",
-      "published_at_utc": "2026-11-10T10:01:59+00:00",
+      "published_at_utc": "2026-11-11T11:57:00+00:00",
       "tags": [
-        "利率与通胀",
-        "市场与风险"
+        "科技与AI"
       ],
-      "original_title": "Stock Market News, November 10, 2026: Yields Jump as Inflation Comes in Hotter Than Expected",
-      "title_zh": "股市新闻，2026 年 11 月 10 日：通胀高于预期，收益率飙升",
+      "original_title": "Nasdaq-Backed Payward Launches Tokenized Versions of European Stocks",
+      "title_zh": "纳斯达克支持的 Payward 推出欧洲股票的代币化版本",
       "translation_status": "translated"
     }
   ],
@@ -228,6 +226,28 @@
       "timing_note": "官方发布日期；具体时间查看原日历",
       "title_zh": "2024 年美国跨国企业活动",
       "translation_status": "translated"
+    },
+    {
+      "date": "2026-11-25",
+      "time_utc": null,
+      "title": "GDP发布",
+      "original_title": "GDP (Second Estimate) and Corporate Profits, 3rd Quarter 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "GDP发布",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-11-25",
+      "time_utc": null,
+      "title": "个人收入与支出（含PCE）",
+      "original_title": "Personal Income and Outlays, October 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "个人收入与支出（含PCE）",
+      "translation_status": "original_zh"
     }
   ],
   "calendar_complete": false,
@@ -238,7 +258,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/SPY/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "QQQ",
@@ -246,7 +266,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/QQQ/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "IWM",
@@ -254,7 +274,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/IWM/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "RSP",
@@ -262,7 +282,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/RSP/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "SOXX",
@@ -270,7 +290,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/SOXX/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "GLD",
@@ -278,7 +298,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/GLD/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "UUP",
@@ -286,7 +306,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/UUP/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "^TNX",
@@ -294,7 +314,7 @@
       "ok": true,
       "message": null,
       "url": "https://finance.yahoo.com/quote/^TNX/history/",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "VIX",
@@ -302,7 +322,7 @@
       "ok": true,
       "message": null,
       "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
-      "data_date": "2026-11-10"
+      "data_date": "2026-11-11"
     },
     {
       "name": "WSJ市场",

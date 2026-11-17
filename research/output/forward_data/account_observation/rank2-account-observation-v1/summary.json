@@ -283,7 +283,7 @@
     "first_data_date": "2026-10-12",
     "recorded_sessions": 26,
     "late_signals": 1,
-    "confirmed_publications": 25,
+    "confirmed_publications": 26,
     "late_publications": 1,
     "missing_sessions": [],
     "unverified_fill_sessions": 0,
@@ -1381,7 +1381,14 @@
         "fills_linked_to_prior_plan": true,
         "fills_match_prior_plan": true,
         "fill_count": 0,
-        "publication": null,
+        "publication": {
+          "data_date": "2026-11-16",
+          "record_sha256": "3c30e919b1d80b2282f1ad5a5dcb13c0901f74f7ff9c986b9f018c744bbd89dd",
+          "published_at_utc": "2026-11-17T05:16:39.816414+00:00",
+          "github_run_url": "https://github.com/53Wusan/etf53/actions/runs/44022715556",
+          "sha256": "66cdf52fde7d444864c5c154e1fe64b34d43d07de83b9dc932e648f4edfeed49",
+          "before_next_open": true
+        },
         "next_open_plan": {
           "signal_date": "2026-11-16",
           "next_open_date": "2026-11-17",
@@ -1533,7 +1540,7 @@
   "valid_until": "2026-11-17T21:30:00+00:00",
   "run": {
     "status": "calculation_and_recording_ok",
-    "captured_at_utc": "2026-11-17T05:15:27.656617+00:00",
-    "github_run_url": "https://github.com/53Wusan/etf53/actions/runs/44022715556"
+    "captured_at_utc": "2026-11-17T18:39:53.767072+00:00",
+    "github_run_url": "https://github.com/53Wusan/etf53/actions/runs/44150168432"
   }
 }

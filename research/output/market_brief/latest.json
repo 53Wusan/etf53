@@ -2,7 +2,7 @@
   "version": "market-context-v2",
   "status": "partial",
   "market_date": "2026-11-16",
-  "generated_at_utc": "2026-11-17T05:15:29.577239+00:00",
+  "generated_at_utc": "2026-11-17T18:39:55.458103+00:00",
   "valid_until": "2026-11-17T21:30:00+00:00",
   "market_ready": true,
   "assessment": {
@@ -42,7 +42,7 @@
       "return_5d_pct": -2.5907082090873113,
       "return_20d_pct": -7.880448035236509,
       "distance_ma50_pct": -7.65284060164576,
-      "distance_ma200_pct": -2.885284011608069,
+      "distance_ma200_pct": -2.885283489683843,
       "drawdown_252_pct": -12.888657637079836,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -58,7 +58,7 @@
       "return_5d_pct": -3.3874931837488464,
       "return_20d_pct": 0.6119152423986529,
       "distance_ma50_pct": -2.6000672661595448,
-      "distance_ma200_pct": -2.0148507177601527,
+      "distance_ma200_pct": -2.014851012973562,
       "drawdown_252_pct": -10.304220768182438,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -74,7 +74,7 @@
       "return_5d_pct": -0.9142359358955465,
       "return_20d_pct": 2.591377196561373,
       "distance_ma50_pct": 1.9051023495123554,
-      "distance_ma200_pct": 5.34160831380186,
+      "distance_ma200_pct": 5.341608391143726,
       "drawdown_252_pct": -1.9701827426670482,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -90,7 +90,7 @@
       "return_5d_pct": -3.774866103497143,
       "return_20d_pct": -15.593805940229977,
       "distance_ma50_pct": -17.532939223276543,
-      "distance_ma200_pct": -11.95506196958388,
+      "distance_ma200_pct": -11.955061906764463,
       "drawdown_252_pct": -35.277784363060604,
       "change_5d_bp": null,
       "provider": "yahoo",
@@ -157,53 +157,54 @@
   "translation_complete": true,
   "news": [
     {
-      "title": "Gold Struggles to Recover as Dollar, Rates Weigh",
-      "url": "https://www.wsj.com/finance/commodities-futures/gold-struggles-to-recover-as-dollar-rates-weigh-13856211?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-17T00:47:00+00:00",
-      "tags": [
-        "利率与通胀",
-        "市场与风险"
-      ],
-      "original_title": "Gold Struggles to Recover as Dollar, Rates Weigh",
-      "title_zh": "美元、利率承压，金价艰难复苏",
-      "translation_status": "translated"
-    },
-    {
-      "title": "Treasury Yields Slip to Start Busy Week",
-      "url": "https://www.wsj.com/finance/-63dc4bbf?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-16T20:47:00+00:00",
-      "tags": [
-        "利率与通胀"
-      ],
-      "original_title": "Treasury Yields Slip to Start Busy Week",
-      "title_zh": "美国国债收益率下滑，迎来繁忙的一周",
-      "translation_status": "translated"
-    },
-    {
-      "title": "Optimum Skips Bond Interest Payments Amid Restructuring Talks",
-      "url": "https://www.wsj.com/pro/bankruptcy/optimum-skips-bond-interest-payments-amid-restructuring-talks-3a1644f9?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-16T17:37:00+00:00",
-      "tags": [
-        "利率与通胀"
-      ],
-      "original_title": "Optimum Skips Bond Interest Payments Amid Restructuring Talks",
-      "title_zh": "Optimum 在重组谈判中跳过债券利息支付",
-      "translation_status": "translated"
-    },
-    {
-      "title": "Stock Market News, November 16, 2026: Nasdaq Slides 2.5% as Nvidia Drama Continues",
-      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-16-2026?mod=rss_markets_main",
-      "source": "WSJ市场",
-      "published_at_utc": "2026-11-16T10:00:37+00:00",
+      "title": "Why Salesforce’s stock is leading S&P 500 decliners amid tech jitters",
+      "url": "https://www.marketwatch.com/story/why-salesforces-stock-is-leading-s-p-500-decliners-amid-tech-jitters-17510caf?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-11-17T17:36:00+00:00",
       "tags": [
         "科技与AI",
         "市场与风险"
       ],
-      "original_title": "Stock Market News, November 16, 2026: Nasdaq Slides 2.5% as Nvidia Drama Continues",
-      "title_zh": "股市新闻，2026 年 11 月 16 日：随着 Nvidia 戏剧性的继续，纳斯达克指数下跌 2.5%",
+      "original_title": "Why Salesforce’s stock is leading S&P 500 decliners amid tech jitters",
+      "title_zh": "为什么 Salesforce 的股票在科技股紧张的情况下领跑标准普尔 500 指数跌幅",
+      "translation_status": "translated"
+    },
+    {
+      "title": "If you own a Nasdaq-100 fund, you’ll own Anthropic shares after 15 trading days — whether you want to or not",
+      "url": "https://www.marketwatch.com/story/if-you-own-a-nasdaq-100-fund-youll-own-anthropic-shares-after-15-trading-days-whether-you-want-to-or-not-19b08485?mod=mw_rss_topstories",
+      "source": "MarketWatch",
+      "published_at_utc": "2026-11-17T17:02:00+00:00",
+      "tags": [
+        "科技与AI"
+      ],
+      "original_title": "If you own a Nasdaq-100 fund, you’ll own Anthropic shares after 15 trading days — whether you want to or not",
+      "title_zh": "如果您拥有纳斯达克 100 指数基金，则无论您愿意与否，您都将在 15 个交易日后拥有 Anthropic 股票",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Stock Market Today: Dow Slides Ahead of Nvidia Earnings",
+      "url": "https://www.wsj.com/livecoverage/nvidia-earnings-stock-market-news-11-17-2026?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-17T10:11:07+00:00",
+      "tags": [
+        "科技与AI",
+        "市场与风险"
+      ],
+      "original_title": "Stock Market Today: Dow Slides Ahead of Nvidia Earnings",
+      "title_zh": "今日股市：道琼斯指数领先于英伟达盈利",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Gold Remains Pressured by Fed Rate-Hike Bets",
+      "url": "https://www.wsj.com/finance/commodities-futures/gold-struggles-to-recover-as-dollar-rates-weigh-13856211?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-17T09:10:00+00:00",
+      "tags": [
+        "利率与通胀",
+        "市场与风险"
+      ],
+      "original_title": "Gold Remains Pressured by Fed Rate-Hike Bets",
+      "title_zh": "黄金仍受到美联储加息押注的压力",
       "translation_status": "translated"
     }
   ],

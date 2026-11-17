@@ -79,6 +79,22 @@ jobs:
         working-directory: frontend
       - run: python scripts/export-static.py
       - run: python scripts/account-vault.py site
+      - name: Send signed Feishu daily digest
+        id: feishu
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_WEBHOOK_SECRET: ${{ secrets.FEISHU_WEBHOOK_SECRET }}
+        run: python -m app.services.feishu_digest
+      - name: Preserve Feishu delivery receipt
+        run: |
+          if [ -d research/output/forward_data/feishu_receipts ]; then
+            git add research/output/forward_data/feishu_receipts
+            if ! git diff --cached --quiet; then
+              git commit -m 'data: preserve Feishu daily delivery receipt'
+              git push
+            fi
+          fi
       - name: Build public strategy site
         working-directory: frontend
         env:
@@ -88,6 +104,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/dist
+      - name: Notify Feishu about update failure
+        if: ${{ failure() || steps.feishu.outcome == 'failure' }}
+        continue-on-error: true
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_WEBHOOK_SECRET: ${{ secrets.FEISHU_WEBHOOK_SECRET }}
+        run: python -m app.services.feishu_digest --failure
   deploy:
     needs: update
     runs-on: ubuntu-latest

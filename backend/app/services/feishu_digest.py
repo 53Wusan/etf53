@@ -52,7 +52,7 @@ def daily_text(catalog: dict, account: dict, brief: dict, now: datetime, site: s
     if (catalog.get("stale") or now > valid or account.get("data_date") != day
             or not plan or plan.get("signal_date") != day or plan.get("next_open_date", "") <= day):
         raise DeliveryError("行情、账户或操作计划过期/日期不齐，不推送买卖意向")
-    lines = [f"53 · 杠杆ETF晨间短讯｜美东 {day} 收盘", f"下一开盘：{plan['next_open_date']}（美东）"]
+    lines = [f"ETF日报｜美东 {day} 收盘", f"下一开盘：{plan['next_open_date']}（美东）"]
     try:
         brief_valid = datetime.fromisoformat(brief["valid_until"].replace("Z", "+00:00"))
         usable = brief.get("market_ready") and brief.get("market_date") == day and now <= brief_valid
@@ -60,25 +60,25 @@ def daily_text(catalog: dict, account: dict, brief: dict, now: datetime, site: s
         usable = False
     if usable:
         a = brief["assessment"]
-        lines += [f"市场：{a['trend']} / {a['short_term']} / 波动与急跌风险 {a['risk']}"]
+        lines += [f"市场：{a['trend']} / {a['short_term']} / 风险 {a['risk']}"]
+        quotes = []
         for q in brief.get("quotes", []):
             if q.get("symbol") in {"SPY", "QQQ", "SOXX"} and q.get("fresh"):
-                lines.append(f"{q['symbol']} 当日 {q['return_1d_pct']:+.2f}%｜近5日 {q['return_5d_pct']:+.2f}%")
-        if a.get("risk_reasons"):
-            lines.append("风险依据：" + "；".join(a["risk_reasons"]))
+                quotes.append(f"{q['symbol']} {q['return_1d_pct']:+.2f}%")
+        if quotes:
+            lines.append("当日：" + "｜".join(quotes))
     else:
-        lines.append("市场晨报未齐或过期：环境判断待核验；以下计划来自已核验的独立策略账户。")
+        lines.append("市场环境待核验；模拟账户计划已核验。")
     lines.append("\n下一开盘模拟计划（未成交）：")
     if not plan.get("actions"):
-        lines.append("今日无买卖计划，继续按规则等待。")
+        lines.append("今日无买卖计划。")
     for action in plan.get("actions", []):
         if action.get("side") not in {"buy", "sell"}:
             raise DeliveryError("存在未知操作方向，停止发送")
         side = "拟买入" if action["side"] == "buy" else "拟卖出"
-        lines.append(f"{action['symbol']} {side}｜{action.get('reason', '按既定规则')}")
-        if action["side"] == "buy" and account.get("buy_budget_usd"):
-            lines.append(f"每笔模拟预算 ${account['buy_budget_usd']:,.2f}")
-    lines += ["\n信号来自已完成的收盘数据，计划不代表实际成交。", site]
+        budget = f" ${account['buy_budget_usd']:,.0f}" if action["side"] == "buy" and account.get("buy_budget_usd") else ""
+        lines.append(f"{action['symbol']} {side}{budget}｜{action.get('reason', '按规则')[:80]}")
+    lines.append(site)
     return "\n".join(lines)
 
 
@@ -91,7 +91,7 @@ def run(root: Path, *, failure: bool = False, now: datetime | None = None) -> st
     site = f"https://{repo.split('/')[0].lower()}.github.io/{repo.split('/')[1]}/"
     if failure:
         run_id = os.environ.get("GITHUB_RUN_ID", "")
-        send(url, secret, f"53 · 杠杆ETF更新异常\n本次数据更新、日报发送或网页构建未正常完成。请核对运行结果，勿将旧计划当作最新操作。\nhttps://github.com/{repo}/actions/runs/{run_id}")
+        send(url, secret, f"ETF更新异常\n数据更新、日报或网页构建失败；旧计划勿作最新操作。\nhttps://github.com/{repo}/actions/runs/{run_id}")
         return "sent: 更新异常提醒"
     public = root / "frontend/public/data"
     def read(name):

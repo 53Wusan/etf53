@@ -40,7 +40,7 @@
 
 ## 飞书晨间短讯
 
-在仓库 Settings → Secrets and variables → Actions 配置 `FEISHU_WEBHOOK_URL` 和 `FEISHU_WEBHOOK_SECRET`，分别保存自定义机器人发送地址和签名密钥。机器人关键词设置为 `53`，开启签名校验。真实值不得写入代码、网页、截图或提交历史。
+在仓库 Settings → Secrets and variables → Actions 配置 `FEISHU_WEBHOOK_URL` 和 `FEISHU_WEBHOOK_SECRET`，分别保存自定义机器人发送地址和签名密钥。开启签名校验即可，无需设置自定义关键词。真实值不得写入代码、网页、截图或提交历史。
 
 每次数据更新并导出成功后，任务推送市场状态、SPY/QQQ/SOXX涨跌及下一开盘模拟计划；日期不齐或计划过期时禁止推送买卖意向。市场晨报单独过期时明确标为待核验。无操作也发送短讯，账户金额和完整持仓不出现在通知中。
 

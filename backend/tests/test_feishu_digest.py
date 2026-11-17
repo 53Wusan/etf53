@@ -21,7 +21,7 @@ def test_empty_plan_and_buy_sell_are_explicit():
     assert '今日无买卖计划' in f.daily_text(c, a, b, NOW, 'https://example.com')
     a['next_open_plan']['actions'] = [{'symbol': 'TQQQ', 'side': 'buy'}, {'symbol': 'SOXL', 'side': 'sell'}]
     text = f.daily_text(c, a, b, NOW, 'https://example.com')
-    assert '53' in text and 'TQQQ 拟买入' in text and 'SOXL 拟卖出' in text
+    assert '53' not in text and 'TQQQ 拟买入' in text and 'SOXL 拟卖出' in text
     assert '2026-11-18（美东）' in text and '未成交' in text
 
 
@@ -40,7 +40,7 @@ def test_old_brief_does_not_masquerade_as_current():
     c, a, b = samples()
     b['market_date'] = '2026-11-16'
     text = f.daily_text(c, a, b, NOW, '')
-    assert '环境判断待核验' in text and '中期上行' not in text
+    assert '市场环境待核验' in text and '中期上行' not in text
 
 
 def test_signed_delivery_and_redacted_transport_error(monkeypatch):

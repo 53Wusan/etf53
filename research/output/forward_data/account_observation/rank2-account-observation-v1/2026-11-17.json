@@ -1,0 +1,327 @@
+{
+  "recorded_at_utc": "2026-11-18T04:43:36.543412+00:00",
+  "previous_sha256": "3c30e919b1d80b2282f1ad5a5dcb13c0901f74f7ff9c986b9f018c744bbd89dd",
+  "signal_before_next_open": true,
+  "next_open_utc": "2026-11-18T14:30:00+00:00",
+  "fills_linked_to_prior_plan": true,
+  "fills_match_prior_plan": true,
+  "payload": {
+    "data_date": "2026-11-17",
+    "cash_usd": 20134.951428881926,
+    "equity_usd": 43160.66768556461,
+    "positions": {
+      "FAS": {
+        "quantity": 15.383891231864746,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 20160.254051375174,
+        "pnl_hkd": 2610.254051375175,
+        "profit_pct": 14.873242457978208,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 42,
+        "last_buy_price": 146.11077352760174,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": true,
+        "sold_lots": 0,
+        "peak_price": 188.55598589127428
+      },
+      "GDXU": {
+        "quantity": 108.12477566593898,
+        "lots": 4,
+        "cost_hkd": 70200.0,
+        "market_value_hkd": 55063.839487649966,
+        "pnl_hkd": -15136.160512350032,
+        "profit_pct": -21.561482211324833,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 42,
+        "last_buy_price": 68.67999932023814,
+        "selling": false,
+        "last_buy_date": "2026-11-02",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 109.14999996056235
+      },
+      "CURE": {
+        "quantity": 17.52797622221368,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 22908.835029165097,
+        "pnl_hkd": 5358.835029165098,
+        "profit_pct": 30.534672530855268,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 42,
+        "last_buy_price": 128.23797906021863,
+        "selling": false,
+        "last_buy_date": "2026-10-06",
+        "last_sell_date": null,
+        "exit_armed": true,
+        "sold_lots": 0,
+        "peak_price": 181.05481580090108
+      },
+      "TECL": {
+        "quantity": 17.35075511558225,
+        "lots": 1,
+        "cost_hkd": 17550.0,
+        "market_value_hkd": 16864.655267809878,
+        "pnl_hkd": -685.3447321901207,
+        "profit_pct": -3.905098189117495,
+        "first_buy_date": "2026-11-17",
+        "holding_days": 0,
+        "last_buy_price": 129.5478054285719,
+        "selling": false,
+        "last_buy_date": "2026-11-17",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 129.5478054285719
+      },
+      "UGL": {
+        "quantity": 214.90493233210037,
+        "lots": 4,
+        "cost_hkd": 70200.0,
+        "market_value_hkd": 64603.00296612481,
+        "pnl_hkd": -5596.997033875184,
+        "profit_pct": -7.972930247685451,
+        "first_buy_date": "2026-10-06",
+        "holding_days": 42,
+        "last_buy_price": 38.81999964269426,
+        "selling": false,
+        "last_buy_date": "2026-11-17",
+        "last_sell_date": null,
+        "exit_armed": false,
+        "sold_lots": 0,
+        "peak_price": 46.45000070056348
+      }
+    },
+    "fills": [
+      {
+        "date": "2026-11-17",
+        "signal_date": "2026-11-16",
+        "symbol": "DFEN",
+        "side": "sell",
+        "reason": "上涨后回撤",
+        "score": 4.4629336533999355,
+        "price": 45.86521226955803,
+        "quantity": 50.716580343183466,
+        "gross_hkd": 18143.78843960439,
+        "fee_hkd": 18.14378843960439,
+        "realized_pnl_hkd": 575.6446511647835,
+        "position_quantity": 0.0,
+        "position_lots": 0,
+        "position_cost_hkd": 0.0,
+        "cash_hkd": 192152.62114527903,
+        "portfolio_positions": {
+          "FAS": {
+            "quantity": 15.383891231864746,
+            "lots": 1,
+            "market_value_hkd": 20887.07653687342
+          },
+          "GDXU": {
+            "quantity": 108.12477566593898,
+            "lots": 4,
+            "market_value_hkd": 54406.00939144069
+          },
+          "CURE": {
+            "quantity": 17.52797622221368,
+            "lots": 1,
+            "market_value_hkd": 23122.62855592263
+          },
+          "UGL": {
+            "quantity": 157.003019183184,
+            "lots": 3,
+            "market_value_hkd": 47539.88575902636
+          }
+        },
+        "equity_at_open_hkd": 338108.22138854215
+      },
+      {
+        "date": "2026-11-17",
+        "signal_date": "2026-11-16",
+        "symbol": "TECL",
+        "side": "buy",
+        "reason": "指数进入恐惧区",
+        "score": -38.107717770458876,
+        "price": 129.5478054285719,
+        "quantity": 17.35075511558225,
+        "gross_hkd": 17532.467532467534,
+        "fee_hkd": 17.53246753246585,
+        "realized_pnl_hkd": 0.0,
+        "position_quantity": 17.35075511558225,
+        "position_lots": 1,
+        "position_cost_hkd": 17550.0,
+        "cash_hkd": 174602.62114527903,
+        "portfolio_positions": {
+          "FAS": {
+            "quantity": 15.383891231864746,
+            "lots": 1,
+            "market_value_hkd": 20887.07653687342
+          },
+          "GDXU": {
+            "quantity": 108.12477566593898,
+            "lots": 4,
+            "market_value_hkd": 54406.00939144069
+          },
+          "CURE": {
+            "quantity": 17.52797622221368,
+            "lots": 1,
+            "market_value_hkd": 23122.62855592263
+          },
+          "TECL": {
+            "quantity": 17.35075511558225,
+            "lots": 1,
+            "market_value_hkd": 17532.467532467534
+          },
+          "UGL": {
+            "quantity": 157.003019183184,
+            "lots": 3,
+            "market_value_hkd": 47539.88575902636
+          }
+        },
+        "equity_at_open_hkd": 338090.68892100966
+      },
+      {
+        "date": "2026-11-17",
+        "signal_date": "2026-11-16",
+        "symbol": "UGL",
+        "side": "buy",
+        "reason": "恐惧区内再跌后加仓",
+        "score": -35.885380391688905,
+        "price": 38.81999964269426,
+        "quantity": 57.90191314891638,
+        "gross_hkd": 17532.467532467534,
+        "fee_hkd": 17.53246753246585,
+        "realized_pnl_hkd": 0.0,
+        "position_quantity": 214.90493233210037,
+        "position_lots": 4,
+        "position_cost_hkd": 70200.0,
+        "cash_hkd": 157052.62114527903,
+        "portfolio_positions": {
+          "FAS": {
+            "quantity": 15.383891231864746,
+            "lots": 1,
+            "market_value_hkd": 20887.07653687342
+          },
+          "GDXU": {
+            "quantity": 108.12477566593898,
+            "lots": 4,
+            "market_value_hkd": 54406.00939144069
+          },
+          "CURE": {
+            "quantity": 17.52797622221368,
+            "lots": 1,
+            "market_value_hkd": 23122.62855592263
+          },
+          "TECL": {
+            "quantity": 17.35075511558225,
+            "lots": 1,
+            "market_value_hkd": 17532.467532467534
+          },
+          "UGL": {
+            "quantity": 214.90493233210037,
+            "lots": 4,
+            "market_value_hkd": 65072.35329149389
+          }
+        },
+        "equity_at_open_hkd": 338073.15645347716
+      }
+    ],
+    "trades_sha256": "a79e2339085e72a4647e4d2a5d3d2b2baf96214dab4a85e4dd742997744c3a55",
+    "next_open_plan": {
+      "signal_date": "2026-11-17",
+      "next_open_date": "2026-11-18",
+      "actions": [
+        {
+          "date": "2026-11-18",
+          "signal_date": "2026-11-17",
+          "symbol": "FAS",
+          "side": "sell",
+          "reason": "上涨后回撤",
+          "score": -0.7270937086573451,
+          "price": 168.01002531472096,
+          "quantity": 15.383891231864746,
+          "gross_hkd": 20160.254051375174,
+          "fee_hkd": 20.160254051375176,
+          "realized_pnl_hkd": 2590.0937973237983,
+          "position_quantity": 0.0,
+          "position_lots": 0,
+          "position_cost_hkd": 0.0,
+          "cash_hkd": 177192.71494260282,
+          "portfolio_positions": {
+            "GDXU": {
+              "quantity": 108.12477566593898,
+              "lots": 4,
+              "market_value_hkd": 55063.839487649966
+            },
+            "CURE": {
+              "quantity": 17.52797622221368,
+              "lots": 1,
+              "market_value_hkd": 22908.835029165097
+            },
+            "TECL": {
+              "quantity": 17.35075511558225,
+              "lots": 1,
+              "market_value_hkd": 16864.655267809878
+            },
+            "UGL": {
+              "quantity": 214.90493233210037,
+              "lots": 4,
+              "market_value_hkd": 64603.00296612481
+            }
+          },
+          "equity_at_open_hkd": 336633.04769335256
+        },
+        {
+          "date": "2026-11-18",
+          "signal_date": "2026-11-17",
+          "symbol": "TQQQ",
+          "side": "buy",
+          "reason": "指数进入恐惧区",
+          "score": -35.615614735361625,
+          "price": 51.91018798666188,
+          "quantity": 43.300791904853035,
+          "gross_hkd": 17532.467532467534,
+          "fee_hkd": 17.53246753246585,
+          "realized_pnl_hkd": 0.0,
+          "position_quantity": 43.300791904853035,
+          "position_lots": 1,
+          "position_cost_hkd": 17550.0,
+          "cash_hkd": 159642.71494260282,
+          "portfolio_positions": {
+            "TQQQ": {
+              "quantity": 43.300791904853035,
+              "lots": 1,
+              "market_value_hkd": 17532.467532467534
+            },
+            "GDXU": {
+              "quantity": 108.12477566593898,
+              "lots": 4,
+              "market_value_hkd": 55063.839487649966
+            },
+            "CURE": {
+              "quantity": 17.52797622221368,
+              "lots": 1,
+              "market_value_hkd": 22908.835029165097
+            },
+            "TECL": {
+              "quantity": 17.35075511558225,
+              "lots": 1,
+              "market_value_hkd": 16864.655267809878
+            },
+            "UGL": {
+              "quantity": 214.90493233210037,
+              "lots": 4,
+              "market_value_hkd": 64603.00296612481
+            }
+          },
+          "equity_at_open_hkd": 336615.51522582007
+        }
+      ]
+    },
+    "benchmark_usd": 25393.871080074186,
+    "source_manifest_sha256": "8f2376674bdfe73d2053dda84011733f58b830066042fce20e02ada19d68a835"
+  },
+  "sha256": "8eadde57066a0fe2d3b73905c7c8314d9a5a0dbf72c9c72efeff6ed8742a49bb"
+}

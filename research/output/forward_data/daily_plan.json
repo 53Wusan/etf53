@@ -1,229 +1,194 @@
 {
   "status": "ok",
-  "started_at": "2026-11-18T04:43:30.084423+00:00",
-  "completed_at": "2026-11-18T04:43:36.299326+00:00",
-  "data_date": "2026-11-17",
+  "started_at": "2026-11-19T04:32:02.532492+00:00",
+  "completed_at": "2026-11-19T04:32:10.457915+00:00",
+  "data_date": "2026-11-18",
   "plans": {
     "rank2": {
-      "signal_date": "2026-11-17",
-      "next_open_date": "2026-11-18",
+      "signal_date": "2026-11-18",
+      "next_open_date": "2026-11-19",
       "actions": [
         {
-          "date": "2026-11-18",
-          "signal_date": "2026-11-17",
-          "symbol": "EDC",
-          "side": "buy",
-          "reason": "恐惧区内再跌后加仓",
-          "score": -35.534567625953315,
-          "price": 48.504015578073684,
-          "quantity": 66.01363290623698,
-          "gross_hkd": 24975.02497502498,
-          "fee_hkd": 24.975024975022098,
-          "realized_pnl_hkd": 0.0,
-          "position_quantity": 231.3856103214017,
-          "position_lots": 4,
-          "position_cost_hkd": 100000.0,
-          "cash_hkd": 959082.113890761,
+          "date": "2026-11-19",
+          "signal_date": "2026-11-18",
+          "symbol": "CURE",
+          "side": "sell",
+          "reason": "上涨后回撤",
+          "score": -7.844307181580977,
+          "price": 155.78413435569314,
+          "quantity": 25.584708268559243,
+          "gross_hkd": 31088.39471681148,
+          "fee_hkd": 31.08839471681148,
+          "realized_pnl_hkd": 6057.306322094668,
+          "position_quantity": 0.0,
+          "position_lots": 0,
+          "position_cost_hkd": 0.0,
+          "cash_hkd": 990139.4202128558,
           "portfolio_positions": {
             "TQQQ": {
               "quantity": 112.45973270348523,
               "lots": 2,
-              "market_value_hkd": 45534.885751427784
+              "market_value_hkd": 46088.579096297864
             },
             "GDXU": {
               "quantity": 173.1639326457211,
               "lots": 4,
-              "market_value_hkd": 88185.81063893865
-            },
-            "CURE": {
-              "quantity": 25.584708268559243,
-              "lots": 1,
-              "market_value_hkd": 33438.878143327194
+              "market_value_hkd": 72328.84095903966
             },
             "TECL": {
               "quantity": 47.444519237573296,
               "lots": 2,
-              "market_value_hkd": 46115.31059936794
+              "market_value_hkd": 46485.71470056768
             },
             "EDC": {
-              "quantity": 231.3856103214017,
+              "quantity": 231.7285739247451,
               "lots": 4,
-              "market_value_hkd": 87540.42373105657
+              "market_value_hkd": 85857.68681376032
             }
           },
-          "equity_at_open_hkd": 1259897.4227548793
+          "equity_at_open_hkd": 1240900.2417825214
+        },
+        {
+          "date": "2026-11-19",
+          "signal_date": "2026-11-18",
+          "symbol": "UGL",
+          "side": "buy",
+          "reason": "指数进入恐惧区",
+          "score": -41.63556523610217,
+          "price": 36.09000010412395,
+          "quantity": 88.72059489086774,
+          "gross_hkd": 24975.02497502498,
+          "fee_hkd": 24.975024975022098,
+          "realized_pnl_hkd": 0.0,
+          "position_quantity": 88.72059489086774,
+          "position_lots": 1,
+          "position_cost_hkd": 25000.0,
+          "cash_hkd": 965139.4202128558,
+          "portfolio_positions": {
+            "TQQQ": {
+              "quantity": 112.45973270348523,
+              "lots": 2,
+              "market_value_hkd": 46088.579096297864
+            },
+            "GDXU": {
+              "quantity": 173.1639326457211,
+              "lots": 4,
+              "market_value_hkd": 72328.84095903966
+            },
+            "TECL": {
+              "quantity": 47.444519237573296,
+              "lots": 2,
+              "market_value_hkd": 46485.71470056768
+            },
+            "EDC": {
+              "quantity": 231.7285739247451,
+              "lots": 4,
+              "market_value_hkd": 85857.68681376032
+            },
+            "UGL": {
+              "quantity": 88.72059489086774,
+              "lots": 1,
+              "market_value_hkd": 24975.024975024975
+            }
+          },
+          "equity_at_open_hkd": 1240875.2667575462
         }
       ],
       "estimate_note": "模拟账户的规则计划；下一开盘成交价未知，数量和资产仅按最新复权收盘估算，不是已成交订单。"
     },
     "short": {
-      "signal_date": "2026-11-17",
-      "next_open_date": "2026-11-18",
+      "signal_date": "2026-11-18",
+      "next_open_date": "2026-11-19",
       "actions": [
         {
-          "date": "2026-11-18",
-          "signal_date": "2026-11-17",
+          "date": "2026-11-19",
+          "signal_date": "2026-11-18",
           "symbol": "TQQQ",
           "side": "sell",
           "reason": "持仓到期退出",
-          "score": -35.615614735361625,
-          "price": 51.91018798666188,
-          "quantity": 48.6711298498621,
-          "gross_hkd": 19706.91450023066,
-          "fee_hkd": 19.706914500230663,
-          "realized_pnl_hkd": -5312.79241426957,
-          "position_quantity": 111.14298355030408,
-          "position_lots": 2,
-          "position_cost_hkd": 50000.0,
-          "cash_hkd": 670841.8782889396,
+          "score": -36.86331315729751,
+          "price": 52.54140348539118,
+          "quantity": 50.52563737835487,
+          "gross_hkd": 20706.565618851102,
+          "fee_hkd": 20.7065656188511,
+          "realized_pnl_hkd": -4314.1409467677495,
+          "position_quantity": 60.61734617194921,
+          "position_lots": 1,
+          "position_cost_hkd": 25000.0,
+          "cash_hkd": 659402.6369748851,
           "portfolio_positions": {
             "TQQQ": {
-              "quantity": 111.14298355030408,
-              "lots": 2,
-              "market_value_hkd": 45001.734722059075
+              "quantity": 60.61734617194921,
+              "lots": 1,
+              "market_value_hkd": 24842.379458785323
             },
             "GDXU": {
               "quantity": 47.156498568674074,
               "lots": 1,
-              "market_value_hkd": 24015.012766431482
+              "market_value_hkd": 19696.79732405343
+            },
+            "DFEN": {
+              "quantity": 69.5009382550904,
+              "lots": 1,
+              "market_value_hkd": 24877.42375958333
             },
             "TECL": {
-              "quantity": 61.82337293034083,
-              "lots": 3,
-              "market_value_hkd": 60091.325421744266
+              "quantity": 44.2521632132803,
+              "lots": 2,
+              "market_value_hkd": 43357.87288126646
             },
             "UPRO": {
-              "quantity": 45.449948802055445,
-              "lots": 2,
-              "market_value_hkd": 44938.42702718386
+              "quantity": 70.61182389229212,
+              "lots": 3,
+              "market_value_hkd": 69188.13217028709
             }
           },
-          "equity_at_open_hkd": 844888.3782263582
+          "equity_at_open_hkd": 841365.2425688608
         },
         {
-          "date": "2026-11-18",
-          "signal_date": "2026-11-17",
+          "date": "2026-11-19",
+          "signal_date": "2026-11-18",
           "symbol": "TECL",
           "side": "sell",
           "reason": "持仓到期退出",
-          "score": -39.86163899946033,
-          "price": 124.61332526116401,
-          "quantity": 17.57120971706053,
-          "gross_hkd": 17078.933599292675,
-          "fee_hkd": 17.07893359929268,
-          "realized_pnl_hkd": -7938.145334306615,
-          "position_quantity": 44.2521632132803,
-          "position_lots": 2,
-          "position_cost_hkd": 50000.0,
-          "cash_hkd": 687903.732954633,
-          "portfolio_positions": {
-            "TQQQ": {
-              "quantity": 111.14298355030408,
-              "lots": 2,
-              "market_value_hkd": 45001.734722059075
-            },
-            "GDXU": {
-              "quantity": 47.156498568674074,
-              "lots": 1,
-              "market_value_hkd": 24015.012766431482
-            },
-            "TECL": {
-              "quantity": 44.2521632132803,
-              "lots": 2,
-              "market_value_hkd": 43012.391822451595
-            },
-            "UPRO": {
-              "quantity": 45.449948802055445,
-              "lots": 2,
-              "market_value_hkd": 44938.42702718386
-            }
-          },
-          "equity_at_open_hkd": 844871.2992927589
-        },
-        {
-          "date": "2026-11-18",
-          "signal_date": "2026-11-17",
-          "symbol": "UPRO",
-          "side": "buy",
-          "reason": "恐惧区内再跌后加仓",
-          "score": -33.16030358148057,
-          "price": 126.7622285659506,
-          "quantity": 25.25930882623675,
-          "gross_hkd": 24975.02497502498,
-          "fee_hkd": 24.975024975022098,
-          "realized_pnl_hkd": 0.0,
-          "position_quantity": 70.70925762829219,
-          "position_lots": 3,
-          "position_cost_hkd": 75000.0,
-          "cash_hkd": 662903.732954633,
-          "portfolio_positions": {
-            "TQQQ": {
-              "quantity": 111.14298355030408,
-              "lots": 2,
-              "market_value_hkd": 45001.734722059075
-            },
-            "GDXU": {
-              "quantity": 47.156498568674074,
-              "lots": 1,
-              "market_value_hkd": 24015.012766431482
-            },
-            "TECL": {
-              "quantity": 44.2521632132803,
-              "lots": 2,
-              "market_value_hkd": 43012.391822451595
-            },
-            "UPRO": {
-              "quantity": 70.70925762829219,
-              "lots": 3,
-              "market_value_hkd": 69913.45200220883
-            }
-          },
-          "equity_at_open_hkd": 844846.3242677839
-        },
-        {
-          "date": "2026-11-18",
-          "signal_date": "2026-11-17",
-          "symbol": "DFEN",
-          "side": "buy",
-          "reason": "指数进入恐惧区",
-          "score": -2.3972548774092566,
-          "price": 46.310311073761525,
-          "quantity": 69.14067741305892,
-          "gross_hkd": 24975.02497502498,
-          "fee_hkd": 24.975024975022098,
-          "realized_pnl_hkd": 0.0,
-          "position_quantity": 69.14067741305892,
+          "score": -40.34565774628097,
+          "price": 125.61423550422558,
+          "quantity": 19.960156691274655,
+          "gross_hkd": 19556.782621888342,
+          "fee_hkd": 19.556782621888342,
+          "realized_pnl_hkd": -5462.774160733546,
+          "position_quantity": 24.292006522005643,
           "position_lots": 1,
           "position_cost_hkd": 25000.0,
-          "cash_hkd": 637903.732954633,
+          "cash_hkd": 678939.8628141516,
           "portfolio_positions": {
             "TQQQ": {
-              "quantity": 111.14298355030408,
-              "lots": 2,
-              "market_value_hkd": 45001.734722059075
+              "quantity": 60.61734617194921,
+              "lots": 1,
+              "market_value_hkd": 24842.379458785323
             },
             "GDXU": {
               "quantity": 47.156498568674074,
               "lots": 1,
-              "market_value_hkd": 24015.012766431482
+              "market_value_hkd": 19696.79732405343
             },
             "DFEN": {
-              "quantity": 69.14067741305892,
+              "quantity": 69.5009382550904,
               "lots": 1,
-              "market_value_hkd": 24975.02497502498
+              "market_value_hkd": 24877.42375958333
             },
             "TECL": {
-              "quantity": 44.2521632132803,
-              "lots": 2,
-              "market_value_hkd": 43012.391822451595
+              "quantity": 24.292006522005643,
+              "lots": 1,
+              "market_value_hkd": 23801.090259378125
             },
             "UPRO": {
-              "quantity": 70.70925762829219,
+              "quantity": 70.61182389229212,
               "lots": 3,
-              "market_value_hkd": 69913.45200220883
+              "market_value_hkd": 69188.13217028709
             }
           },
-          "equity_at_open_hkd": 844821.349242809
+          "equity_at_open_hkd": 841345.6857862388
         }
       ],
       "estimate_note": "模拟账户的规则计划；下一开盘成交价未知，数量和资产仅按最新复权收盘估算，不是已成交订单。"
@@ -232,193 +197,193 @@
   "observations": {
     "TQQQ": {
       "symbol": "TQQQ",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -74.13427544882092,
+        "score": -74.9001725380995,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -65.17600832175314,
-            "contribution": -19.552802496525942
+            "value": -60.97782321168722,
+            "contribution": -18.293346963506167
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -26.5490960014257,
-            "contribution": -5.3098192002851405
+            "value": -24.08874487510208,
+            "contribution": -4.817748975020416
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -44.1644282574696,
-            "contribution": -11.0411070643674
+            "value": -38.86250516789942,
+            "contribution": -9.715626291974855
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -99.20634920634922,
-            "contribution": -9.920634920634923
+            "value": -96.82539682539681,
+            "contribution": -9.682539682539682
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -51.26274012223025,
-            "contribution": -7.689411018334537
+            "value": -44.89236902907464,
+            "contribution": -6.7338553543611965
           }
         ]
       }
     },
     "SOXL": {
       "symbol": "SOXL",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -75.29667906120488,
+        "score": -74.67902772212025,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -78.71785602243003,
-            "contribution": -23.615356806729007
+            "value": -78.2715436518764,
+            "contribution": -23.48146309556292
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -23.63475477197742,
-            "contribution": -4.726950954395484
+            "value": -22.90725231646822,
+            "contribution": -4.581450463293645
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -10.904897377382113,
-            "contribution": -2.7262243443455283
+            "value": -11.043217112925948,
+            "contribution": -2.760804278231487
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -95.23809523809524,
-            "contribution": -9.523809523809524
+            "value": -90.47619047619045,
+            "contribution": -9.047619047619046
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -44.88391160652176,
-            "contribution": -6.732586740978263
+            "value": -43.168234678219,
+            "contribution": -6.47523520173285
           }
         ]
       }
     },
     "FAS": {
       "symbol": "FAS",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": 3.010654489005441,
+        "score": -27.17913743706095,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": 12.124333510084572,
-            "contribution": 3.6373000530253714
+            "value": -10.576850002524854,
+            "contribution": -3.173055000757456
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -6.97213430329873,
-            "contribution": -1.394426860659746
+            "value": -16.464600798869544,
+            "contribution": -3.292920159773909
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -19.9364453341179,
-            "contribution": -4.984111333529475
+            "value": -41.57950117884542,
+            "contribution": -10.394875294711355
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -67.46031746031747,
-            "contribution": -6.746031746031747
+            "value": -68.25396825396825,
+            "contribution": -6.825396825396826
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -19.961576017789845,
-            "contribution": -2.9942364026684767
+            "value": -33.65659458777301,
+            "contribution": -5.048489188165951
           }
         ]
       }
     },
     "GDXU": {
       "symbol": "GDXU",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -75.71646144425961,
+        "score": -81.56634441825074,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -92.0494643640337,
-            "contribution": -27.614839309210108
+            "value": -95.06628926883198,
+            "contribution": -28.519886780649593
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -19.152577576664118,
-            "contribution": -3.8305155153328236
+            "value": -29.554139924429062,
+            "contribution": -5.910827984885813
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -30.202595057045297,
-            "contribution": -7.550648764261324
+            "value": -41.22960439812564,
+            "contribution": -10.30740109953141
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -43.650793650793645,
-            "contribution": -4.365079365079365
+            "value": -83.33333333333331,
+            "contribution": -8.333333333333332
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -45.67112822825457,
-            "contribution": -6.850669234238185
+            "value": -82.98970881724453,
+            "contribution": -12.44845632258668
           }
         ]
       }
     },
     "CONL": {
       "symbol": "CONL",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -87.71829709995288,
+        "score": -89.12112581523351,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -98.84736031169183,
-            "contribution": -29.65420809350755
+            "value": -99.27492025442587,
+            "contribution": -29.782476076327757
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -39.31003067848102,
-            "contribution": -7.8620061356962045
+            "value": -41.84932952872988,
+            "contribution": -8.369865905745977
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -47.82134180008007,
-            "contribution": -11.955335450020018
+            "value": -67.53863572957766,
+            "contribution": -16.884658932394416
           },
           {
             "key": "volatility_state",
@@ -429,37 +394,78 @@
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -76.5147749600578,
-            "contribution": -11.477216244008671
+            "value": -62.931435228094124,
+            "contribution": -9.439715284214119
           }
         ]
       }
     },
     "CURE": {
       "symbol": "CURE",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": 15.230770117312776,
+        "score": -19.4231302827255,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": 47.24256306350343,
-            "contribution": 14.172768919051029
+            "value": 16.7092537793231,
+            "contribution": 5.01277613379693
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -0.5529385476796009,
-            "contribution": -0.11058770953592019
+            "value": -19.26341442220676,
+            "contribution": -3.8526828844413523
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -23.657409558484844,
-            "contribution": -5.914352389621211
+            "value": -45.24453040624012,
+            "contribution": -11.31113260156003
+          },
+          {
+            "key": "volatility_state",
+            "weight": 0.1,
+            "value": -100.0,
+            "contribution": -10.0
+          },
+          {
+            "key": "urgency",
+            "weight": 0.15,
+            "value": -39.02036876296594,
+            "contribution": -5.85305531444489
+          }
+        ]
+      }
+    },
+    "LABU": {
+      "symbol": "LABU",
+      "data_date": "2026-11-18",
+      "status": "ok",
+      "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
+      "latest": {
+        "score": -74.06897092817306,
+        "components": [
+          {
+            "key": "price_position",
+            "weight": 0.3,
+            "value": -52.060887768274966,
+            "contribution": -15.61826633048249
+          },
+          {
+            "key": "momentum",
+            "weight": 0.2,
+            "value": -24.8079011038863,
+            "contribution": -4.961580220777261
+          },
+          {
+            "key": "volume_flow",
+            "weight": 0.25,
+            "value": -54.92029774957407,
+            "contribution": -13.730074437393517
           },
           {
             "key": "volatility_state",
@@ -470,49 +476,8 @@
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -13.655219533158109,
-            "contribution": -2.048282929973716
-          }
-        ]
-      }
-    },
-    "LABU": {
-      "symbol": "LABU",
-      "data_date": "2026-11-17",
-      "status": "ok",
-      "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
-      "latest": {
-        "score": -68.28742005875449,
-        "components": [
-          {
-            "key": "price_position",
-            "weight": 0.3,
-            "value": -50.747382841246946,
-            "contribution": -15.224214852374082
-          },
-          {
-            "key": "momentum",
-            "weight": 0.2,
-            "value": -23.704451375618238,
-            "contribution": -4.740890275123648
-          },
-          {
-            "key": "volume_flow",
-            "weight": 0.25,
-            "value": -43.304521612885026,
-            "contribution": -10.826130403221256
-          },
-          {
-            "key": "volatility_state",
-            "weight": 0.1,
-            "value": -99.20634920634922,
-            "contribution": -9.920634920634923
-          },
-          {
-            "key": "urgency",
-            "weight": 0.15,
-            "value": -45.122822707036725,
-            "contribution": -6.768423406055509
+            "value": -61.55972318206628,
+            "contribution": -9.233958477309942
           }
         ]
       }
@@ -520,252 +485,252 @@
     "NAIL": {
       "symbol": "NAIL",
       "status": "missing",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "latest": null,
       "message": "量价质量不足，暂不展示五项观察"
     },
     "DFEN": {
       "symbol": "DFEN",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -59.85896188034984,
+        "score": -68.1085029769136,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -61.90624332722753,
-            "contribution": -18.571872998168256
+            "value": -64.77055986690641,
+            "contribution": -19.43116796007192
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -10.519263130562146,
-            "contribution": -2.1038526261124293
+            "value": -13.11680356546708,
+            "contribution": -2.6233607130934162
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -32.37950504688037,
-            "contribution": -8.094876261720092
+            "value": -50.77581584526254,
+            "contribution": -12.693953961315636
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -79.36507936507937,
-            "contribution": -7.936507936507937
+            "value": -76.98412698412699,
+            "contribution": -7.6984126984126995
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -42.24318783218546,
-            "contribution": -6.336478174827819
+            "value": -40.26074150079281,
+            "contribution": -6.039111225118922
           }
         ]
       }
     },
     "TECL": {
       "symbol": "TECL",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -76.74453935822501,
+        "score": -77.40312566306297,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -61.19227958867128,
-            "contribution": -18.357683876601385
+            "value": -59.676549229628336,
+            "contribution": -17.9029647688885
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -30.749181045205685,
-            "contribution": -6.149836209041137
+            "value": -29.251395546080126,
+            "contribution": -5.850279109216025
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -46.848133782999014,
-            "contribution": -11.712033445749753
+            "value": -46.56563667403857,
+            "contribution": -11.641409168509643
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -99.20634920634922,
-            "contribution": -9.920634920634923
+            "value": -96.82539682539681,
+            "contribution": -9.682539682539682
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -51.409681737266936,
-            "contribution": -7.71145226059004
+            "value": -47.44883633677673,
+            "contribution": -7.1173254505165096
           }
         ]
       }
     },
     "UPRO": {
       "symbol": "UPRO",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -60.442491545972445,
+        "score": -69.28539111255078,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -41.161553597678356,
-            "contribution": -12.348466079303506
+            "value": -45.753080902736684,
+            "contribution": -13.725924270821006
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -26.85541886420477,
-            "contribution": -5.371083772840954
+            "value": -29.33590770434892,
+            "contribution": -5.867181540869784
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -46.88373494922678,
-            "contribution": -11.720933737306694
+            "value": -63.73885136597134,
+            "contribution": -15.934712841492836
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -97.61904761904762,
-            "contribution": -9.761904761904763
+            "value": -96.03174603174602,
+            "contribution": -9.603174603174603
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -39.074055702163555,
-            "contribution": -5.861108355324533
+            "value": -35.28599068549542,
+            "contribution": -5.292898602824313
           }
         ]
       }
     },
     "EDC": {
       "symbol": "EDC",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -79.14965863425184,
+        "score": -83.6288021213235,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -90.26271583041414,
-            "contribution": -27.07881474912424
+            "value": -95.56867705359441,
+            "contribution": -28.670603116078322
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -26.25693515090106,
-            "contribution": -5.251387030180212
+            "value": -29.1338191807254,
+            "contribution": -5.82676383614508
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -49.47437521236531,
-            "contribution": -12.368593803091327
+            "value": -64.65228032486634,
+            "contribution": -16.163070081216585
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -79.36507936507937,
-            "contribution": -7.936507936507937
+            "value": -71.42857142857142,
+            "contribution": -7.142857142857142
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -67.3457770752288,
-            "contribution": -10.10186656128432
+            "value": -63.07269349340003,
+            "contribution": -9.460904024010004
           }
         ]
       }
     },
     "UGL": {
       "symbol": "UGL",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -74.84422987706435,
+        "score": -80.74353499126899,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -98.42826087524044,
-            "contribution": -29.52847826257213
+            "value": -98.75675148345825,
+            "contribution": -29.62702544503747
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -28.329618739560807,
-            "contribution": -5.665923747912162
+            "value": -39.72604812885881,
+            "contribution": -7.945209625771762
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -35.41072307372066,
-            "contribution": -8.852680768430165
+            "value": -39.82426989503997,
+            "contribution": -9.956067473759992
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": -8.73015873015872,
-            "contribution": -0.8730158730158721
+            "value": -38.0952380952381,
+            "contribution": -3.80952380952381
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -31.850674127337527,
-            "contribution": -4.777601119100629
+            "value": -83.2613766387092,
+            "contribution": -12.489206495806378
           }
         ]
       }
     },
     "YINN": {
       "symbol": "YINN",
-      "data_date": "2026-11-17",
+      "data_date": "2026-11-18",
       "status": "ok",
       "message": "五项量价观察，与交易用两项输入指数独立，不参与买卖规则",
       "latest": {
-        "score": -60.98307764346109,
+        "score": -72.20390627176621,
         "components": [
           {
             "key": "price_position",
             "weight": 0.3,
-            "value": -79.61831701120069,
-            "contribution": -23.885495103360206
+            "value": -96.85158646217933,
+            "contribution": -29.055475938653796
           },
           {
             "key": "momentum",
             "weight": 0.2,
-            "value": -25.313115706029148,
-            "contribution": -5.06262314120583
+            "value": -34.98500923377249,
+            "contribution": -6.997001846754498
           },
           {
             "key": "volume_flow",
             "weight": 0.25,
-            "value": -32.1745274497708,
-            "contribution": -8.0436318624427
+            "value": -35.512151863236035,
+            "contribution": -8.878037965809009
           },
           {
             "key": "volatility_state",
             "weight": 0.1,
-            "value": 3.9682539682539613,
-            "contribution": 0.39682539682539614
+            "value": -13.492063492063494,
+            "contribution": -1.3492063492063495
           },
           {
             "key": "urgency",
             "weight": 0.15,
-            "value": -56.096141619644214,
-            "contribution": -8.414421242946633
+            "value": -70.82281266581423,
+            "contribution": -10.623421899872133
           }
         ]
       }

@@ -42,6 +42,24 @@ def test_supplier_correction_is_not_overridden():
     pd.testing.assert_frame_equal(recovery.recover_reviewed_closes(frame, payload, "GDXU", DAY), frame)
 
 
+def test_cent_rounded_edge_cache_fields_and_small_volume_revision_are_preserved():
+    frame, payload = sample()
+    for field in ("open", "high", "low"):
+        frame.loc[DAY, field] = round(frame.loc[DAY, field], 2)
+    frame.loc[DAY, "volume"] += 10
+    result = recovery.recover_reviewed_closes(frame, payload, "GDXU", DAY)
+    assert result.loc[DAY, "close"] == pytest.approx(47.16)
+    for field in ("open", "high", "low", "volume"):
+        assert result.loc[DAY, field] == frame.loc[DAY, field]
+
+
+def test_material_volume_revision_requires_review():
+    frame, payload = sample()
+    frame.loc[DAY, "volume"] *= 1.1
+    with pytest.raises(ValueError, match="volume differs"):
+        recovery.recover_reviewed_closes(frame, payload, "GDXU", DAY)
+
+
 @pytest.mark.parametrize("symbol", ["GDXU", "CONL", "LABU", "NAIL", "DFEN"])
 def test_each_incident_product_has_matching_reviewed_close(symbol):
     frame, payload = sample(symbol)

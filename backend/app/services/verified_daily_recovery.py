@@ -39,8 +39,13 @@ def recover_reviewed_closes(frame: pd.DataFrame, payload: dict, symbol: str, end
                 if event_day == day:
                     raise ValueError("Corporate action requires a separately reviewed adjustment")
         for field in ("open", "high", "low", "volume"):
-            if not np.isfinite(row[field]) or not np.isclose(row[field], evidence["expected_daily"][field], rtol=0, atol=1e-5):
-                raise ValueError(f"Reviewed recovery daily {field} no longer matches supplier data")
+            expected = evidence["expected_daily"][field]
+            # Yahoo edge caches may round sub-cent prices or revise consolidated volume.
+            # Compare prices at cent precision; retain the supplier's original fields.
+            matches = (np.isclose(row[field], expected, rtol=.001, atol=100) if field == "volume"
+                       else np.isclose(round(float(row[field]), 2), round(float(expected), 2), rtol=0, atol=1e-8))
+            if not np.isfinite(row[field]) or not matches:
+                raise ValueError(f"{symbol} {day}: reviewed daily {field} differs: supplier={row[field]}, reviewed={expected}")
         schedule = mcal.get_calendar("NYSE").schedule(start_date=day, end_date=day)
         if len(schedule) != 1:
             raise ValueError("Reviewed recovery is not an NYSE session")

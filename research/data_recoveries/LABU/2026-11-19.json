@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "symbol": "LABU",
+  "date": "2026-11-19",
+  "currency": "USD",
+  "expected_daily": {
+    "low": 185.72500610351562,
+    "close": null,
+    "volume": 562286,
+    "high": 207.30999755859375,
+    "open": 192.3699951171875
+  },
+  "close": 187.5800018310547,
+  "adjusted_close": 187.5800018310547,
+  "adjustment_policy": "Prior daily adjustment ratios must be 1; no same-session split or dividend.",
+  "evidence": {
+    "daily_url": "https://query1.finance.yahoo.com/v8/finance/chart/LABU?period1=1789084800&period2=1795132800&interval=1d&events=div,splits&includeAdjustedClose=true",
+    "intraday_url": "https://query1.finance.yahoo.com/v8/finance/chart/LABU?range=5d&interval=5m&includePrePost=false&events=div,splits",
+    "daily_response_sha256": "a198cf5334c98c5b5c7f62dcc264430b19dc904cf5a761e31a75ce4c13898005",
+    "intraday_response_sha256": "430e2308b83f5b6ec649e7347cb90fb175b18b7150e55a4005bcdeeb732e7495",
+    "captured_at_utc": "2026-11-20T05:20:57.277359+00:00",
+    "closing_timestamp_utc": 1795122000,
+    "closing_marker": {
+      "close": 187.5800018310547,
+      "open": 187.5800018310547,
+      "volume": 0,
+      "high": 187.5800018310547,
+      "low": 187.5800018310547
+    },
+    "regular_market_time": 1795122000,
+    "regular_market_price": 187.58,
+    "regular_session_5m_bars": 78,
+    "reason": "Completed daily record has both close fields null. Preserve daily OHLCV and recover only its close from the exact NYSE session-close marker; never use after-hours quotes."
+  }
+}

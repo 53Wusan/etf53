@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "symbol": "CONL",
+  "date": "2026-11-19",
+  "currency": "USD",
+  "expected_daily": {
+    "low": 1.7799999713897705,
+    "high": 2.009999990463257,
+    "close": null,
+    "open": 1.9700000286102295,
+    "volume": 30164026
+  },
+  "close": 1.7899999618530273,
+  "adjusted_close": 1.7899999618530273,
+  "adjustment_policy": "Prior daily adjustment ratios must be 1; no same-session split or dividend.",
+  "evidence": {
+    "daily_url": "https://query1.finance.yahoo.com/v8/finance/chart/CONL?period1=1789084800&period2=1795132800&interval=1d&events=div,splits&includeAdjustedClose=true",
+    "intraday_url": "https://query1.finance.yahoo.com/v8/finance/chart/CONL?range=5d&interval=5m&includePrePost=false&events=div,splits",
+    "daily_response_sha256": "3b673f9472a2bd0f291e0db4623c571f266aee7f89afbdfb0fcf26b3c4def1ee",
+    "intraday_response_sha256": "5202207b536ba99ba1718c0df26d8fbc6c2c3290bbbc53403e8fb02192c2e04a",
+    "captured_at_utc": "2026-11-20T05:21:55.542600+00:00",
+    "closing_timestamp_utc": 1795122000,
+    "closing_marker": {
+      "open": 1.7899999618530273,
+      "low": 1.7899999618530273,
+      "close": 1.7899999618530273,
+      "high": 1.7899999618530273,
+      "volume": 0
+    },
+    "regular_market_time": 1795122001,
+    "regular_market_price": 1.79,
+    "regular_session_5m_bars": 78,
+    "regular_session_5m_valid_bars": 78,
+    "last_regular_bar": {
+      "open": 1.809999942779541,
+      "low": 1.7799999713897705,
+      "close": 1.7860000133514404,
+      "high": 1.809999942779541,
+      "volume": 542566
+    },
+    "reason": "Completed daily record has both close fields null. Recover only the closing value from the exact session-close marker, preserve existing daily OHLCV. Empty intraday slots are not filled; no after-hours price is used."
+  }
+}

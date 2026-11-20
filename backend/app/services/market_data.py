@@ -105,6 +105,9 @@ class YahooChartProvider:
                 frame.loc[event_date, "split_factor"] = float(event.get("numerator", 1)) / float(
                     event.get("denominator", 1)
                 )
+        from app.services.verified_daily_recovery import recover_reviewed_closes
+
+        frame = recover_reviewed_closes(frame, payload, symbol, end)
         return _clean_frame(frame)
 
 

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "symbol": "DFEN",
+  "date": "2026-11-19",
+  "currency": "USD",
+  "expected_daily": {
+    "close": null,
+    "volume": 225492,
+    "low": 43.15999984741211,
+    "open": 46.69499969482422,
+    "high": 46.919898986816406
+  },
+  "close": 43.599998474121094,
+  "adjusted_close": 43.599998474121094,
+  "adjustment_policy": "Prior daily adjustment ratios must be 1; no same-session split or dividend.",
+  "evidence": {
+    "daily_url": "https://query1.finance.yahoo.com/v8/finance/chart/DFEN?period1=1789084800&period2=1795132800&interval=1d&events=div,splits&includeAdjustedClose=true",
+    "intraday_url": "https://query1.finance.yahoo.com/v8/finance/chart/DFEN?range=5d&interval=5m&includePrePost=false&events=div,splits",
+    "daily_response_sha256": "3a1f65ff8beac7835d986f120965f431244ac711f9344db0307cb1572a2a8f06",
+    "intraday_response_sha256": "fa20598a11e1ed15d3af65b1c577c7623b7f494193872fa90b72f05e0dc3794d",
+    "captured_at_utc": "2026-11-20T05:21:56.378298+00:00",
+    "closing_timestamp_utc": 1795122000,
+    "closing_marker": {
+      "volume": 0,
+      "open": 43.599998474121094,
+      "low": 43.599998474121094,
+      "high": 43.599998474121094,
+      "close": 43.599998474121094
+    },
+    "regular_market_time": 1795122000,
+    "regular_market_price": 43.6,
+    "regular_session_5m_bars": 78,
+    "regular_session_5m_valid_bars": 69,
+    "last_regular_bar": {
+      "volume": 32021,
+      "open": 43.834999084472656,
+      "low": 43.529998779296875,
+      "high": 43.88999938964844,
+      "close": 43.58000183105469
+    },
+    "reason": "Completed daily record has both close fields null. Recover only the closing value from the exact session-close marker, preserve existing daily OHLCV. Empty intraday slots are not filled; no after-hours price is used."
+  }
+}

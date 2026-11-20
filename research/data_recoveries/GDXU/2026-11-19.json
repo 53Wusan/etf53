@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "symbol": "GDXU",
+  "date": "2026-11-19",
+  "currency": "USD",
+  "expected_daily": {
+    "volume": 3677854,
+    "close": null,
+    "open": 52.41999816894531,
+    "high": 53.86790084838867,
+    "low": 47.02239990234375
+  },
+  "close": 47.15999984741211,
+  "adjusted_close": 47.15999984741211,
+  "adjustment_policy": "Prior daily adjustment ratios must be 1; no same-session split or dividend.",
+  "evidence": {
+    "daily_url": "https://query1.finance.yahoo.com/v8/finance/chart/GDXU?period1=1789084800&period2=1795132800&interval=1d&events=div,splits&includeAdjustedClose=true",
+    "intraday_url": "https://query1.finance.yahoo.com/v8/finance/chart/GDXU?range=5d&interval=5m&includePrePost=false&events=div,splits",
+    "daily_response_sha256": "149ad67a05f436eaeb2a60c6985a1829c797fc5e2c20ced533432dd1f6958d3b",
+    "intraday_response_sha256": "6f844f779a3b01203a35aaeaa47b8d7046b10542a5fea4320abe398e41f67cdc",
+    "captured_at_utc": "2026-11-20T05:18:34.864804+00:00",
+    "closing_timestamp_utc": 1795122000,
+    "closing_marker": {
+      "close": 47.15999984741211,
+      "high": 47.15999984741211,
+      "low": 47.15999984741211,
+      "volume": 0,
+      "open": 47.15999984741211
+    },
+    "regular_market_time": 1795122000,
+    "regular_market_price": 47.16,
+    "regular_session_5m_bars": 78,
+    "independent_display_check": "https://www.moneydj.com/etf/x/basic/basic0003.xdjhtm?etfid=GDXU",
+    "reason": "The completed daily record has both close fields null. Preserve daily OHLCV and recover only its close from the exact NYSE session-close marker; never use after-hours quotes."
+  }
+}

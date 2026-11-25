@@ -1,9 +1,9 @@
 {
   "status": "ok",
-  "started_at": "2026-11-24T07:06:32.072295+00:00",
-  "completed_at": "2026-11-24T07:06:39.440506+00:00",
-  "data_date": "2026-11-23",
+  "started_at": "2026-11-25T05:41:49.419929+00:00",
+  "completed_at": "2026-11-25T05:41:55.879915+00:00",
+  "data_date": "2026-11-24",
   "observation_version": "rank2-account-observation-v1",
-  "recorded_at_utc": "2026-11-24T07:06:39.751592+00:00",
+  "recorded_at_utc": "2026-11-25T05:41:56.108670+00:00",
   "signal_before_next_open": true
 }

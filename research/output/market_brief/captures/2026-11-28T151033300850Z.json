@@ -1,0 +1,376 @@
+{
+  "version": "market-context-v2",
+  "status": "partial",
+  "market_date": "2026-11-27",
+  "generated_at_utc": "2026-11-28T15:10:33.300850+00:00",
+  "valid_until": "2026-11-30T21:30:00+00:00",
+  "market_ready": true,
+  "assessment": {
+    "trend": "中期下行",
+    "short_term": "短期回升",
+    "risk": "常态",
+    "risk_reasons": [],
+    "technology": "科技走势未触发急跌观察线",
+    "summary": "中期下行，短期回升。纳指100近5日+0.9%，标普500近5日+1.7%；科技走势未触发急跌观察线。"
+  },
+  "quotes": [
+    {
+      "symbol": "SPY",
+      "label": "标普500",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 728.3200073242188,
+      "return_1d_pct": 1.6213192297017676,
+      "return_5d_pct": 1.7391442988182737,
+      "return_20d_pct": -5.33430108255375,
+      "distance_ma50_pct": -3.8144567583364486,
+      "distance_ma200_pct": -0.3639948323035491,
+      "drawdown_252_pct": -6.516579314481263,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SPY/history/"
+    },
+    {
+      "symbol": "QQQ",
+      "label": "纳指100",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 650.989990234375,
+      "return_1d_pct": 2.691148510986907,
+      "return_5d_pct": 0.9224253394692683,
+      "return_20d_pct": -8.99572709554185,
+      "distance_ma50_pct": -7.754676637037427,
+      "distance_ma200_pct": -4.650902535605295,
+      "drawdown_252_pct": -14.30508210934538,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/QQQ/history/"
+    },
+    {
+      "symbol": "IWM",
+      "label": "美国小盘",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 273.7900085449219,
+      "return_1d_pct": 1.8298856388158757,
+      "return_5d_pct": 3.6219844372133325,
+      "return_20d_pct": -3.59846514886466,
+      "distance_ma50_pct": -1.132572482559402,
+      "distance_ma200_pct": -1.7897323532657272,
+      "drawdown_252_pct": -10.024884800113764,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/IWM/history/"
+    },
+    {
+      "symbol": "RSP",
+      "label": "标普等权",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 218.3800048828125,
+      "return_1d_pct": 1.2236948745846243,
+      "return_5d_pct": 3.1895288211790884,
+      "return_20d_pct": -0.7544030421604897,
+      "distance_ma50_pct": 1.6149630972462692,
+      "distance_ma200_pct": 4.768378526804828,
+      "drawdown_252_pct": -2.216449607154336,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/RSP/history/"
+    },
+    {
+      "symbol": "SOXX",
+      "label": "半导体",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 134.07000732421875,
+      "return_1d_pct": 4.758558999487028,
+      "return_5d_pct": -2.812605806348212,
+      "return_20d_pct": -21.727703752983285,
+      "distance_ma50_pct": -18.885262130303637,
+      "distance_ma200_pct": -16.809593982013638,
+      "drawdown_252_pct": -38.55468170600738,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/SOXX/history/"
+    },
+    {
+      "symbol": "GLD",
+      "label": "黄金ETF",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 334.3999938964844,
+      "return_1d_pct": 2.1224557735117777,
+      "return_5d_pct": -0.23271042315803347,
+      "return_20d_pct": -9.270969625500792,
+      "distance_ma50_pct": -9.563988902364562,
+      "distance_ma200_pct": -17.056879909280752,
+      "drawdown_252_pct": -32.56705020926296,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/GLD/history/"
+    },
+    {
+      "symbol": "UUP",
+      "label": "美元ETF",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 29.719999313354492,
+      "return_1d_pct": 0.40540179168337964,
+      "return_5d_pct": 0.30374672675341774,
+      "return_20d_pct": 2.341592205197074,
+      "distance_ma50_pct": 2.241607211943175,
+      "distance_ma200_pct": 5.560012547924087,
+      "drawdown_252_pct": -0.20148210848740522,
+      "change_5d_bp": null,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/UUP/history/"
+    },
+    {
+      "symbol": "^TNX",
+      "label": "美债10年收益率",
+      "date": "2026-11-27",
+      "fresh": true,
+      "close": 4.935999870300293,
+      "return_1d_pct": 1.8151778013420383,
+      "return_5d_pct": -2.2961238009697627,
+      "return_20d_pct": -1.0623366397803369,
+      "distance_ma50_pct": -2.657208478254447,
+      "distance_ma200_pct": 6.901142142442329,
+      "drawdown_252_pct": -7.060817344339288,
+      "change_5d_bp": -11.600017547607422,
+      "provider": "yahoo",
+      "source_url": "https://finance.yahoo.com/quote/^TNX/history/"
+    }
+  ],
+  "vix": {
+    "date": "2026-11-27",
+    "close": 23.81,
+    "change_5d_pct": -16.27988748241913,
+    "prior252_percentile": 88.4920634920635,
+    "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+    "excluded_non_session_rows": 16
+  },
+  "breadth_relative_20d_pp": 4.57989804039326,
+  "translation_complete": true,
+  "news": [
+    {
+      "title": "Americans Have More Riding on the Stock Market Than Ever",
+      "url": "https://www.wsj.com/world/americans-have-more-riding-on-the-stock-market-than-ever-69846861?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-28T12:02:00+00:00",
+      "tags": [
+        "市场与风险"
+      ],
+      "original_title": "Americans Have More Riding on the Stock Market Than Ever",
+      "title_zh": "美国人比以往任何时候都更多地依赖股市",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Americans Are More Exposed to the Stock Market Than Ever Before",
+      "url": "https://www.wsj.com/finance/stocks/us-stock-market-wealth-0caf5bac?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-28T02:00:00+00:00",
+      "tags": [
+        "市场与风险"
+      ],
+      "original_title": "Americans Are More Exposed to the Stock Market Than Ever Before",
+      "title_zh": "美国人比以往任何时候都更容易接触股票市场",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Treasury Yields Gain As U.S. Equities Rally",
+      "url": "https://www.wsj.com/finance/investing/short-term-jgb-yields-rise-on-elevated-tokyo-inflation-data-713a900b?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-27T21:10:00+00:00",
+      "tags": [
+        "利率与通胀"
+      ],
+      "original_title": "Treasury Yields Gain As U.S. Equities Rally",
+      "title_zh": "美国股市上涨，国债收益率上涨",
+      "translation_status": "translated"
+    },
+    {
+      "title": "Trump Can’t Rescue the Stock Market. Here’s What Can.",
+      "url": "https://www.wsj.com/finance/stocks/trump-cant-rescue-the-stock-market-heres-what-can-1b97a560?mod=rss_markets_main",
+      "source": "WSJ市场",
+      "published_at_utc": "2026-11-27T10:30:00+00:00",
+      "tags": [
+        "市场与风险"
+      ],
+      "original_title": "Trump Can’t Rescue the Stock Market. Here’s What Can.",
+      "title_zh": "特朗普无法拯救股市。这是可以的。",
+      "translation_status": "translated"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-12-02",
+      "time_utc": null,
+      "title": "GDP发布",
+      "original_title": "GDP by County and Personal Income by County, 2025",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "GDP发布",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-12-08",
+      "time_utc": null,
+      "title": "U.S. International Trade in Goods and Services, October 2026",
+      "original_title": "U.S. International Trade in Goods and Services, October 2026",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "2026 年 10 月美国国际商品和服务贸易",
+      "translation_status": "translated"
+    },
+    {
+      "date": "2026-12-09",
+      "time_utc": null,
+      "title": "FOMC会议结束日",
+      "source": "美联储会议",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "timing_note": "美东日期，具体公布时间以官方为准",
+      "original_title": "FOMC会议结束日",
+      "title_zh": "FOMC会议结束日",
+      "translation_status": "original_zh"
+    },
+    {
+      "date": "2026-12-10",
+      "time_utc": null,
+      "title": "Real Personal Consumption Expenditures by State and Real Personal Income by State, 2025",
+      "original_title": "Real Personal Consumption Expenditures by State and Real Personal Income by State, 2025",
+      "source": "BEA经济数据",
+      "url": "https://www.bea.gov/news/schedule",
+      "timing_note": "官方发布日期；具体时间查看原日历",
+      "title_zh": "2025年各州实际个人消费支出和各州实际个人收入",
+      "translation_status": "translated"
+    }
+  ],
+  "calendar_complete": false,
+  "sources": [
+    {
+      "name": "SPY",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SPY/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "QQQ",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/QQQ/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "IWM",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/IWM/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "RSP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/RSP/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "SOXX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/SOXX/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "GLD",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/GLD/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "UUP",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/UUP/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "^TNX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://finance.yahoo.com/quote/^TNX/history/",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "VIX",
+      "kind": "quote",
+      "ok": true,
+      "message": null,
+      "url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv",
+      "data_date": "2026-11-27"
+    },
+    {
+      "name": "WSJ市场",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain",
+      "data_date": null
+    },
+    {
+      "name": "MarketWatch",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+      "data_date": null
+    },
+    {
+      "name": "美联储政策",
+      "kind": "news",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+      "data_date": null
+    },
+    {
+      "name": "美联储会议",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "data_date": null
+    },
+    {
+      "name": "BEA经济数据",
+      "kind": "calendar",
+      "ok": true,
+      "message": null,
+      "url": "https://www.bea.gov/news/schedule",
+      "data_date": null
+    },
+    {
+      "name": "BLS经济数据",
+      "kind": "calendar",
+      "ok": false,
+      "message": "来源暂不可读取（HTTP 403）",
+      "url": "https://www.bls.gov/schedule/news_release/bls.ics",
+      "data_date": null
+    }
+  ],
+  "note": "规则描述已发生的收盘状态，不预测下一日方向；新闻按主题和时间筛选，不是AI解读，不参与现网买卖。"
+}

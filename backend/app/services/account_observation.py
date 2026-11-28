@@ -14,12 +14,14 @@ import pandas as pd
 import pandas_market_calendars as mcal
 
 from app.services.execution_research import FX, CapitalPolicy, ExecutionRule, load_arrays, simulate
+from app.services.observation_compatibility import LEDGER_ROUNDOFF_TRANSITION
 from app.services.research_cockpit import (
     BENCHMARK_SYMBOLS,
     _active_data,
     _research_output,
     benchmark_frame,
 )
+from app.services.shadow_account import same_trades
 
 VERSION = "rank2-account-observation-v1"
 WEIGHTS = dict(zip(BENCHMARK_SYMBOLS, (.4, .3, .3), strict=True))
@@ -106,7 +108,7 @@ def build_summary(config: dict, account: dict) -> dict:
     result = simulate(data, rule, start=account["activation_date"], end=account["data_date"], detail=True, capital=capital)
     last = result["daily"][-1]
     if (abs(last["equity_hkd"] / FX - account["equity_usd"]) > 1e-6
-            or result["trades"] != account["trades"]):
+            or not same_trades(account["trades"], result["trades"])):
         raise ValueError("观察回放与现网账户不一致")
     dates = pd.DatetimeIndex([row["date"] for row in result["daily"]])
     expected = mcal.get_calendar("NYSE").valid_days(start_date=dates[0], end_date=dates[-1]).tz_localize(None)
@@ -144,6 +146,33 @@ def build_summary(config: dict, account: dict) -> dict:
             "curve_kind": "historical_replay_not_proof_of_preopen_signals"}
 
 
+def _same_payload(recorded: dict, current: dict) -> bool:
+    if recorded == current:
+        return True
+    old = recorded.copy()
+    new = current.copy()
+    for candidate in (old, new):
+        candidate["next_open_plan"] = candidate["next_open_plan"].copy()
+    return (same_trades(old.pop("fills"), new.pop("fills"))
+            and same_trades(old["next_open_plan"].pop("actions"),
+                            new["next_open_plan"].pop("actions"))
+            and old == new)
+
+
+def _chain_definition(directory: Path, definition: dict) -> dict:
+    kickoff_path = directory / "kickoff.json"
+    if not kickoff_path.exists():
+        return definition
+    recorded = _read(kickoff_path)["definition"]
+    if digest(recorded) != LEDGER_ROUNDOFF_TRANSITION["prior_definition"]:
+        return definition
+    hashes = recorded["code_sha256"]
+    approved = {**hashes, **LEDGER_ROUNDOFF_TRANSITION["updated_files"]}
+    if definition == {**recorded, "code_sha256": approved}:
+        return recorded
+    return definition
+
+
 def append_record(directory: Path, definition: dict, payload: dict, now: datetime) -> dict:
     """Idempotent same-day runs; fail on definition changes, tampering or history rewrites."""
     schedule = mcal.get_calendar("NYSE").schedule(start_date=payload["data_date"], end_date=pd.Timestamp(payload["data_date"]) + pd.Timedelta(days=14))
@@ -174,7 +203,7 @@ def append_record(directory: Path, definition: dict, payload: dict, now: datetim
         previous_hash = record["sha256"]
     matching = next((r for r in records if r["payload"]["data_date"] == payload["data_date"]), None)
     if matching:
-        if matching["payload"] != payload:
+        if not _same_payload(matching["payload"], payload):
             raise ValueError("已登记的当日计划或账户数据变化，不覆盖")
     else:
         if records and payload["data_date"] < records[-1]["payload"]["data_date"]:
@@ -234,8 +263,9 @@ def capture(config: dict, account: dict) -> dict:
                "benchmark_usd": summary["curve"][-1]["benchmark_usd"],
                "source_manifest_sha256": hashlib.sha256((active / "manifest.json").read_bytes()).hexdigest() if active else None}
     directory = _directory()
-    summary["audit"] = append_record(directory, definition, payload, datetime.now(timezone.utc))
-    summary["definition_sha256"] = digest(definition)
+    chain_definition = _chain_definition(directory, definition)
+    summary["audit"] = append_record(directory, chain_definition, payload, datetime.now(timezone.utc))
+    summary["definition_sha256"] = digest(chain_definition)
     summary["code_sha256"] = definition["code_sha256"]
     schedule = mcal.get_calendar("NYSE").schedule(start_date=account["next_open_plan"]["next_open_date"],
                                                  end_date=account["next_open_plan"]["next_open_date"])

@@ -1,5 +1,6 @@
 """Deployment-date paper account, isolated from historical and actual ledgers."""
 import json
+import math
 import os
 from pathlib import Path
 
@@ -7,7 +8,24 @@ import numpy as np
 import pandas as pd
 import pandas_market_calendars as mcal
 
-from app.services.execution_research import CapitalPolicy, ExecutionRule, FX, load_arrays, simulate
+from app.services.execution_research import FX, CapitalPolicy, ExecutionRule, load_arrays, simulate
+
+
+def same_trades(recorded: list[dict], replayed: list[dict]) -> bool:
+    """Only the derived opening valuation can vary by floating-point roundoff."""
+    if len(recorded) != len(replayed):
+        return False
+    field = "equity_at_open_hkd"
+    for old, new in zip(recorded, replayed, strict=True):
+        if old == new:
+            continue
+        if old.keys() != new.keys() or field not in old:
+            return False
+        if any(old[key] != new[key] for key in old if key != field):
+            return False
+        if not math.isclose(old[field], new[field], rel_tol=0, abs_tol=1e-8):
+            return False
+    return True
 
 
 def calculate(config: dict, data: dict) -> dict:
@@ -51,8 +69,11 @@ def update(config_path: Path, output_path: Path) -> dict:
     if output_path.exists():
         previous = json.loads(output_path.read_text(encoding="utf8"))
         historical = [t for t in result["trades"] if t["date"] <= previous["data_date"]]
-        if previous["activation_date"] != result["activation_date"] or historical != previous["trades"]:
+        if (previous["activation_date"] != result["activation_date"]
+                or result["data_date"] < previous["data_date"]
+                or not same_trades(previous["trades"], historical)):
             raise ValueError("已登记模拟成交发生变化，必须先对账，不覆盖旧账本")
+        result["trades"][:len(historical)] = previous["trades"]
     output_path.parent.mkdir(parents=True, exist_ok=True)
     temporary = output_path.with_suffix(".tmp")
     temporary.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf8")
